@@ -1,0 +1,176 @@
+const servicosFixos = [
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11M8 10v11M16 10v11M12 10v11" />
+      </svg>
+    ),
+    titulo: "Provas de Carga Estáticas e Dinâmicas",
+    descricao:
+      "Aplicadas em lajes, arquibancadas, pontes, passarelas e viadutos em todo o Brasil, com instrumentação de alta precisão.",
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+    titulo: "Ensaios de Conforto Humano e Vibração",
+    descricao:
+      "Avaliação de vibrações ambientais e conforto estrutural conforme NBR 6118 e 7188. Análise de frequências naturais e amortecimentos.",
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+        <path d="M7 8l3 3 2-2 3 3" />
+      </svg>
+    ),
+    titulo: "Monitoramento Estrutural",
+    descricao:
+      "Acompanhamento de tensões e deslocamentos em tempo real com strain gages e LVDTs. Aquisição multicanal e processamento em tempo real.",
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <path d="M17.5 17.5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+        <path d="M14 17.5h1.5M17.5 14v1.5" />
+      </svg>
+    ),
+    titulo: "Validação de Modelos Numéricos",
+    descricao:
+      "Calibração experimental de simulações estruturais em elementos finitos — correlacionando dados de campo com modelos computacionais.",
+  },
+];
+
+const servicosMoveis = [
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 3h15v13H1z" />
+        <path d="M16 8h4l3 3v5h-7V8z" />
+        <circle cx="5.5" cy="18.5" r="2.5" />
+        <circle cx="18.5" cy="18.5" r="2.5" />
+      </svg>
+    ),
+    titulo: "Ensaios de Trafegabilidade",
+    descricao:
+      "Subestações móveis WEG, análise de vibração e estabilidade com acelerômetros. Verificação de integridade estrutural em deslocamento.",
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+      </svg>
+    ),
+    titulo: "Ensaios Industriais Especiais",
+    descricao:
+      "Testes experimentais sob demanda: pistões ThyssenKrupp Synergy, dispositivos de precisão, cilindros pneumáticos e validação de soldas.",
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 3v18M3 9h18M3 15h18" />
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+      </svg>
+    ),
+    titulo: "Fabricação e Calibração de Células de Carga",
+    descricao:
+      "Produção sob medida para validações estruturais e sistemas de medição. Células calibradas com rastreabilidade metrológica.",
+  },
+];
+
+export default function Services() {
+  return (
+    <section id="servicos" className="py-24 md:py-32 bg-[#080808]">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="mb-16">
+          <p className="text-xs tracking-[0.35em] text-[#f97316] uppercase font-medium mb-4">
+            O que fazemos
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-black text-white leading-tight max-w-2xl"
+            style={{ fontFamily: "var(--font-outfit)" }}
+          >
+            Serviços e
+            <br />
+            <span className="text-[#2563eb]">Especialidades</span>
+          </h2>
+        </div>
+
+        {/* Estruturas Fixas */}
+        <div className="mb-14">
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-[1px] w-8 bg-[#2563eb]" />
+            <span
+              className="text-sm font-bold text-[#2563eb] tracking-widest uppercase"
+              style={{ fontFamily: "var(--font-outfit)" }}
+            >
+              Estruturas Fixas — 60%
+            </span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {servicosFixos.map((servico, i) => (
+              <div
+                key={i}
+                className="p-6 bg-[#111111] border border-[#1e1e1e] hover:border-[#2563eb]/40 rounded-sm transition-colors duration-200 cursor-default group"
+              >
+                <div className="w-10 h-10 flex items-center justify-center mb-5 text-[#2563eb] group-hover:text-white transition-colors duration-200">
+                  {servico.icon}
+                </div>
+                <h3
+                  className="text-sm font-bold text-white mb-3 leading-snug"
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
+                  {servico.titulo}
+                </h3>
+                <p className="text-xs text-[#6b7280] leading-relaxed">
+                  {servico.descricao}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Estruturas Móveis */}
+        <div>
+          <div className="flex items-center gap-4 mb-8">
+            <div className="h-[1px] w-8 bg-[#f97316]" />
+            <span
+              className="text-sm font-bold text-[#f97316] tracking-widest uppercase"
+              style={{ fontFamily: "var(--font-outfit)" }}
+            >
+              Estruturas Móveis e Especiais — 40%
+            </span>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {servicosMoveis.map((servico, i) => (
+              <div
+                key={i}
+                className="p-6 bg-[#111111] border border-[#1e1e1e] hover:border-[#f97316]/40 rounded-sm transition-colors duration-200 cursor-default group"
+              >
+                <div className="w-10 h-10 flex items-center justify-center mb-5 text-[#f97316] group-hover:text-white transition-colors duration-200">
+                  {servico.icon}
+                </div>
+                <h3
+                  className="text-sm font-bold text-white mb-3 leading-snug"
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
+                  {servico.titulo}
+                </h3>
+                <p className="text-xs text-[#6b7280] leading-relaxed">
+                  {servico.descricao}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

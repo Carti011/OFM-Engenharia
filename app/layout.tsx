@@ -17,12 +17,36 @@ const workSans = Work_Sans({
   display: "swap",
 });
 
+const URL_BASE = "https://ofmengenharia.com.br";
+const TITULO = "OFM | Engenharia, Instrumentações e Análises Estruturais";
+const DESCRICAO =
+  "Empresa especializada em instrumentação de alta precisão, provas de carga, ensaios dinâmicos e análises estruturais. Veja nosso portfólio.";
+
 export const metadata: Metadata = {
-  title: "OFM | Engenharia, Instrumentações e Análises Estruturais",
-  description:
-    "OFM Engenharia e Inspeções — empresa especializada em instrumentação de alta precisão, ensaios estáticos e dinâmicos, fabricação de células de carga e validação experimental de modelos numéricos.",
+  title: TITULO,
+  description: DESCRICAO,
   keywords:
     "instrumentação estrutural, análises estruturais, provas de carga, strain gages, ensaios dinâmicos, engenharia experimental, inspeção estrutural",
+  metadataBase: new URL(URL_BASE),
+  openGraph: {
+    type: "website",
+    url: URL_BASE,
+    title: TITULO,
+    description: DESCRICAO,
+    siteName: "OFM Engenharia",
+    images: [
+      {
+        url: "/images/Logos/Logo Full/ofm_logo_full.png",
+        alt: "OFM Engenharia — Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITULO,
+    description: DESCRICAO,
+    images: ["/images/Logos/Logo Full/ofm_logo_full.png"],
+  },
 };
 
 export default function RootLayout({

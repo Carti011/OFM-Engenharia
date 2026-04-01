@@ -1,4 +1,36 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+// Estilos de transição em longhand para evitar conflito com transitionDelay
+const transicao = {
+  transitionProperty: "transform, opacity",
+  transitionDuration: "0.7s",
+  transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+} as const;
+
 export default function Hero() {
+  const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisivel(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const fadeUp = (delay: number) => ({
+    ...transicao,
+    transitionDelay: `${delay}ms`,
+    opacity: visivel ? 1 : 0,
+    transform: visivel ? "none" : "translateY(40px)",
+  });
+
+  const scaleIn = (delay: number) => ({
+    ...transicao,
+    transitionDelay: `${delay}ms`,
+    opacity: visivel ? 1 : 0,
+    transform: visivel ? "none" : "scale(0.85)",
+  });
+
   return (
     <section
       id="hero"
@@ -17,13 +49,16 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,var(--bg-principal)_100%)]" />
 
       {/* Accent line top */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-(--destaque-azul) to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-(--destaque-azul) to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
         {/* Eyebrow */}
         <p
           className="text-xs tracking-[0.4em] text-(--destaque-laranja) uppercase font-medium mb-6"
-          style={{ fontFamily: "var(--font-work-sans)" }}
+          style={{
+            fontFamily: "var(--font-work-sans)",
+            ...fadeUp(100),
+          }}
         >
           Engenharia Experimental — Desde 2002
         </p>
@@ -31,13 +66,19 @@ export default function Hero() {
         {/* Main heading */}
         <h1
           className="text-5xl md:text-7xl lg:text-8xl font-black text-(--texto-principal) leading-[0.95] tracking-tight mb-2 max-w-5xl"
-          style={{ fontFamily: "var(--font-outfit)" }}
+          style={{
+            fontFamily: "var(--font-outfit)",
+            ...fadeUp(200),
+          }}
         >
           OFM
         </h1>
         <h2
           className="text-xl md:text-3xl lg:text-4xl font-light text-(--texto-secundario) tracking-wide mb-8 max-w-4xl"
-          style={{ fontFamily: "var(--font-outfit)" }}
+          style={{
+            fontFamily: "var(--font-outfit)",
+            ...fadeUp(300),
+          }}
         >
           Engenharia, Instrumentações e{" "}
           <span className="text-(--texto-principal) font-semibold">Análises Estruturais</span>
@@ -46,14 +87,17 @@ export default function Hero() {
         {/* Tagline */}
         <p
           className="text-lg md:text-xl text-(--texto-secundario) max-w-2xl mb-12 leading-relaxed"
-          style={{ fontFamily: "var(--font-work-sans)" }}
+          style={{
+            fontFamily: "var(--font-work-sans)",
+            ...fadeUp(400),
+          }}
         >
           Transformando medições em conhecimento estrutural — promovendo
           segurança, desempenho e inovação em obras de grande porte.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4" style={fadeUp(500)}>
           <a
             href="#contato"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white font-bold text-base rounded-sm transition-colors duration-200 cursor-pointer"
@@ -74,11 +118,11 @@ export default function Hero() {
         {/* Stats */}
         <div className="mt-20 grid grid-cols-3 gap-6 max-w-xl">
           {[
-            { value: "20+", label: "Anos de experiência" },
-            { value: "100+", label: "Obras instrumentadas" },
-            { value: "Alta", label: "Precisão metrológica" },
+            { value: "20+", label: "Anos de experiência", delay: 600 },
+            { value: "100+", label: "Obras instrumentadas", delay: 700 },
+            { value: "Alta", label: "Precisão metrológica", delay: 800 },
           ].map((stat) => (
-            <div key={stat.label} className="flex flex-col">
+            <div key={stat.label} className="flex flex-col" style={scaleIn(stat.delay)}>
               <span
                 className="text-2xl md:text-3xl font-black text-(--texto-principal)"
                 style={{ fontFamily: "var(--font-outfit)" }}

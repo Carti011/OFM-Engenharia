@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "OFM Engenharia",
     images: [
       {
-        url: "/images/Logos/logo-full/ofm_logo_full.png",
+        url: "/images/Logos/logo-full/ofm_logo_full_navbar_2x.png",
         alt: "OFM Engenharia — Logo",
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITULO,
     description: DESCRICAO,
-    images: ["/images/Logos/logo-full/ofm_logo_full.png"],
+    images: ["/images/Logos/logo-full/ofm_logo_full_navbar_2x.png"],
   },
 };
 

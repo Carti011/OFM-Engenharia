@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
       </svg>
 
       {/* Tooltip */}
-      <span className="absolute right-16 bg-[#111111] border border-[#222222] text-white text-xs px-3 py-1.5 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+      <span className="absolute right-16 bg-(--bg-cartao) border border-(--borda-input) text-(--texto-principal) text-xs px-3 py-1.5 rounded-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
         Fale conosco no WhatsApp
       </span>
     </a>

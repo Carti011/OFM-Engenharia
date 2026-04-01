@@ -2,27 +2,27 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-(--bg-principal)"
     >
       {/* Blueprint grid background */}
       <div
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(37,99,235,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,0.15) 1px, transparent 1px)",
+            "linear-gradient(var(--blueprint-15) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-15) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
       {/* Radial vignette over grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,#0a0a0a_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,var(--bg-principal)_100%)]" />
 
       {/* Accent line top */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#2563eb] to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-(--destaque-azul) to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-20">
         {/* Eyebrow */}
         <p
-          className="text-xs tracking-[0.4em] text-[#f97316] uppercase font-medium mb-6"
+          className="text-xs tracking-[0.4em] text-(--destaque-laranja) uppercase font-medium mb-6"
           style={{ fontFamily: "var(--font-work-sans)" }}
         >
           Engenharia Experimental — Desde 2002
@@ -30,22 +30,22 @@ export default function Hero() {
 
         {/* Main heading */}
         <h1
-          className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[0.95] tracking-tight mb-2 max-w-5xl"
+          className="text-5xl md:text-7xl lg:text-8xl font-black text-(--texto-principal) leading-[0.95] tracking-tight mb-2 max-w-5xl"
           style={{ fontFamily: "var(--font-outfit)" }}
         >
           OFM
         </h1>
         <h2
-          className="text-xl md:text-3xl lg:text-4xl font-light text-[#9ca3af] tracking-wide mb-8 max-w-4xl"
+          className="text-xl md:text-3xl lg:text-4xl font-light text-(--texto-secundario) tracking-wide mb-8 max-w-4xl"
           style={{ fontFamily: "var(--font-outfit)" }}
         >
-          Instrumentações e{" "}
-          <span className="text-white font-semibold">Análises Estruturais</span>
+          Engenharia, Instrumentações e{" "}
+          <span className="text-(--texto-principal) font-semibold">Análises Estruturais</span>
         </h2>
 
         {/* Tagline */}
         <p
-          className="text-lg md:text-xl text-[#9ca3af] max-w-2xl mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-(--texto-secundario) max-w-2xl mb-12 leading-relaxed"
           style={{ fontFamily: "var(--font-work-sans)" }}
         >
           Transformando medições em conhecimento estrutural — promovendo
@@ -56,7 +56,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#contato"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#f97316] hover:bg-[#ea6c0a] text-white font-bold text-base rounded-sm transition-colors duration-200 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white font-bold text-base rounded-sm transition-colors duration-200 cursor-pointer"
           >
             Solicitar Proposta
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -65,7 +65,7 @@ export default function Hero() {
           </a>
           <a
             href="#servicos"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#2563eb] text-[#2563eb] hover:bg-[#2563eb]/10 font-semibold text-base rounded-sm transition-colors duration-200 cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-(--destaque-azul) text-(--destaque-azul) hover:bg-(--destaque-azul)/10 font-semibold text-base rounded-sm transition-colors duration-200 cursor-pointer"
           >
             Nossos Serviços
           </a>
@@ -80,12 +80,12 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col">
               <span
-                className="text-2xl md:text-3xl font-black text-white"
+                className="text-2xl md:text-3xl font-black text-(--texto-principal)"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
                 {stat.value}
               </span>
-              <span className="text-xs text-[#6b7280] mt-1 leading-snug">
+              <span className="text-xs text-(--texto-suave) mt-1 leading-snug">
                 {stat.label}
               </span>
             </div>
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#4b5563]">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-(--texto-fraco)">
         <span className="text-xs tracking-widest uppercase">Rolar</span>
         <svg
           width="20"

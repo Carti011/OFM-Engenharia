@@ -26,20 +26,20 @@ const programas = [
 
 export default function TechnicalScope() {
   return (
-    <section id="acervo" className="py-24 md:py-32 bg-[#080808]">
+    <section id="acervo" className="py-24 md:py-32 bg-(--bg-secao)">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <p className="text-xs tracking-[0.35em] text-[#f97316] uppercase font-medium mb-4">
+          <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
             Capacidade Técnica
           </p>
           <h2
-            className="text-4xl md:text-5xl font-black text-white leading-tight"
+            className="text-4xl md:text-5xl font-black text-(--texto-principal) leading-tight"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
             Acervo
             <br />
-            <span className="text-[#2563eb]">Técnico</span>
+            <span className="text-(--destaque-azul)">Técnico</span>
           </h2>
         </div>
 
@@ -48,7 +48,7 @@ export default function TechnicalScope() {
           <div className="lg:col-span-2">
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
               {capacidades.map((item, i) => (
-                <div key={i} className="flex items-start gap-3 py-2 border-b border-[#151515]">
+                <div key={i} className="flex items-start gap-3 py-2 border-b border-(--borda-fina)">
                   <svg
                     width="16"
                     height="16"
@@ -58,11 +58,11 @@ export default function TechnicalScope() {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-[#2563eb] flex-shrink-0 mt-0.5"
+                    className="text-(--destaque-azul) flex-shrink-0 mt-0.5"
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span className="text-[#9ca3af] text-sm leading-snug">{item}</span>
+                  <span className="text-(--texto-secundario) text-sm leading-snug">{item}</span>
                 </div>
               ))}
             </div>
@@ -71,7 +71,7 @@ export default function TechnicalScope() {
           {/* Painel de softwares */}
           <div className="flex flex-col gap-5">
             <h3
-              className="text-base font-bold text-white tracking-wide mb-2"
+              className="text-base font-bold text-(--texto-principal) tracking-wide mb-2"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
               Softwares Utilizados
@@ -79,16 +79,16 @@ export default function TechnicalScope() {
             {programas.map((programa) => (
               <div
                 key={programa.nome}
-                className="p-5 bg-[#111111] border border-[#1e1e1e] rounded-sm"
+                className="p-5 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-[#2563eb]/10 border border-[#2563eb]/20 rounded-sm flex items-center justify-center">
+                  <div className="w-8 h-8 bg-(--destaque-azul)/10 border border-(--destaque-azul)/20 rounded-sm flex items-center justify-center">
                     <svg
                       width="16"
                       height="16"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#2563eb"
+                      stroke="var(--destaque-azul)"
                       strokeWidth="2"
                       strokeLinecap="round"
                     >
@@ -97,20 +97,20 @@ export default function TechnicalScope() {
                     </svg>
                   </div>
                   <span
-                    className="text-white font-bold text-sm"
+                    className="text-(--texto-principal) font-bold text-sm"
                     style={{ fontFamily: "var(--font-outfit)" }}
                   >
                     {programa.nome}
                   </span>
                 </div>
-                <p className="text-xs text-[#6b7280] leading-relaxed">{programa.descricao}</p>
+                <p className="text-xs text-(--texto-suave) leading-relaxed">{programa.descricao}</p>
               </div>
             ))}
 
             {/* Norms reference */}
-            <div className="p-5 bg-[#111111] border border-[#1e1e1e] rounded-sm">
+            <div className="p-5 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm">
               <h4
-                className="text-white text-sm font-bold mb-3"
+                className="text-(--texto-principal) text-sm font-bold mb-3"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
                 Normas de Referência
@@ -119,7 +119,7 @@ export default function TechnicalScope() {
                 {["ABNT NBR 6118", "NBR 7188", "NBR 8800", "NBR 14931", "NBR 14762", "AWS D1.1", "ISO 6892-1"].map((norm) => (
                   <span
                     key={norm}
-                    className="px-2 py-1 bg-[#1a1a1a] border border-[#252525] text-[#6b7280] text-[10px] font-mono rounded-sm"
+                    className="px-2 py-1 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[10px] font-mono rounded-sm"
                   >
                     {norm}
                   </span>

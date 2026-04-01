@@ -88,11 +88,16 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-(--borda-fina) flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-(--texto-fraco) text-xs">
-            © {new Date().getFullYear()} OFM Engenharia e Inspeções Ltda. — CNPJ 65.669.828/0001-82
-          </p>
-          <p className="text-(--texto-fraco) text-xs">
-            Eng. Fernando Franco de Oliveira — CREA/SP
+          <div className="flex flex-col gap-1">
+            <p className="text-(--texto-fraco) text-xs">
+              © {new Date().getFullYear()} OFM Engenharia e Inspeções Ltda. — CNPJ 65.669.828/0001-82
+            </p>
+            <p className="text-(--texto-fraco) text-xs">
+              Responsável Técnico: Fernando Franco de Oliveira
+            </p>
+          </div>
+          <p className="text-(--texto-fraco) text-xs text-right">
+            Av. dos Autonomistas, 503 — São Paulo, SP
           </p>
         </div>
       </div>

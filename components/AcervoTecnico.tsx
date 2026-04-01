@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const capacidades = [
   "Ensaios estáticos e dinâmicos em pontes e viadutos ferroviários e rodoviários",
   "Provas de carga hidráulicas e estruturais em lajes, passarelas e edificações",
@@ -17,10 +19,12 @@ const programas = [
   {
     nome: "AqDados",
     descricao: "Programa de aquisição de dados multicanal Lynx — configuração de canais, calibração de sensores e gravação em tempo real com taxas de amostragem elevadas.",
+    logo: "/images/AqDados.png",
   },
   {
     nome: "AqDAnalysis",
     descricao: "Análise e processamento de sinais adquiridos — domínio do tempo e frequência, filtros digitais e geração de relatórios técnicos.",
+    logo: "/images/AqDAnalysis.png",
   },
 ];
 
@@ -58,7 +62,7 @@ export default function TechnicalScope() {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-(--destaque-azul) flex-shrink-0 mt-0.5"
+                    className="text-(--destaque-azul) shrink-0 mt-0.5"
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
@@ -82,19 +86,15 @@ export default function TechnicalScope() {
                 className="p-5 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 bg-(--destaque-azul)/10 border border-(--destaque-azul)/20 rounded-sm flex items-center justify-center">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="var(--destaque-azul)"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    >
-                      <rect x="2" y="3" width="20" height="14" rx="2" />
-                      <path d="M8 21h8M12 17v4" />
-                    </svg>
+                  <div className="w-10 h-10 rounded-sm overflow-hidden shrink-0 bg-[#e8e8e8]">
+                    <Image
+                      src={programa.logo}
+                      alt={programa.nome}
+                      width={40}
+                      height={40}
+                      className="w-full h-full object-contain"
+                      unoptimized
+                    />
                   </div>
                   <span
                     className="text-(--texto-principal) font-bold text-sm"
@@ -107,7 +107,7 @@ export default function TechnicalScope() {
               </div>
             ))}
 
-            {/* Norms reference */}
+            {/* Normas de referência */}
             <div className="p-5 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm">
               <h4
                 className="text-(--texto-principal) text-sm font-bold mb-3"

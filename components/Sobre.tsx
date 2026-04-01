@@ -1,30 +1,32 @@
+import Image from "next/image";
+
 const historico = [
   {
     ano: "2002",
     titulo: "LSE – USP",
     descricao:
       "Início da trajetória no Laboratório de Sistemas Estruturais da USP, aprendendo instrumentação com strain gages e acelerômetros no sistema ADS2000.",
-    corTexto: "var(--destaque-azul)",
-    corFundo: "var(--timeline-azul-bg)",
     corBorda: "var(--timeline-azul-borda)",
+    logo: "/images/usp_universidadedesaopaulo.png",
+    logoBg: "#ffffff",
   },
   {
-    ano: "2010",
+    ano: "2010–2021",
     titulo: "Falcão Bauer",
     descricao:
       "Integração à Falcão Bauer, executando ensaios estruturais e especiais: provas de carga, vibração, conforto humano e fogo e fumaça. Participação em obras como o Estádio do Corinthians, o Museu do Amanhã e a Ponte Rio–Niterói.",
-    corTexto: "var(--destaque-laranja)",
-    corFundo: "var(--timeline-laranja-bg)",
     corBorda: "var(--timeline-laranja-borda)",
+    logo: "/images/Falcão Bauer.png",
+    logoBg: "#ffffff",
   },
   {
-    ano: "OFM",
+    ano: "Atual",
     titulo: "Fundação da OFM",
     descricao:
       "Consolidação de toda a trajetória em uma empresa própria, oferecendo instrumentação de alta precisão, fabricação de células de carga, ensaios estáticos e dinâmicos e validação experimental de modelos numéricos.",
-    corTexto: "var(--destaque-laranja)",
-    corFundo: "var(--timeline-laranja-bg)",
     corBorda: "var(--timeline-laranja-borda)",
+    logo: "/images/Logos/logo_v2Removido.png",
+    logoBg: "#0a0a0a",
   },
 ];
 
@@ -84,19 +86,28 @@ export default function About() {
             <div className="space-y-10">
               {historico.map((etapa, i) => (
                 <div key={i} className="relative pl-16">
-                  {/* Marcador */}
+                  {/* Marcador com logo */}
                   <div
-                    className="absolute left-0 top-1 w-12 h-12 rounded-sm flex items-center justify-center text-xs font-black tracking-tight border"
-                    style={{
-                      backgroundColor: etapa.corFundo,
-                      borderColor: etapa.corBorda,
-                      fontFamily: "var(--font-outfit)",
-                      color: etapa.corTexto,
-                    }}
+                    className="absolute left-0 top-1 w-12 h-12 rounded-sm overflow-hidden border flex-shrink-0"
+                    style={{ borderColor: etapa.corBorda, backgroundColor: etapa.logoBg }}
                   >
-                    {etapa.ano}
+                    <Image
+                      src={etapa.logo}
+                      alt={etapa.titulo}
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-contain p-1"
+                      unoptimized
+                    />
                   </div>
 
+                  <div className="flex items-center gap-2 mb-1">
+                    <span
+                      className="text-xs font-mono text-(--texto-fraco) tracking-widest"
+                    >
+                      {etapa.ano}
+                    </span>
+                  </div>
                   <h3
                     className="text-lg font-bold text-(--texto-principal) mb-2"
                     style={{ fontFamily: "var(--font-outfit)" }}

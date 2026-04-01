@@ -1,3 +1,7 @@
+"use client";
+
+import { useScrollReveal } from "../hooks/useScrollReveal";
+
 const servicosFixos = [
   {
     icon: (
@@ -85,11 +89,29 @@ const servicosMoveis = [
 ];
 
 export default function Services() {
+  const header = useScrollReveal({ threshold: 0.15 });
+  const labelFixos = useScrollReveal({ threshold: 0.15 });
+  const labelMoveis = useScrollReveal({ threshold: 0.15 });
+
+  const f0 = useScrollReveal({ threshold: 0.1 });
+  const f1 = useScrollReveal({ threshold: 0.1 });
+  const f2 = useScrollReveal({ threshold: 0.1 });
+  const f3 = useScrollReveal({ threshold: 0.1 });
+  const fixosRefs = [f0, f1, f2, f3];
+
+  const m0 = useScrollReveal({ threshold: 0.1 });
+  const m1 = useScrollReveal({ threshold: 0.1 });
+  const m2 = useScrollReveal({ threshold: 0.1 });
+  const moveisRefs = [m0, m1, m2];
+
   return (
     <section id="servicos" className="py-24 md:py-32 bg-(--bg-secao)">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-16">
+        <div
+          ref={header.ref}
+          className={`mb-16 ${header.montado ? "reveal-fade-up" : ""} ${header.visivel ? "is-visible" : ""}`}
+        >
           <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
             O que fazemos
           </p>
@@ -105,8 +127,11 @@ export default function Services() {
 
         {/* Estruturas Fixas */}
         <div className="mb-14">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-[1px] w-8 bg-(--destaque-azul)" />
+          <div
+            ref={labelFixos.ref}
+            className={`flex items-center gap-4 mb-8 ${labelFixos.montado ? "reveal-fade-right" : ""} ${labelFixos.visivel ? "is-visible" : ""}`}
+          >
+            <div className="h-px w-8 bg-(--destaque-azul)" />
             <span
               className="text-sm font-bold text-(--destaque-azul) tracking-widest uppercase"
               style={{ fontFamily: "var(--font-outfit)" }}
@@ -115,32 +140,40 @@ export default function Services() {
             </span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {servicosFixos.map((servico, i) => (
-              <div
-                key={i}
-                className="p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/40 rounded-sm transition-colors duration-200 cursor-default group"
-              >
-                <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-azul) group-hover:text-(--texto-principal) transition-colors duration-200">
-                  {servico.icon}
-                </div>
-                <h3
-                  className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
-                  style={{ fontFamily: "var(--font-outfit)" }}
+            {servicosFixos.map((servico, i) => {
+              const { ref, montado, visivel } = fixosRefs[i];
+              return (
+                <div
+                  key={i}
+                  ref={ref}
+                  className={`p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/40 rounded-sm transition-colors duration-200 cursor-default group ${montado ? "reveal-fade-up" : ""} ${visivel ? "is-visible" : ""}`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
                 >
-                  {servico.titulo}
-                </h3>
-                <p className="text-xs text-(--texto-suave) leading-relaxed">
-                  {servico.descricao}
-                </p>
-              </div>
-            ))}
+                  <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-azul) group-hover:text-(--texto-principal) transition-colors duration-200">
+                    {servico.icon}
+                  </div>
+                  <h3
+                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
+                    style={{ fontFamily: "var(--font-outfit)" }}
+                  >
+                    {servico.titulo}
+                  </h3>
+                  <p className="text-xs text-(--texto-suave) leading-relaxed">
+                    {servico.descricao}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* Estruturas Móveis */}
         <div>
-          <div className="flex items-center gap-4 mb-8">
-            <div className="h-[1px] w-8 bg-(--destaque-laranja)" />
+          <div
+            ref={labelMoveis.ref}
+            className={`flex items-center gap-4 mb-8 ${labelMoveis.montado ? "reveal-fade-right" : ""} ${labelMoveis.visivel ? "is-visible" : ""}`}
+          >
+            <div className="h-px w-8 bg-(--destaque-laranja)" />
             <span
               className="text-sm font-bold text-(--destaque-laranja) tracking-widest uppercase"
               style={{ fontFamily: "var(--font-outfit)" }}
@@ -149,25 +182,30 @@ export default function Services() {
             </span>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {servicosMoveis.map((servico, i) => (
-              <div
-                key={i}
-                className="p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-laranja)/40 rounded-sm transition-colors duration-200 cursor-default group"
-              >
-                <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-laranja) group-hover:text-(--texto-principal) transition-colors duration-200">
-                  {servico.icon}
-                </div>
-                <h3
-                  className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
-                  style={{ fontFamily: "var(--font-outfit)" }}
+            {servicosMoveis.map((servico, i) => {
+              const { ref, montado, visivel } = moveisRefs[i];
+              return (
+                <div
+                  key={i}
+                  ref={ref}
+                  className={`p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-laranja)/40 rounded-sm transition-colors duration-200 cursor-default group ${montado ? "reveal-fade-up" : ""} ${visivel ? "is-visible" : ""}`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
                 >
-                  {servico.titulo}
-                </h3>
-                <p className="text-xs text-(--texto-suave) leading-relaxed">
-                  {servico.descricao}
-                </p>
-              </div>
-            ))}
+                  <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-laranja) group-hover:text-(--texto-principal) transition-colors duration-200">
+                    {servico.icon}
+                  </div>
+                  <h3
+                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
+                    style={{ fontFamily: "var(--font-outfit)" }}
+                  >
+                    {servico.titulo}
+                  </h3>
+                  <p className="text-xs text-(--texto-suave) leading-relaxed">
+                    {servico.descricao}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

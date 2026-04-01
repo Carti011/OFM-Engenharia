@@ -1,3 +1,7 @@
+"use client";
+
+import { useScrollReveal } from "../hooks/useScrollReveal";
+
 const obras = [
   {
     titulo: "Ponte Rio–Niterói",
@@ -66,12 +70,28 @@ const obras = [
 ];
 
 export default function Portfolio() {
+  const tituloEsq = useScrollReveal({ threshold: 0.15 });
+  const textoDir = useScrollReveal({ threshold: 0.15 });
+
+  const o0 = useScrollReveal({ threshold: 0.08 });
+  const o1 = useScrollReveal({ threshold: 0.08 });
+  const o2 = useScrollReveal({ threshold: 0.08 });
+  const o3 = useScrollReveal({ threshold: 0.08 });
+  const o4 = useScrollReveal({ threshold: 0.08 });
+  const o5 = useScrollReveal({ threshold: 0.08 });
+  const o6 = useScrollReveal({ threshold: 0.08 });
+  const o7 = useScrollReveal({ threshold: 0.08 });
+  const obrasRefs = [o0, o1, o2, o3, o4, o5, o6, o7];
+
   return (
     <section id="obras" className="py-24 md:py-32 bg-(--bg-principal)">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div>
+          <div
+            ref={tituloEsq.ref}
+            className={`${tituloEsq.montado ? "reveal-fade-right" : ""} ${tituloEsq.visivel ? "is-visible" : ""}`}
+          >
             <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
               Portfólio
             </p>
@@ -84,7 +104,10 @@ export default function Portfolio() {
               <span className="text-(--destaque-azul)">Destaque</span>
             </h2>
           </div>
-          <p className="text-(--texto-suave) text-sm max-w-xs leading-relaxed">
+          <p
+            ref={textoDir.ref}
+            className={`text-(--texto-suave) text-sm max-w-xs leading-relaxed ${textoDir.montado ? "reveal-fade-left" : ""} ${textoDir.visivel ? "is-visible" : ""}`}
+          >
             Participação em projetos de referência nacional e internacional,
             com instrumentação e análises de alto nível técnico.
           </p>
@@ -92,72 +115,79 @@ export default function Portfolio() {
 
         {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {obras.map((obra, i) => (
-            <article
-              key={i}
-              className="group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 cursor-default"
-            >
-              {/* Placeholder de imagem */}
-              <div className="relative h-44 bg-(--bg-elevado) flex flex-col items-center justify-center gap-2 overflow-hidden">
-                <div
-                  className="absolute inset-0 opacity-20"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(var(--blueprint-30) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-30) 1px, transparent 1px)",
-                    backgroundSize: "24px 24px",
-                  }}
-                />
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="text-(--icone-placeholder) relative z-10"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <circle cx="8.5" cy="8.5" r="1.5" />
-                  <polyline points="21 15 16 10 5 21" />
-                </svg>
-                <span className="text-[10px] text-(--icone-placeholder) tracking-widest uppercase relative z-10">
-                  Foto do Projeto
-                </span>
+          {obras.map((obra, i) => {
+            const { ref, montado, visivel } = obrasRefs[i];
+            // delays em grupos de 4: 0,100,200,300 para linha 1 e repete para linha 2
+            const delay = (i % 4) * 100;
+            return (
+              <article
+                key={i}
+                ref={ref}
+                className={`group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 cursor-default ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                style={{ transitionDelay: `${delay}ms` }}
+              >
+                {/* Placeholder de imagem */}
+                <div className="relative h-44 bg-(--bg-elevado) flex flex-col items-center justify-center gap-2 overflow-hidden">
+                  <div
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(var(--blueprint-30) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-30) 1px, transparent 1px)",
+                      backgroundSize: "24px 24px",
+                    }}
+                  />
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    className="text-(--icone-placeholder) relative z-10"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                  <span className="text-[10px] text-(--icone-placeholder) tracking-widest uppercase relative z-10">
+                    Foto do Projeto
+                  </span>
 
-                {/* Etiqueta de tipo */}
-                <span className="absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-(--destaque-laranja) text-[10px] font-bold tracking-wide uppercase rounded-sm">
-                  {obra.tipo}
-                </span>
-              </div>
-
-              {/* Conteúdo */}
-              <div className="p-5">
-                <p className="text-[10px] text-(--texto-fraco) tracking-widest uppercase mb-1">
-                  {obra.local}
-                </p>
-                <h3
-                  className="text-sm font-bold text-(--texto-principal) mb-2 leading-snug group-hover:text-(--destaque-azul-hover) transition-colors duration-200"
-                  style={{ fontFamily: "var(--font-outfit)" }}
-                >
-                  {obra.titulo}
-                </h3>
-                <p className="text-xs text-(--texto-suave) leading-relaxed mb-4">
-                  {obra.descricao}
-                </p>
-                {/* Etiquetas */}
-                <div className="flex flex-wrap gap-1.5">
-                  {obra.etiquetas.map((etiqueta) => (
-                    <span
-                      key={etiqueta}
-                      className="px-2 py-0.5 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[10px] rounded-sm"
-                    >
-                      {etiqueta}
-                    </span>
-                  ))}
+                  {/* Etiqueta de tipo */}
+                  <span className="absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-(--destaque-laranja) text-[10px] font-bold tracking-wide uppercase rounded-sm">
+                    {obra.tipo}
+                  </span>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                {/* Conteúdo */}
+                <div className="p-5">
+                  <p className="text-[10px] text-(--texto-fraco) tracking-widest uppercase mb-1">
+                    {obra.local}
+                  </p>
+                  <h3
+                    className="text-sm font-bold text-(--texto-principal) mb-2 leading-snug group-hover:text-(--destaque-azul-hover) transition-colors duration-200"
+                    style={{ fontFamily: "var(--font-outfit)" }}
+                  >
+                    {obra.titulo}
+                  </h3>
+                  <p className="text-xs text-(--texto-suave) leading-relaxed mb-4">
+                    {obra.descricao}
+                  </p>
+                  {/* Etiquetas */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {obra.etiquetas.map((etiqueta) => (
+                      <span
+                        key={etiqueta}
+                        className="px-2 py-0.5 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[10px] rounded-sm"
+                      >
+                        {etiqueta}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

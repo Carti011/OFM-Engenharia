@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563eb;
-  --color-accent: #f97316;
+  --color-primary: #b45309;
+  --color-accent: #475569;
   --color-dark: #0a0a0a;
   --color-dark-card: #111111;
   --color-dark-elevated: #161616;
@@ -13,13 +13,86 @@
   --font-body: var(--font-work-sans);
 }
 
+/* ============================================================
+   VARIÁVEIS DE TEMA — dark (padrão) e light
+   ============================================================ */
+
+:root,
+html.dark {
+  --bg-principal: #0a0a0a;
+  --bg-secao: #080808;
+  --bg-nav-mobile: #0f0f0f;
+  --bg-cartao: #111111;
+  --bg-elevado: #161616;
+  --bg-elemento: #1a1a1a;
+
+  --borda-principal: #1e1e1e;
+  --borda-fina: #151515;
+  --borda-input: #222222;
+  --borda-etiqueta: #252525;
+
+  --icone-placeholder: #2a2a2a;
+
+  --texto-principal: #ffffff;
+  --texto-secundario: #9ca3af;
+  --texto-suave: #6b7280;
+  --texto-fraco: #4b5563;
+
+  --destaque-azul: #475569;
+  --destaque-azul-hover: #64748b;
+  --destaque-laranja: #b45309;
+  --destaque-laranja-hover: #92400e;
+
+  --blueprint-15: rgba(71, 85, 105, 0.08);
+  --blueprint-30: rgba(71, 85, 105, 0.15);
+
+  --timeline-azul-bg: rgba(71, 85, 105, 0.08);
+  --timeline-azul-borda: rgba(71, 85, 105, 0.25);
+  --timeline-laranja-bg: rgba(180, 83, 9, 0.08);
+  --timeline-laranja-borda: rgba(180, 83, 9, 0.25);
+}
+
+html.light {
+  --bg-principal: #f4f1ec;
+  --bg-secao: #ede9e2;
+  --bg-nav-mobile: #eae6df;
+  --bg-cartao: #ffffff;
+  --bg-elevado: #f7f4ef;
+  --bg-elemento: #f0ece5;
+
+  --borda-principal: #d4cfc8;
+  --borda-fina: #ddd8d1;
+  --borda-input: #ccc7c0;
+  --borda-etiqueta: #c4bfb8;
+
+  --icone-placeholder: #bdb8b1;
+
+  --texto-principal: #1a1614;
+  --texto-secundario: #5a534d;
+  --texto-suave: #6b6460;
+  --texto-fraco: #7a7470;
+
+  --destaque-azul: #334155;
+  --destaque-azul-hover: #475569;
+  --destaque-laranja: #92400e;
+  --destaque-laranja-hover: #78350f;
+
+  --blueprint-15: rgba(51, 65, 85, 0.07);
+  --blueprint-30: rgba(51, 65, 85, 0.13);
+
+  --timeline-azul-bg: rgba(51, 65, 85, 0.08);
+  --timeline-azul-borda: rgba(51, 65, 85, 0.25);
+  --timeline-laranja-bg: rgba(146, 64, 14, 0.08);
+  --timeline-laranja-borda: rgba(146, 64, 14, 0.25);
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0a0a0a;
-  color: #f5f5f5;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
   font-family: var(--font-work-sans), "Work Sans", sans-serif;
 }
 

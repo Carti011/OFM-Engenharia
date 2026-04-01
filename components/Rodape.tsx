@@ -1,3 +1,7 @@
+"use client";
+
+import { useScrollReveal } from "../hooks/useScrollReveal";
+
 const itensNav = [
   { rotulo: "Sobre", ancora: "#sobre" },
   { rotulo: "Serviços", ancora: "#servicos" },
@@ -7,12 +11,19 @@ const itensNav = [
 ];
 
 export default function Footer() {
+  const brand = useScrollReveal({ threshold: 0.15 });
+  const nav   = useScrollReveal({ threshold: 0.15 });
+  const contato = useScrollReveal({ threshold: 0.15 });
+
   return (
     <footer className="bg-(--bg-secao) border-t border-(--bg-elemento)">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
-          <div>
+          <div
+            ref={brand.ref}
+            className={`${brand.montado ? "reveal-fade-up" : ""} ${brand.visivel ? "is-visible" : ""}`}
+          >
             <a href="#" className="flex flex-col leading-none mb-4 cursor-pointer">
               <span
                 className="text-3xl font-black text-(--texto-principal) tracking-tight"
@@ -31,7 +42,11 @@ export default function Footer() {
           </div>
 
           {/* Nav */}
-          <div>
+          <div
+            ref={nav.ref}
+            className={`${nav.montado ? "reveal-fade-up" : ""} ${nav.visivel ? "is-visible" : ""}`}
+            style={{ transitionDelay: "100ms" }}
+          >
             <h4
               className="text-(--texto-principal) text-sm font-bold mb-5 tracking-wide"
               style={{ fontFamily: "var(--font-outfit)" }}
@@ -53,7 +68,11 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div
+            ref={contato.ref}
+            className={`${contato.montado ? "reveal-fade-up" : ""} ${contato.visivel ? "is-visible" : ""}`}
+            style={{ transitionDelay: "200ms" }}
+          >
             <h4
               className="text-(--texto-principal) text-sm font-bold mb-5 tracking-wide"
               style={{ fontFamily: "var(--font-outfit)" }}

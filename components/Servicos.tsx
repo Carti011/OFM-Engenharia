@@ -86,29 +86,29 @@ const servicosMoveis = [
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-24 md:py-32 bg-[#080808]">
+    <section id="servicos" className="py-24 md:py-32 bg-(--bg-secao)">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <p className="text-xs tracking-[0.35em] text-[#f97316] uppercase font-medium mb-4">
+          <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
             O que fazemos
           </p>
           <h2
-            className="text-4xl md:text-5xl font-black text-white leading-tight max-w-2xl"
+            className="text-4xl md:text-5xl font-black text-(--texto-principal) leading-tight max-w-2xl"
             style={{ fontFamily: "var(--font-outfit)" }}
           >
             Serviços e
             <br />
-            <span className="text-[#2563eb]">Especialidades</span>
+            <span className="text-(--destaque-azul)">Especialidades</span>
           </h2>
         </div>
 
         {/* Estruturas Fixas */}
         <div className="mb-14">
           <div className="flex items-center gap-4 mb-8">
-            <div className="h-[1px] w-8 bg-[#2563eb]" />
+            <div className="h-[1px] w-8 bg-(--destaque-azul)" />
             <span
-              className="text-sm font-bold text-[#2563eb] tracking-widest uppercase"
+              className="text-sm font-bold text-(--destaque-azul) tracking-widest uppercase"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
               Estruturas Fixas — 60%
@@ -118,18 +118,18 @@ export default function Services() {
             {servicosFixos.map((servico, i) => (
               <div
                 key={i}
-                className="p-6 bg-[#111111] border border-[#1e1e1e] hover:border-[#2563eb]/40 rounded-sm transition-colors duration-200 cursor-default group"
+                className="p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/40 rounded-sm transition-colors duration-200 cursor-default group"
               >
-                <div className="w-10 h-10 flex items-center justify-center mb-5 text-[#2563eb] group-hover:text-white transition-colors duration-200">
+                <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-azul) group-hover:text-(--texto-principal) transition-colors duration-200">
                   {servico.icon}
                 </div>
                 <h3
-                  className="text-sm font-bold text-white mb-3 leading-snug"
+                  className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
                   style={{ fontFamily: "var(--font-outfit)" }}
                 >
                   {servico.titulo}
                 </h3>
-                <p className="text-xs text-[#6b7280] leading-relaxed">
+                <p className="text-xs text-(--texto-suave) leading-relaxed">
                   {servico.descricao}
                 </p>
               </div>
@@ -140,9 +140,9 @@ export default function Services() {
         {/* Estruturas Móveis */}
         <div>
           <div className="flex items-center gap-4 mb-8">
-            <div className="h-[1px] w-8 bg-[#f97316]" />
+            <div className="h-[1px] w-8 bg-(--destaque-laranja)" />
             <span
-              className="text-sm font-bold text-[#f97316] tracking-widest uppercase"
+              className="text-sm font-bold text-(--destaque-laranja) tracking-widest uppercase"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
               Estruturas Móveis e Especiais — 40%
@@ -152,18 +152,18 @@ export default function Services() {
             {servicosMoveis.map((servico, i) => (
               <div
                 key={i}
-                className="p-6 bg-[#111111] border border-[#1e1e1e] hover:border-[#f97316]/40 rounded-sm transition-colors duration-200 cursor-default group"
+                className="p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-laranja)/40 rounded-sm transition-colors duration-200 cursor-default group"
               >
-                <div className="w-10 h-10 flex items-center justify-center mb-5 text-[#f97316] group-hover:text-white transition-colors duration-200">
+                <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-laranja) group-hover:text-(--texto-principal) transition-colors duration-200">
                   {servico.icon}
                 </div>
                 <h3
-                  className="text-sm font-bold text-white mb-3 leading-snug"
+                  className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
                   style={{ fontFamily: "var(--font-outfit)" }}
                 >
                   {servico.titulo}
                 </h3>
-                <p className="text-xs text-[#6b7280] leading-relaxed">
+                <p className="text-xs text-(--texto-suave) leading-relaxed">
                   {servico.descricao}
                 </p>
               </div>

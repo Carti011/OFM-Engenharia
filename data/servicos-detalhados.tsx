@@ -522,6 +522,70 @@ export const servicosDetalhados: ServicoDetalhado[] = [
 
   // ── 8 ─────────────────────────────────────────────────────
   {
+    slug: "analise-de-vibracao",
+    titulo: "Análise de Vibração e Frequências Naturais",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
+    acento: "laranja",
+    imagemHero: "/images/Obras/analise-vibracao-03.png",
+    subtitulo:
+      "Identificação de frequências de ressonância e modos de vibração em máquinas, equipamentos e estruturas de apoio — processamento espectral em tempo real para diagnóstico e prevenção de falhas.",
+    sobre: [
+      "O Ensaio de Análise de Vibração e Determinação de Frequências Naturais tem como objetivo identificar e quantificar as frequências de ressonância e modos de vibração de equipamentos, máquinas e estruturas de apoio, garantindo desempenho estável e seguro.",
+      "Durante o ensaio, acelerômetros de alta sensibilidade são instalados nos pontos estratégicos do equipamento e na estrutura adjacente — como lajes ou bases de fundação — permitindo a separação das componentes estruturais e operacionais da vibração.",
+      "A OFM realiza a aquisição de dados em alta taxa de amostragem com processamento espectral em tempo real, determinando com precisão as frequências dominantes (Hz), amplitudes e modos de resposta dinâmica.",
+      "Essas informações permitem diagnosticar fontes de vibração excessiva, avaliar o risco de ressonância e propor medidas corretivas como alterações de rigidez, isolamento dinâmico ou ajuste de parâmetros de operação.",
+    ],
+    metricas: [
+      { valor: "Hz", rotulo: "Frequências dominantes" },
+      { valor: "Modal", rotulo: "Análise espectral" },
+      { valor: "Alta", rotulo: "Taxa de amostragem" },
+      { valor: "Real", rotulo: "Processamento em tempo real" },
+    ],
+    aplicacoes: [
+      {
+        titulo: "Máquinas e Equipamentos Industriais",
+        descricao: "Diagnóstico de vibração excessiva em máquinas rotativas, compressores, bombas e equipamentos com base de fundação.",
+      },
+      {
+        titulo: "Estruturas de Apoio e Fundações",
+        descricao: "Separação das componentes estruturais e operacionais de vibração em lajes, bases e suportes de equipamentos.",
+      },
+      {
+        titulo: "Avaliação de Risco de Ressonância",
+        descricao: "Identificação de frequências naturais próximas às frequências de operação — prevenção de ressonância e falha por fadiga.",
+      },
+      {
+        titulo: "Medidas Corretivas e Otimização",
+        descricao: "Proposição de alterações de rigidez, isolamento dinâmico ou ajuste de parâmetros para redução de vibrações e aumento da vida útil.",
+      },
+    ],
+    equipamentos: [
+      { nome: "Acelerômetros de Alta Sensibilidade", detalhe: "Posicionados em pontos estratégicos" },
+      { nome: "Sistema de Aquisição Multicanal", detalhe: "Alta taxa de amostragem" },
+      { nome: "Processamento Espectral", detalhe: "FFT em tempo real" },
+      { nome: "Software de Análise Modal", detalhe: "Identificação de frequências e modos" },
+    ],
+    normas: ["ISO 10816", "ISO 20816", "ABNT NBR 6118"],
+    obras: [
+      // [TODO] Confirmar nome do cliente / equipamento do ensaio com o cliente
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/analise-vibracao-01.png",
+        alt: "Setup completo do ensaio com sistema de aquisição multicanal e laptop em campo",
+        legenda: "Setup em campo — sistema de aquisição multicanal com processamento espectral em tempo real",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/analise-vibracao-02.png",
+        alt: "Acelerômetro instalado na base metálica do equipamento",
+        legenda: "Acelerômetro posicionado na base estrutural — separação das componentes de vibração",
+      },
+    ],
+  },
+
+  // ── 9 ─────────────────────────────────────────────────────
+  {
     slug: "monitoramento-termico",
     titulo: "Monitoramento Térmico e Detecção de Fumaça",
     categoriaLabel: "Ensaios Especiais e Instrumentação",

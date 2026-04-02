@@ -158,6 +158,24 @@ const servicosMoveis = [
     descricao:
       "Ensaios de fuga de fumaça com sensores PT100 posicionados em pontos críticos — detecção precoce de variações térmicas e integração com sistemas de alarme.",
   },
+  {
+    slug: "analise-de-vibracao",
+    icon: (
+      // Espectro de frequência com pico de ressonância
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="2" y1="20" x2="22" y2="20" />
+        <line x1="4" y1="20" x2="4" y2="16" />
+        <line x1="7" y1="20" x2="7" y2="12" />
+        <line x1="10" y1="20" x2="10" y2="4" />
+        <line x1="13" y1="20" x2="13" y2="10" />
+        <line x1="16" y1="20" x2="16" y2="15" />
+        <line x1="19" y1="20" x2="19" y2="18" />
+      </svg>
+    ),
+    titulo: "Análise de Vibração e Frequências Naturais",
+    descricao:
+      "Identificação de frequências de ressonância e modos de vibração em máquinas e estruturas de apoio — processamento espectral em tempo real com acelerômetros de alta sensibilidade.",
+  },
 ];
 
 export default function Services() {
@@ -176,7 +194,8 @@ export default function Services() {
   const m1 = useScrollReveal({ threshold: 0.1 });
   const m2 = useScrollReveal({ threshold: 0.1 });
   const m3 = useScrollReveal({ threshold: 0.1 });
-  const moveisRefs = [m0, m1, m2, m3];
+  const m4 = useScrollReveal({ threshold: 0.1 });
+  const moveisRefs = [m0, m1, m2, m3, m4];
 
   return (
     <section id="servicos" className="py-24 md:py-32 bg-(--bg-secao)">
@@ -263,7 +282,7 @@ export default function Services() {
               Ensaios Especiais e Instrumentação — 40%
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {servicosMoveis.map((servico, i) => {
               const { ref, montado, visivel } = moveisRefs[i];
               return (

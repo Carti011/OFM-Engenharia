@@ -586,6 +586,85 @@ export const servicosDetalhados: ServicoDetalhado[] = [
 
   // ── 9 ─────────────────────────────────────────────────────
   {
+    slug: "porta-paletes",
+    titulo: "Ensaio de Carga em Porta Paletes",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
+    acento: "laranja",
+    imagemHero: "/images/Obras/porta-paletes-06.png",
+    subtitulo:
+      "Validação estrutural de sistemas de armazenagem em campo e fábrica — aplicação controlada de carga por etapas com strain gages e LVDTs nas longarinas, garantindo conformidade com a ABNT NBR 14762.",
+    sobre: [
+      "O Ensaio de Carga em Porta Paletes tem como objetivo avaliar a resistência, rigidez e estabilidade estrutural dos sistemas de armazenagem, assegurando o cumprimento dos requisitos de desempenho e segurança previstos em norma.",
+      "A OFM realiza ensaios tanto em campo, em estruturas já instaladas, quanto em fábrica, antes da liberação para uso — aplicando carregamentos controlados por etapas com instrumentação de alta precisão composta por strain gages uniaxiais, biaxiais ou triaxiais e sensores LVDT para monitoramento dos deslocamentos verticais e deflexões nas longarinas.",
+      "Nos ensaios em campo, os porta paletes são avaliados sob condições reais de operação, simulando o carregamento progressivo de produtos e monitorando o comportamento estrutural ao longo do tempo. Nos ensaios em fábrica, os testes seguem protocolos de carga máxima com 40% de margem de segurança, garantindo a conformidade dos projetos.",
+      "A OFM também executa ensaios em sistemas automatizados e drive-in, oferecendo soluções completas de validação experimental, inspeção dimensional e monitoramento de alinhamento das estruturas.",
+    ],
+    metricas: [
+      { valor: "+40%", rotulo: "Margem de segurança" },
+      { valor: "Campo", rotulo: "e fábrica" },
+      { valor: "LVDT", rotulo: "+ Strain Gages" },
+      { valor: "NBR", rotulo: "14762" },
+    ],
+    aplicacoes: [
+      {
+        titulo: "Ensaios em Campo",
+        descricao: "Validação de estruturas já instaladas em operação — carregamento progressivo simulando condições reais com monitoramento contínuo.",
+      },
+      {
+        titulo: "Ensaios em Fábrica",
+        descricao: "Certificação antes da liberação para uso — carga máxima com 40% de margem de segurança conforme protocolos normativos.",
+      },
+      {
+        titulo: "Sistemas Drive-in e Automatizados",
+        descricao: "Validação de sistemas de armazenagem especiais com maior complexidade estrutural e requisitos operacionais específicos.",
+      },
+      {
+        titulo: "Inspeção e Alinhamento",
+        descricao: "Monitoramento dimensional e de alinhamento das estruturas — verificação de plumb, nível e geometria das longarinas.",
+      },
+    ],
+    equipamentos: [
+      { nome: "Strain Gages Uni/Bi/Triaxiais", detalhe: "Longarinas e pontos de maior solicitação" },
+      { nome: "LVDTs", detalhe: "Deflexões e deslocamentos verticais" },
+      { nome: "Sistema de Aquisição", detalhe: "Multicanal em tempo real" },
+      { nome: "Cargas Calibradas", detalhe: "Aplicação controlada por etapas" },
+    ],
+    normas: ["ABNT NBR 14762", "ABNT NBR 8800", "FEM 10.2.02"],
+    obras: [
+      // [TODO] Confirmar nome dos clientes dos ensaios de porta paletes
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/porta-paletes-04.png",
+        alt: "LVDT instalado na longarina azul para medição de deflexão",
+        legenda: "LVDT posicionado na longarina — medição da deflexão durante o carregamento progressivo",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/porta-paletes-05.png",
+        alt: "LVDT em ensaio de fábrica com estrutura laranja antes da liberação",
+        legenda: "Ensaio em fábrica — LVDT na estrutura antes da liberação para uso comercial",
+      },
+      {
+        src: "/images/Obras/porta-paletes-01.png",
+        alt: "Sistema de aquisição instalado em campo durante ensaio em supermercado",
+        legenda: "Aquisição em campo — sistema multicanal durante ensaio em estrutura instalada",
+      },
+      {
+        src: "/images/Obras/porta-paletes-02.png",
+        alt: "Strain gage biaxial instalado na longarina metálica",
+        legenda: "Strain gage biaxial fixado na longarina — monitoramento de deformações nas direções principais",
+      },
+      {
+        src: "/images/Obras/porta-paletes-03.png",
+        alt: "LVDT sob longarina vermelha medindo deflexão vertical",
+        legenda: "LVDT sob a longarina — medição precisa da deflexão vertical sob carga",
+      },
+    ],
+  },
+
+  // ── 10 ────────────────────────────────────────────────────
+  {
     slug: "monitoramento-termico",
     titulo: "Monitoramento Térmico e Detecção de Fumaça",
     categoriaLabel: "Ensaios Especiais e Instrumentação",

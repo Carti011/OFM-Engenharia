@@ -176,6 +176,23 @@ const servicosMoveis = [
     descricao:
       "Identificação de frequências de ressonância e modos de vibração em máquinas e estruturas de apoio — processamento espectral em tempo real com acelerômetros de alta sensibilidade.",
   },
+  {
+    slug: "porta-paletes",
+    icon: (
+      // Prateleira com carga e seta de deflexão
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="2" y1="20" x2="22" y2="20" />
+        <line x1="4" y1="20" x2="4" y2="4" />
+        <line x1="20" y1="20" x2="20" y2="4" />
+        <path d="M4 9 Q12 11 20 9" />
+        <line x1="4" y1="14" x2="20" y2="14" />
+        <rect x="7" y="5" width="10" height="4" rx="0.5" />
+      </svg>
+    ),
+    titulo: "Ensaio de Carga em Porta Paletes",
+    descricao:
+      "Validação estrutural de sistemas de armazenagem em campo e fábrica — strain gages e LVDTs nas longarinas, com carga máxima e 40% de margem de segurança conforme ABNT NBR 14762.",
+  },
 ];
 
 export default function Services() {
@@ -195,7 +212,8 @@ export default function Services() {
   const m2 = useScrollReveal({ threshold: 0.1 });
   const m3 = useScrollReveal({ threshold: 0.1 });
   const m4 = useScrollReveal({ threshold: 0.1 });
-  const moveisRefs = [m0, m1, m2, m3, m4];
+  const m5 = useScrollReveal({ threshold: 0.1 });
+  const moveisRefs = [m0, m1, m2, m3, m4, m5];
 
   return (
     <section id="servicos" className="py-24 md:py-32 bg-(--bg-secao)">
@@ -282,7 +300,7 @@ export default function Services() {
               Ensaios Especiais e Instrumentação — 40%
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             {servicosMoveis.map((servico, i) => {
               const { ref, montado, visivel } = moveisRefs[i];
               return (

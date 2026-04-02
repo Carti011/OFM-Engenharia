@@ -94,6 +94,7 @@ body {
   background-color: var(--bg-principal);
   color: var(--texto-principal);
   font-family: var(--font-work-sans), "Work Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 /* ============================================================

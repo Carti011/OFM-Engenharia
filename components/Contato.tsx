@@ -67,7 +67,7 @@ export default function Contact() {
         `Tipo de Ensaio: ${form.tipo || "Não especificado"}\n` +
         `Descrição: ${form.descricao || "Sem descrição adicional"}`
     );
-    window.open(`mailto:oliveiraff2@gmail.com?subject=${assunto}&body=${corpo}`, "_blank");
+    window.open(`mailto:ofmengenharia@ofmengenharia.com.br?subject=${assunto}&body=${corpo}`, "_blank");
   };
 
   const estiloInput =
@@ -281,7 +281,7 @@ export default function Contact() {
                 {/* Email */}
                 <a
                   ref={infoItem1.ref}
-                  href="mailto:oliveiraff2@gmail.com"
+                  href="mailto:fernando.franco@ofmengenharia.com.br"
                   className={`flex items-start gap-4 group cursor-pointer ${infoItem1.montado ? "reveal-fade-left" : ""} ${infoItem1.visivel ? "is-visible" : ""}`}
                   style={{ transitionDelay: "200ms" }}
                 >
@@ -296,7 +296,10 @@ export default function Contact() {
                       E-mail
                     </p>
                     <p className="text-(--texto-principal) text-sm font-medium group-hover:text-(--destaque-azul-hover) transition-colors break-all">
-                      oliveiraff2@gmail.com
+                      fernando.franco@ofmengenharia.com.br
+                    </p>
+                    <p className="text-(--texto-suave) text-xs mt-0.5 break-all">
+                      ofmengenharia@ofmengenharia.com.br
                     </p>
                   </div>
                 </a>

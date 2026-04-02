@@ -90,10 +90,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:oliveiraff2@gmail.com"
+                  href="mailto:ofmengenharia@ofmengenharia.com.br"
                   className="text-(--texto-suave) hover:text-(--texto-principal) text-sm transition-colors cursor-pointer"
                 >
-                  oliveiraff2@gmail.com
+                  ofmengenharia@ofmengenharia.com.br
                 </a>
               </li>
               <li>

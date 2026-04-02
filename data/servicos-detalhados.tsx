@@ -24,6 +24,13 @@ export interface Metrica {
   rotulo: string;
 }
 
+export interface GaleriaItem {
+  src: string;
+  alt: string;
+  legenda?: string;
+  destaque?: boolean; // se true, ocupa col-span-2 na grade
+}
+
 export interface ServicoDetalhado {
   slug: string;
   titulo: string;
@@ -36,6 +43,8 @@ export interface ServicoDetalhado {
   equipamentos: Equipamento[];
   normas: string[];
   obras: ObraRelacionada[];
+  imagemHero?: string;  // foto para o hero (opcional — sem ela usa blueprint grid)
+  galeria?: GaleriaItem[];
 }
 
 export const servicosDetalhados: ServicoDetalhado[] = [
@@ -210,35 +219,64 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     categoriaLabel: "Estruturas Móveis e Especiais",
     acento: "laranja",
     subtitulo:
-      "Verificação da integridade estrutural e comportamento dinâmico de equipamentos e cargas especiais em deslocamento — com acelerômetros de alta precisão.",
+      "Avaliação da integridade estrutural e comportamento dinâmico de carretas transportadoras de subestações móveis — instrumentação em duas fases, com strain gages e acelerômetros de alta precisão.",
+    imagemHero: "/images/Obras/Ensaio de Trafegabilidade-03.png",
     sobre: [
-      // [TODO] Completar com texto do PDF
-      "Subestações móveis, transformadores de grande porte, equipamentos industriais e cargas especiais estão sujeitos a solicitações dinâmicas durante o transporte que podem comprometer sua integridade estrutural.",
-      "A OFM realiza ensaios de trafegabilidade instrumentando os equipamentos com acelerômetros de alta sensibilidade e registrando as acelerações, vibrações e deformações durante o percurso real de transporte.",
-      "Os resultados permitem verificar se os esforços dinâmicos durante o transporte estão dentro dos limites admissíveis de projeto, validando a metodologia de transporte ou identificando necessidade de ajustes.",
+      "O ensaio de trafegabilidade tem como objetivo avaliar a integridade estrutural e o comportamento dinâmico da carreta que transporta a subestação móvel, garantindo que a unidade possa trafegar com segurança e confiabilidade entre as cidades.",
+      "Na primeira fase, o ensaio é realizado com a carreta vazia. Strain gages são posicionados nos pontos de maior solicitação, previamente identificados por análise em elementos finitos. As medições determinam as deformações e tensões atuantes, verificando se estão dentro do limite de 70% da tensão de escoamento do material.",
+      "Após a montagem da subestação sobre a carreta, acelerômetros de alta precisão são instalados nos principais componentes — para-raios, isoladores, trocadores de calor e suportes estruturais — para monitorar vibrações durante o deslocamento real. Essas medições asseguram que nenhum componente se desprenda ou apresente falhas estruturais durante o transporte.",
     ],
     metricas: [
-      { valor: "3D", rotulo: "Acelerações triaxiais" },
-      // [TODO] Adicionar métricas numéricas do PDF
-      { valor: "Alta", rotulo: "Precisão metrológica" },
-      { valor: "Real", rotulo: "Condições de transporte" },
-      { valor: "Integ.", rotulo: "Estrutural verificada" },
+      { valor: "70%", rotulo: "Limite da tensão de escoamento" },
+      { valor: "2", rotulo: "Fases de instrumentação" },
+      { valor: "FEM", rotulo: "Identificação dos pontos críticos" },
+      { valor: "Real", rotulo: "Condições de tráfego monitoradas" },
     ],
     aplicacoes: [
-      { titulo: "Subestações Móveis", descricao: "Verificação de integridade durante transporte rodoviário de subestações e transformadores." },
-      { titulo: "Equipamentos Industriais", descricao: "Validação do transporte de grandes equipamentos com geometria sensível." },
-      { titulo: "Cargas Especiais", descricao: "Monitoramento de cargas indivisíveis em trajetos definidos." },
-      // [TODO] Adicionar mais aplicações do PDF
+      {
+        titulo: "Carreta Vazia — Fase 1",
+        descricao: "Strain gages nos pontos críticos (definidos por FEM). Verificação de deformações e tensões dentro do limite de 70% da tensão de escoamento.",
+      },
+      {
+        titulo: "Subestação Montada — Fase 2",
+        descricao: "Acelerômetros instalados em para-raios, isoladores, trocadores de calor e suportes. Monitoramento de vibrações durante deslocamento real.",
+      },
+      {
+        titulo: "Componentes Críticos",
+        descricao: "Validação de que nenhum componente da subestação se desprende ou falha estruturalmente durante o percurso entre cidades.",
+      },
+      {
+        titulo: "Subestações Móveis WEG",
+        descricao: "Ensaios realizados em unidades móveis de grande porte, com metodologia de duas fases e análise integrada de estrutura e equipamentos.",
+      },
     ],
     equipamentos: [
-      { nome: "Acelerômetros Triaxiais", detalhe: "Alta sensibilidade para vibração em transporte" },
-      { nome: "Acelerômetros Dytran (EUA)", detalhe: "Precisão metrológica certificada" },
-      { nome: "Sistema de Aquisição", detalhe: "Registro contínuo durante o percurso" },
-      { nome: "GPS + Telemetria", detalhe: "Correlação espacial dos dados" },
+      { nome: "Strain Gages", detalhe: "Posicionados por análise de elementos finitos" },
+      { nome: "Acelerômetros de Alta Precisão", detalhe: "Para-raios, isoladores, trocadores e suportes" },
+      { nome: "Sistema de Aquisição", detalhe: "Registro contínuo durante o deslocamento" },
+      { nome: "Análise por Elementos Finitos", detalhe: "Identificação prévia dos pontos de maior solicitação" },
     ],
-    normas: ["IEC 60068-2-64", "MIL-STD-810"],
+    normas: ["IEC 60068-2-64", "ABNT NBR 5422", "MIL-STD-810"],
     obras: [
       { titulo: "WEG – Subestação Móvel", local: "Brasil", tipo: "Trafegabilidade" },
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/Ensaio de Trafegabilidade-02.png",
+        alt: "Acelerômetro instalado na estrutura da carreta",
+        legenda: "Acelerômetro posicionado nos pontos críticos da estrutura metálica da carreta",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/Ensaio de Trafegabilidade-01.png",
+        alt: "Sistema de aquisição monitorando vibrações em campo",
+        legenda: "Sistema de aquisição em operação durante o ensaio de deslocamento",
+      },
+      {
+        src: "/images/Obras/Ensaio de Trafegabilidade-03.png",
+        alt: "Subestação móvel em deslocamento sob monitoramento",
+        legenda: "Unidade móvel em tráfego com instrumentação ativa",
+      },
     ],
   },
 

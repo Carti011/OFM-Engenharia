@@ -74,6 +74,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
   const sAplicacoes = useScrollReveal({ threshold: 0.08 });
   const sEquipamentos = useScrollReveal({ threshold: 0.08 });
   const sNormas = useScrollReveal({ threshold: 0.1 });
+  const sGaleria = useScrollReveal({ threshold: 0.08 });
   const sObras = useScrollReveal({ threshold: 0.08 });
   const sCta = useScrollReveal({ threshold: 0.1 });
 
@@ -83,77 +84,104 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
       <main>
 
         {/* ── HERO ────────────────────────────────────────── */}
-        <section className="relative pt-40 pb-20 bg-(--bg-secao) border-b border-(--borda-principal) overflow-hidden">
-          {/* Blueprint grid */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-[0.05]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(26,92,255,0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(26,92,255,0.9) 1px, transparent 1px)",
-              backgroundSize: "48px 48px",
-            }}
-          />
-          {/* Linhas verticais de detalhe (esquerda) */}
-          <div className="absolute left-0 inset-y-0 w-px bg-(--destaque-azul)/10 pointer-events-none" />
-          <div className="absolute left-5 inset-y-0 w-px bg-(--destaque-azul)/06 pointer-events-none" />
-
-          {/* Número decorativo de fundo */}
-          <div
-            className="absolute right-6 md:right-20 top-1/2 -translate-y-1/2 text-[160px] md:text-[260px] font-black leading-none select-none pointer-events-none opacity-[0.025]"
-            style={{ fontFamily: "var(--font-outfit)" }}
-          >
-            {ehAzul ? "F" : "M"}
-          </div>
-
-          <div className="relative z-10 max-w-7xl mx-auto px-6">
-            {/* Voltar */}
-            <Link
-              href="/#servicos"
-              className="inline-flex items-center gap-2 text-xs text-(--texto-suave) hover:text-(--texto-principal) transition-colors duration-200 mb-8 cursor-pointer group"
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="group-hover:-translate-x-0.5 transition-transform duration-200"
+        {servico.imagemHero ? (
+          /* Hero com foto */
+          <section className="relative min-h-[65vh] flex items-end overflow-hidden">
+            <Image
+              src={servico.imagemHero}
+              alt={servico.titulo}
+              fill
+              className="object-cover"
+              unoptimized
+              priority
+            />
+            <div
+              className="absolute inset-0 z-10 pointer-events-none opacity-[0.06]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(26,92,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(26,92,255,0.8) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
+            />
+            <div className="absolute inset-0 z-10 pointer-events-none bg-linear-to-t from-black via-black/55 to-black/15" />
+            <div className="relative z-20 w-full max-w-7xl mx-auto px-6 pb-16 pt-40">
+              <Link
+                href="/#servicos"
+                className="inline-flex items-center gap-2 text-xs text-white/60 hover:text-white/90 transition-colors duration-200 mb-8 cursor-pointer group"
               >
-                <polyline points="15 18 9 12 15 6" />
-              </svg>
-              Voltar aos Serviços
-            </Link>
-
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2 mb-6">
-              <span
-                className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${
-                  ehAzul
-                    ? "bg-(--destaque-azul)/15 border-(--destaque-azul)/30 text-(--destaque-azul)"
-                    : "bg-(--destaque-laranja)/15 border-(--destaque-laranja)/30 text-(--destaque-laranja)"
-                }`}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-0.5 transition-transform duration-200">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+                Voltar aos Serviços
+              </Link>
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${ehAzul ? "bg-(--destaque-azul)/20 border-(--destaque-azul)/40 text-white/80" : "bg-(--destaque-laranja)/20 border-(--destaque-laranja)/40 text-(--destaque-laranja)"}`}>
+                  {servico.categoriaLabel}
+                </span>
+                <span className="px-3 py-1 bg-white/10 border border-white/20 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
+                  O Que Fazemos
+                </span>
+              </div>
+              <h1
+                className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] mb-4"
+                style={{ fontFamily: "var(--font-outfit)" }}
               >
-                {servico.categoriaLabel}
-              </span>
-              <span className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-principal) text-(--texto-suave) text-[11px] tracking-[0.2em] uppercase rounded-sm">
-                O Que Fazemos
-              </span>
+                {servico.titulo}
+              </h1>
+              <p className="text-sm md:text-base text-white/65 max-w-2xl leading-relaxed">
+                {servico.subtitulo}
+              </p>
             </div>
-
-            <h1
-              className="text-4xl md:text-6xl font-black text-(--texto-principal) leading-[1.05] mb-5 max-w-3xl"
+          </section>
+        ) : (
+          /* Hero sem foto — blueprint grid */
+          <section className="relative pt-40 pb-20 bg-(--bg-secao) border-b border-(--borda-principal) overflow-hidden">
+            <div
+              className="absolute inset-0 pointer-events-none opacity-[0.05]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(26,92,255,0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(26,92,255,0.9) 1px, transparent 1px)",
+                backgroundSize: "48px 48px",
+              }}
+            />
+            <div className="absolute left-0 inset-y-0 w-px bg-(--destaque-azul)/10 pointer-events-none" />
+            <div className="absolute left-5 inset-y-0 w-px bg-(--destaque-azul)/06 pointer-events-none" />
+            <div
+              className="absolute right-6 md:right-20 top-1/2 -translate-y-1/2 text-[160px] md:text-[260px] font-black leading-none select-none pointer-events-none opacity-[0.025]"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              {servico.titulo}
-            </h1>
-            <p className="text-sm md:text-base text-(--texto-secundario) max-w-2xl leading-relaxed">
-              {servico.subtitulo}
-            </p>
-          </div>
-        </section>
+              {ehAzul ? "F" : "M"}
+            </div>
+            <div className="relative z-10 max-w-7xl mx-auto px-6">
+              <Link
+                href="/#servicos"
+                className="inline-flex items-center gap-2 text-xs text-(--texto-suave) hover:text-(--texto-principal) transition-colors duration-200 mb-8 cursor-pointer group"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-0.5 transition-transform duration-200">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+                Voltar aos Serviços
+              </Link>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${ehAzul ? "bg-(--destaque-azul)/15 border-(--destaque-azul)/30 text-(--destaque-azul)" : "bg-(--destaque-laranja)/15 border-(--destaque-laranja)/30 text-(--destaque-laranja)"}`}>
+                  {servico.categoriaLabel}
+                </span>
+                <span className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-principal) text-(--texto-suave) text-[11px] tracking-[0.2em] uppercase rounded-sm">
+                  O Que Fazemos
+                </span>
+              </div>
+              <h1
+                className="text-4xl md:text-6xl font-black text-(--texto-principal) leading-[1.05] mb-5 max-w-3xl"
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
+                {servico.titulo}
+              </h1>
+              <p className="text-sm md:text-base text-(--texto-secundario) max-w-2xl leading-relaxed">
+                {servico.subtitulo}
+              </p>
+            </div>
+          </section>
+        )}
 
         {/* ── MÉTRICAS ────────────────────────────────────── */}
         <section className="bg-(--bg-cartao) border-b border-(--borda-principal)">
@@ -325,6 +353,55 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                     >
                       {n}
                     </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── GALERIA ──────────────────────────────────────── */}
+        {servico.galeria && servico.galeria.length > 0 && (
+          <section className="py-20 bg-(--bg-principal)">
+            <div className="max-w-7xl mx-auto px-6">
+              <div
+                ref={sGaleria.ref}
+                className={`${sGaleria.montado ? "reveal-fade-up" : ""} ${sGaleria.visivel ? "is-visible" : ""}`}
+              >
+                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-3">
+                  Galeria
+                </p>
+                <div className="flex items-end justify-between gap-4 mb-10">
+                  <h2
+                    className="text-2xl md:text-3xl font-black text-(--texto-principal)"
+                    style={{ fontFamily: "var(--font-outfit)" }}
+                  >
+                    Registros do Ensaio
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {servico.galeria.map((item, i) => (
+                    <div
+                      key={i}
+                      className={`relative bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden ${
+                        item.destaque ? "md:col-span-2 h-72 md:h-95" : "h-52"
+                      }`}
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.alt}
+                        fill
+                        className="object-cover"
+                        unoptimized
+                      />
+                      {item.legenda && (
+                        <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                          <p className="text-[11px] text-white/70 tracking-wide">
+                            {item.legenda}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </div>

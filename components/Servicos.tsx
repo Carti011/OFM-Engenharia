@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const servicosFixos = [
   {
+    slug: "provas-de-carga",
     icon: (
       // Viga apoiada com seta de força no centro
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -22,6 +24,7 @@ const servicosFixos = [
       "Aplicadas em lajes, arquibancadas, pontes, passarelas e viadutos em todo o Brasil, com instrumentação de alta precisão.",
   },
   {
+    slug: "conforto-e-vibracao",
     icon: (
       // Onda senoidal com amortecimento
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -34,6 +37,7 @@ const servicosFixos = [
       "Avaliação de vibrações ambientais e conforto estrutural conforme NBR 6118 e 7188. Análise de frequências naturais e amortecimentos.",
   },
   {
+    slug: "monitoramento-estrutural",
     icon: (
       // Três círculos concêntricos (radar) com linha de sinal
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -49,6 +53,7 @@ const servicosFixos = [
       "Acompanhamento de tensões e deslocamentos em tempo real com strain gages e LVDTs. Aquisição multicanal e processamento em tempo real.",
   },
   {
+    slug: "validacao-numerica",
     icon: (
       // Malha de elementos finitos (grid triangulado)
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -71,6 +76,7 @@ const servicosFixos = [
 
 const servicosMoveis = [
   {
+    slug: "trafegabilidade",
     icon: (
       // Perfil de ponte com seta de veículo
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -88,6 +94,7 @@ const servicosMoveis = [
       "Subestações móveis WEG, análise de vibração e estabilidade com acelerômetros. Verificação de integridade estrutural em deslocamento.",
   },
   {
+    slug: "ensaios-industriais",
     icon: (
       // Chave sobre dois nós conectados (circuito/instrumentação)
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -102,6 +109,7 @@ const servicosMoveis = [
       "Testes experimentais sob demanda: pistões ThyssenKrupp Synergy, dispositivos de precisão, cilindros pneumáticos e validação de soldas.",
   },
   {
+    slug: "celulas-de-carga",
     icon: (
       // Cilindro com setas de compressão e escala graduada
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -179,15 +187,16 @@ export default function Services() {
                 <div
                   key={i}
                   ref={ref}
-                  className={`relative overflow-hidden p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/40 rounded-sm transition-colors duration-200 cursor-default group ${montado ? "reveal-fade-up" : ""} ${visivel ? "is-visible" : ""}`}
+                  className={`relative overflow-hidden p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/40 rounded-sm transition-colors duration-200 cursor-pointer group ${montado ? "reveal-fade-up" : ""} ${visivel ? "is-visible" : ""}`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
                   <div className="card-linha-hover w-0 group-hover:w-full" />
+                  <Link href={`/servicos/${servico.slug}`} className="absolute inset-0 z-20" aria-label={`Ver serviço: ${servico.titulo}`} />
                   <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-azul) group-hover:text-(--texto-principal) transition-colors duration-200">
                     {servico.icon}
                   </div>
                   <h3
-                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
+                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug group-hover:text-(--destaque-azul-hover) transition-colors duration-200"
                     style={{ fontFamily: "var(--font-outfit)" }}
                   >
                     {servico.titulo}
@@ -195,6 +204,12 @@ export default function Services() {
                   <p className="text-xs text-(--texto-suave) leading-relaxed">
                     {servico.descricao}
                   </p>
+                  <div className="mt-4 flex items-center gap-1.5 text-[11px] text-(--destaque-azul) font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Ver detalhes
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </div>
                 </div>
               );
             })}
@@ -222,15 +237,16 @@ export default function Services() {
                 <div
                   key={i}
                   ref={ref}
-                  className={`relative overflow-hidden p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-laranja)/40 rounded-sm transition-colors duration-200 cursor-default group ${montado ? "reveal-fade-up" : ""} ${visivel ? "is-visible" : ""}`}
+                  className={`relative overflow-hidden p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-laranja)/40 rounded-sm transition-colors duration-200 cursor-pointer group ${montado ? "reveal-fade-up" : ""} ${visivel ? "is-visible" : ""}`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
                   <div className="card-linha-hover w-0 group-hover:w-full" />
+                  <Link href={`/servicos/${servico.slug}`} className="absolute inset-0 z-20" aria-label={`Ver serviço: ${servico.titulo}`} />
                   <div className="w-10 h-10 flex items-center justify-center mb-5 text-(--destaque-laranja) group-hover:text-(--texto-principal) transition-colors duration-200">
                     {servico.icon}
                   </div>
                   <h3
-                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug"
+                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug group-hover:text-(--destaque-azul-hover) transition-colors duration-200"
                     style={{ fontFamily: "var(--font-outfit)" }}
                   >
                     {servico.titulo}
@@ -238,6 +254,12 @@ export default function Services() {
                   <p className="text-xs text-(--texto-suave) leading-relaxed">
                     {servico.descricao}
                   </p>
+                  <div className="mt-4 flex items-center gap-1.5 text-[11px] text-(--destaque-laranja) font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Ver detalhes
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </div>
                 </div>
               );
             })}

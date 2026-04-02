@@ -55,39 +55,93 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     categoriaLabel: "Estruturas Fixas",
     acento: "azul",
     subtitulo:
-      "Ensaios de desempenho estrutural em lajes, arquibancadas, pontes, passarelas e viadutos — com instrumentação de alta precisão e laudo técnico.",
+      "Avaliação da rigidez, capacidade resistente e deformabilidade de estruturas sob carregamento controlado — com strain gages, LVDTs e aquisição multicanal em tempo real.",
+    imagemHero: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-02.png",
     sobre: [
-      // [TODO] Completar com texto do PDF
-      "As provas de carga são ensaios experimentais que avaliam o comportamento real de estruturas sob carregamento controlado, permitindo verificar resistência, rigidez e segurança em relação ao projeto.",
-      "A OFM realiza provas de carga estáticas — com cargas aplicadas de forma incremental e monitoradas por instrumentos de precisão — e dinâmicas, que avaliam a resposta da estrutura sob cargas variáveis e de impacto.",
-      "Os resultados são correlacionados com os modelos analíticos e normas vigentes, gerando relatórios técnicos completos com dados de deformações, deslocamentos e análise comparativa.",
+      "O ensaio de desempenho estrutural e comportamento sob carga tem como objetivo avaliar a rigidez, a capacidade resistente e a deformabilidade de elementos estruturais submetidos a carregamentos controlados, reproduzindo as condições reais de utilização e verificando a integridade e o desempenho do sistema.",
+      "Esses ensaios são amplamente aplicados em lajes de edifícios, arquibancadas, vagões ferroviários, passarelas e outras estruturas especiais, permitindo validar projetos, simulações numéricas e modelos de elementos finitos. Nas estruturas são monitoradas as deformações por strain gages e os deslocamentos verticais por LVDTs, possibilitando a obtenção do comportamento elástico e a verificação do limite de escoamento.",
+      "Os dados são adquiridos por sistemas de aquisição multicanal e processamento em tempo real, permitindo determinar tensões e deslocamentos com elevada precisão. Os resultados asseguram que a estrutura atende aos critérios normativos de desempenho, segurança e serviço.",
     ],
     metricas: [
       { valor: "Estática", rotulo: "e Dinâmica" },
-      { valor: "LVDT", rotulo: "+ Strain Gages" },
-      { valor: "Brasil", rotulo: "inteiro" },
-      // [TODO] Adicionar métrica numérica específica do PDF
-      { valor: "NBR", rotulo: "6118 / 7188" },
+      { valor: "Multi", rotulo: "canal em tempo real" },
+      { valor: "FEM", rotulo: "Validação de modelos" },
+      { valor: "NBR", rotulo: "6118 / 7188 / 14931" },
     ],
     aplicacoes: [
-      // [TODO] Completar com aplicações do PDF
-      { titulo: "Lajes e Estruturas de Concreto", descricao: "Avaliação de capacidade portante e rigidez em lajes, vigas e elementos estruturais." },
-      { titulo: "Arquibancadas e Coberturas", descricao: "Ensaios de desempenho em estruturas de grande vão com uso coletivo." },
-      { titulo: "Pontes, Viadutos e Passarelas", descricao: "Provas de carga em estruturas de infraestrutura para verificação de segurança operacional." },
-      { titulo: "Obras em Uso", descricao: "Ensaios em estruturas existentes para requalificação, reforço ou mudança de uso." },
+      {
+        titulo: "Arquibancadas e Estádios",
+        descricao: "Aplicação de carga distribuída controlada nas arquibancadas com monitoramento simultâneo de deformações e deslocamentos. Referência: Arena Corinthians.",
+      },
+      {
+        titulo: "Vagões Ferroviários",
+        descricao: "Ensaio de desempenho estrutural em vagões do Metrô RJ e CPTM — carregamento simulando condições reais de serviço com passageiros.",
+      },
+      {
+        titulo: "Pontes e Viadutos",
+        descricao: "Provas de carga com veículos de referência para verificação de rigidez, integridade e segurança operacional de pontes em serviço.",
+      },
+      {
+        titulo: "Passarelas e Estruturas Especiais",
+        descricao: "Ensaios em estruturas esbeltas com avaliação simultânea de comportamento estático e dinâmico sob cargas controladas.",
+      },
     ],
     equipamentos: [
-      // [TODO] Confirmar equipamentos específicos com o cliente
-      { nome: "Strain Gages", detalhe: "Medição de deformações específicas" },
-      { nome: "LVDTs", detalhe: "Transdutores de deslocamento linear" },
-      { nome: "Células de Carga", detalhe: "Monitoramento da força aplicada" },
-      { nome: "Sistema de Aquisição", detalhe: "Registro multicanal em tempo real" },
+      { nome: "Strain Gages", detalhe: "Monitoramento de deformações específicas" },
+      { nome: "LVDTs", detalhe: "Deslocamentos verticais de alta resolução" },
+      { nome: "Sistema Lynx Multicanal", detalhe: "Aquisição e processamento em tempo real" },
+      { nome: "Células de Carga", detalhe: "Controle da força aplicada" },
     ],
-    normas: ["NBR 6118", "NBR 7188", "NBR 9607"],
+    normas: ["ABNT NBR 6118", "ABNT NBR 7188", "ABNT NBR 14931"],
     obras: [
-      // [TODO] Confirmar se Arena Corinthians e outros têm página dedicada futuramente
       { titulo: "Arena Corinthians", local: "São Paulo, SP", tipo: "Prova de Carga" },
-      { titulo: "The Town 2025", local: "São Paulo, SP", tipo: "Estrutura Temporária" },
+      { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário" },
+      { titulo: "Ponte Rio–Niterói", local: "Rio de Janeiro, RJ", tipo: "Análise Dinâmica", slug: "ponte-rio-niteroi" },
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-05.png",
+        alt: "Equipe aplicando carga nas arquibancadas da Arena Corinthians",
+        legenda: "Aplicação controlada de carga nas arquibancadas — Arena Corinthians, São Paulo",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-06.png",
+        alt: "Strain gage instalado na estrutura para monitoramento de deformações",
+        legenda: "Strain gage fixado na armadura — monitoramento de deformações específicas",
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-01.png",
+        alt: "Carregamento do vagão Metrô RJ para ensaio estrutural",
+        legenda: "Carregamento do vagão Metrô RJ — simulação das condições de serviço",
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-4.png",
+        alt: "Interior do vagão com carga distribuída durante o ensaio",
+        legenda: "Carga distribuída no interior do vagão reproduzindo lotação real",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-09.png",
+        alt: "Sistema de aquisição multicanal Lynx com dados em tempo real",
+        legenda: "Sistema Lynx multicanal — aquisição e processamento em tempo real",
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-07.png",
+        alt: "LVDT instalado sob estrutura para monitoramento de deslocamentos",
+        legenda: "LVDT posicionado para medição de deslocamentos verticais",
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-03.png",
+        alt: "Prova de carga em ponte CCR com veículo de referência",
+        legenda: "Prova de carga em ponte — carregamento com veículo CCR de referência",
+      },
+      {
+        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-08.png",
+        alt: "Arena Corinthians em operação com torcida — estrutura validada",
+        legenda: "Arena Corinthians em operação — estrutura validada pelo ensaio antes da inauguração",
+        destaque: true,
+      },
     ],
   },
 

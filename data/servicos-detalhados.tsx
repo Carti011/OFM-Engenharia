@@ -31,6 +31,13 @@ export interface GaleriaItem {
   destaque?: boolean; // se true, ocupa col-span-2 na grade
 }
 
+export interface Subsecao {
+  titulo: string;
+  subtitulo: string;
+  sobre: string[];
+  galeria?: GaleriaItem[];
+}
+
 export interface ServicoDetalhado {
   slug: string;
   titulo: string;
@@ -45,6 +52,7 @@ export interface ServicoDetalhado {
   obras: ObraRelacionada[];
   imagemHero?: string;  // foto para o hero (opcional — sem ela usa blueprint grid)
   galeria?: GaleriaItem[];
+  subsecao?: Subsecao;  // ensaio complementar dentro da mesma página
 }
 
 export const servicosDetalhados: ServicoDetalhado[] = [
@@ -661,6 +669,39 @@ export const servicosDetalhados: ServicoDetalhado[] = [
         legenda: "LVDT sob a longarina — medição precisa da deflexão vertical sob carga",
       },
     ],
+    subsecao: {
+      titulo: "Ensaio de Resistência e Desempenho Estrutural em Braços de Porta-Paletes",
+      subtitulo:
+        "Validação da capacidade resistente e do comportamento estrutural de braços de porta-paletes como componentes individuais — ensaio em bancada com célula de carga calibrada, LVDTs e strain gages.",
+      sobre: [
+        "Além dos ensaios no sistema completo de armazenagem, a OFM realiza a validação estrutural dos braços de porta-paletes como componentes individuais. O ensaio de resistência e desempenho estrutural em braços avalia a capacidade de carga, a rigidez e o comportamento à deformação de cada braço isoladamente, garantindo que o componente atenda aos requisitos de projeto antes da montagem ou após reparos.",
+        "O ensaio é conduzido em bancada com aplicação de carga controlada por etapas, utilizando células de carga calibradas posicionadas no ponto de maior solicitação do braço. LVDTs medem os deslocamentos verticais e horizontais em tempo real, enquanto strain gages fixados nos pontos críticos registram as deformações específicas durante todo o carregamento.",
+        "Os dados adquiridos pelo sistema multicanal permitem traçar as curvas de carga-deflexão de cada braço, identificar o ponto de plastificação, verificar a conformidade com as especificações do fabricante e detectar eventuais defeitos estruturais. O relatório técnico emitido ao final documenta os resultados e a aprovação ou reprovação de cada componente ensaiado.",
+      ],
+      galeria: [
+        {
+          src: "/images/Obras/bracos-porta-paletes-01.png",
+          alt: "Bancada de ensaio com célula de carga e LVDT posicionados no braço de porta-paletes",
+          legenda: "Bancada de ensaio — célula de carga e LVDT posicionados para aplicação e medição de carga no braço",
+          destaque: true,
+        },
+        {
+          src: "/images/Obras/bracos-porta-paletes-02.png",
+          alt: "Sistema de aquisição de dados multicanal conectado aos sensores em bancada",
+          legenda: "Sistema de aquisição multicanal — leitura simultânea de todos os sensores durante o ensaio",
+        },
+        {
+          src: "/images/Obras/bracos-porta-paletes-03.png",
+          alt: "Célula de carga calibrada fixada no ponto de aplicação de carga do braço",
+          legenda: "Célula de carga calibrada — controle preciso da força aplicada ao braço durante cada etapa",
+        },
+        {
+          src: "/images/Obras/bracos-porta-paletes-04.png",
+          alt: "Strain gage instalado no braço metálico para medição de deformação específica",
+          legenda: "Strain gage fixado no braço — monitoramento das deformações nos pontos de maior solicitação",
+        },
+      ],
+    },
   },
 
   // ── 10 ────────────────────────────────────────────────────

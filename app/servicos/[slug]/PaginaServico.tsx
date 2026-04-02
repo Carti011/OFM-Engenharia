@@ -75,6 +75,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
   const sEquipamentos = useScrollReveal({ threshold: 0.08 });
   const sNormas = useScrollReveal({ threshold: 0.1 });
   const sGaleria = useScrollReveal({ threshold: 0.08 });
+  const sSubsecao = useScrollReveal({ threshold: 0.06 });
   const sObras = useScrollReveal({ threshold: 0.08 });
   const sCta = useScrollReveal({ threshold: 0.1 });
 
@@ -404,6 +405,72 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── SUBSEÇÃO (ex: ensaio de componentes) ─────────── */}
+        {servico.subsecao && (
+          <section className="py-20 md:py-28 bg-(--bg-cartao) border-t border-(--borda-principal)">
+            <div className="max-w-7xl mx-auto px-6">
+              <div
+                ref={sSubsecao.ref}
+                className={`${sSubsecao.montado ? "reveal-fade-up" : ""} ${sSubsecao.visivel ? "is-visible" : ""}`}
+              >
+                {/* Cabeçalho da subseção */}
+                <div className="max-w-3xl mb-12">
+                  <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+                    Ensaio Complementar
+                  </p>
+                  <h2
+                    className="text-2xl md:text-3xl font-black text-(--texto-principal) mb-5 leading-tight"
+                    style={{ fontFamily: "var(--font-outfit)" }}
+                  >
+                    {servico.subsecao.titulo}
+                  </h2>
+                  <p className="text-sm text-(--texto-secundario) leading-relaxed">
+                    {servico.subsecao.subtitulo}
+                  </p>
+                </div>
+
+                {/* Parágrafos */}
+                <div className="max-w-3xl space-y-5 mb-14">
+                  {servico.subsecao.sobre.map((p, i) => (
+                    <p key={i} className="text-sm text-(--texto-secundario) leading-relaxed">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+
+                {/* Galeria da subseção */}
+                {servico.subsecao.galeria && servico.subsecao.galeria.length > 0 && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {servico.subsecao.galeria.map((item, i) => (
+                      <div
+                        key={i}
+                        className={`relative bg-(--bg-elemento) border border-(--borda-principal) rounded-sm overflow-hidden ${
+                          item.destaque ? "md:col-span-2 h-72 md:h-95" : "h-52"
+                        }`}
+                      >
+                        <Image
+                          src={item.src}
+                          alt={item.alt}
+                          fill
+                          className="object-cover"
+                          unoptimized
+                        />
+                        {item.legenda && (
+                          <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                            <p className="text-[11px] text-white/70 tracking-wide">
+                              {item.legenda}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </section>

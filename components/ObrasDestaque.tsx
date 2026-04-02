@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const obras = [
@@ -10,6 +12,8 @@ const obras = [
     descricao:
       "Aferição dos Atenuadores Dinâmicos Sincronizados (ADS) da maior ponte do Brasil. Acelerômetros Dytran e sistema Lynx ADS2002 a 1024 Hz.",
     etiquetas: ["Vibração", "ADS", "Acelerômetros"],
+    slug: "ponte-rio-niteroi",
+    imagem: "/images/Obras/Fernando-Ponte Rio Niteroi.jpeg",
   },
   {
     titulo: "Museu do Amanhã",
@@ -18,6 +22,8 @@ const obras = [
     descricao:
       "Instrumentação de 10 pontos de extensiometria na estrutura metálica. Resultados citados em publicação técnica internacional.",
     etiquetas: ["Strain Gages", "Extensometria", "Estrutura Metálica"],
+    slug: "museu-do-amanha",
+    imagem: "/images/Obras/Museu do Amanhã.jpeg",
   },
   {
     titulo: "Arena Corinthians",
@@ -26,6 +32,8 @@ const obras = [
     descricao:
       "Ensaios de desempenho estrutural nas arquibancadas e lajes do estádio. Monitoramento de deformações e deslocamentos.",
     etiquetas: ["LVDT", "Prova de Carga", "Estádio"],
+    slug: null,
+    imagem: null,
   },
   {
     titulo: "Ponte Estaiada Octávio Frias",
@@ -34,6 +42,8 @@ const obras = [
     descricao:
       "Instrumentação e análise de comportamento dinâmico da icônica ponte estaiada da capital paulista.",
     etiquetas: ["Pontes", "Dinâmica", "SP"],
+    slug: null,
+    imagem: null,
   },
   {
     titulo: "Ponte Newton Navarro",
@@ -42,6 +52,8 @@ const obras = [
     descricao:
       "Monitoramento estrutural e validação experimental da maior ponte estaiada do nordeste brasileiro.",
     etiquetas: ["Pontes Estaiadas", "RN", "Monitoramento"],
+    slug: null,
+    imagem: null,
   },
   {
     titulo: "The Town 2025",
@@ -50,6 +62,8 @@ const obras = [
     descricao:
       "Ensaio completo da torre da tirolesa com strain gages, LVDTs e acelerômetros triaxiais integrados ao Lynx ADS2000.",
     etiquetas: ["Torre", "Estático", "Dinâmico"],
+    slug: null,
+    imagem: null,
   },
   {
     titulo: "WEG – Subestação Móvel",
@@ -58,6 +72,8 @@ const obras = [
     descricao:
       "Ensaio de integridade estrutural e comportamento dinâmico durante transporte. Verificação com acelerômetros de alta precisão.",
     etiquetas: ["Trafegabilidade", "Industrial", "WEG"],
+    slug: null,
+    imagem: null,
   },
   {
     titulo: "Metrô RJ / CPTM",
@@ -66,6 +82,8 @@ const obras = [
     descricao:
       "Ensaios estruturais em vagões ferroviários, estruturas de plataforma e componentes de via permanente.",
     etiquetas: ["Ferroviário", "Metrô", "CPTM"],
+    slug: null,
+    imagem: null,
   },
 ];
 
@@ -117,44 +135,89 @@ export default function Portfolio() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {obras.map((obra, i) => {
             const { ref, montado, visivel } = obrasRefs[i];
-            // delays em grupos de 4: 0,100,200,300 para linha 1 e repete para linha 2
             const delay = (i % 4) * 100;
             return (
               <article
                 key={i}
                 ref={ref}
-                className={`relative group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 cursor-default ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                className={`relative group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
                 <div className="card-linha-hover w-0 group-hover:w-full" />
-                {/* Placeholder de imagem */}
-                <div className="relative h-44 bg-(--bg-elevado) flex flex-col items-center justify-center gap-2 overflow-hidden">
-                  <div
-                    className="absolute inset-0 opacity-20"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(var(--blueprint-30) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-30) 1px, transparent 1px)",
-                      backgroundSize: "24px 24px",
-                    }}
-                  />
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="text-(--icone-placeholder) relative z-10"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span className="text-[10px] text-(--icone-placeholder) tracking-widest uppercase relative z-10">
-                    Foto do Projeto
-                  </span>
 
-                  {/* Etiqueta de tipo */}
+                {/* Link invisível sobreposto — apenas para cards com página dedicada */}
+                {obra.slug && (
+                  <Link
+                    href={`/obras/${obra.slug}`}
+                    className="absolute inset-0 z-20"
+                    aria-label={`Ver obra: ${obra.titulo}`}
+                  />
+                )}
+
+                {/* Área da imagem */}
+                <div className="relative h-44 overflow-hidden">
+                  {obra.imagem ? (
+                    <>
+                      <Image
+                        src={obra.imagem}
+                        alt={`Obra: ${obra.titulo}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        unoptimized
+                      />
+                      {/* Gradiente para legibilidade do badge */}
+                      <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
+
+                      {/* Indicador "Ver obra →" no hover */}
+                      <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <span>Ver obra</span>
+                        <svg
+                          width="12"
+                          height="12"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-(--bg-elevado)" />
+                      <div
+                        className="absolute inset-0 opacity-20"
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(var(--blueprint-30) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-30) 1px, transparent 1px)",
+                          backgroundSize: "24px 24px",
+                        }}
+                      />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                        <svg
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          className="text-(--icone-placeholder)"
+                        >
+                          <rect x="3" y="3" width="18" height="18" rx="2" />
+                          <circle cx="8.5" cy="8.5" r="1.5" />
+                          <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                        <span className="text-[10px] text-(--icone-placeholder) tracking-widest uppercase">
+                          Foto do Projeto
+                        </span>
+                      </div>
+                    </>
+                  )}
+
+                  {/* Badge de tipo (sempre visível) */}
                   <span className="absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-(--destaque-laranja) text-[10px] font-bold tracking-wide uppercase rounded-sm">
                     {obra.tipo}
                   </span>

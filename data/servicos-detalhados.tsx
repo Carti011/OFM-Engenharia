@@ -771,4 +771,55 @@ export const servicosDetalhados: ServicoDetalhado[] = [
       },
     ],
   },
+
+  // ── 11 ────────────────────────────────────────────────────
+  {
+    slug: "estruturas-especiais",
+    titulo: "Ensaios Estáticos e Dinâmicos em Estruturas Especiais",
+    categoriaLabel: "Estruturas Fixas",
+    acento: "azul",
+    subtitulo:
+      "Validação experimental de estruturas temporárias e permanentes — ensaios estáticos e dinâmicos com acelerômetros triaxiais, strain gages e LVDTs integrados ao sistema Lynx ADS2000, garantindo segurança, desempenho e rastreabilidade técnica.",
+    sobre: [
+      "Os ensaios estáticos e dinâmicos em estruturas especiais têm como objetivo a validação experimental do comportamento estrutural de instalações temporárias e permanentes, assegurando segurança, desempenho e conformidade técnica. Esses ensaios avaliam a resposta real das estruturas sob ação de cargas estáticas controladas e excitações dinâmicas, garantindo estabilidade, rigidez e resposta vibratória dentro dos limites normativos.",
+      "Durante o evento The Town 2025, a OFM executou o ensaio estrutural completo da torre da tirolesa, aplicando metodologia de instrumentação de alta precisão com strain gages, LVDTs e acelerômetros triaxiais integrados ao sistema de aquisição Lynx ADS2000, com processamento e análise realizados pelo software AqDados e AqDAnalysis. O ensaio assegurou a integridade estrutural da instalação durante todo o período do evento.",
+      "A mesma metodologia é aplicada em pontes, passarelas, viadutos e torres metálicas, atendendo às normas ABNT NBR 8800 para estruturas de aço e ABNT NBR 6118 para estruturas de concreto. Cada ensaio é documentado em relatório técnico com resultados, análises e diagnóstico estrutural completo.",
+      "A OFM oferece soluções completas de monitoramento e validação experimental, unindo engenharia aplicada, tecnologia de aquisição de dados e experiência de campo para entregar segurança estrutural comprovada e resultados tecnicamente rastreáveis.",
+    ],
+    metricas: [
+      { valor: "3", unidade: "eixos", rotulo: "Acelerometria triaxial" },
+      { valor: "Lynx", rotulo: "ADS2000" },
+      { valor: "Estático", rotulo: "+ Dinâmico" },
+      { valor: "NBR", rotulo: "8800 / 6118" },
+    ],
+    aplicacoes: [
+      {
+        titulo: "Torres e Estruturas de Eventos",
+        descricao: "Validação de torres temporárias, estruturas de palco e instalações especiais — como a torre da tirolesa do The Town 2025.",
+      },
+      {
+        titulo: "Pontes e Passarelas",
+        descricao: "Ensaios estáticos e dinâmicos sob cargas controladas — verificação de rigidez, deslocamentos e resposta em frequência.",
+      },
+      {
+        titulo: "Viadutos e Estruturas Urbanas",
+        descricao: "Avaliação de desempenho estrutural e resposta dinâmica em viadutos e estruturas de infraestrutura urbana.",
+      },
+      {
+        titulo: "Torres Metálicas",
+        descricao: "Validação experimental de torres metálicas sob cargas estáticas e excitações dinâmicas — análise modal e verificação de estabilidade.",
+      },
+    ],
+    equipamentos: [
+      { nome: "Acelerômetros Triaxiais", detalhe: "Resposta dinâmica nos três eixos" },
+      { nome: "Sistema Lynx ADS2000", detalhe: "Aquisição multicanal de alta precisão" },
+      { nome: "Strain Gages", detalhe: "Deformações específicas nos pontos críticos" },
+      { nome: "LVDTs", detalhe: "Deslocamentos estáticos e quase-estáticos" },
+      { nome: "AqDados / AqDAnalysis", detalhe: "Processamento e análise espectral dos dados" },
+    ],
+    normas: ["ABNT NBR 8800", "ABNT NBR 6118"],
+    obras: [
+      { titulo: "Torre da Tirolesa — The Town 2025", local: "São Paulo, SP", tipo: "Ensaio estático e dinâmico" },
+    ],
+  },
 ];

@@ -88,6 +88,26 @@ const servicosFixos = [
     descricao:
       "Aplicação de carga por lâmina d'água em reservatórios e lajes. Monitoramento com strain gages e LVDTs nas vigas principais conforme NBR 6118.",
   },
+  {
+    slug: "estruturas-especiais",
+    icon: (
+      // Torre treliçada com setas de força estática e onda dinâmica
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="8" y1="20" x2="16" y2="20" />
+        <line x1="9" y1="20" x2="12" y2="4" />
+        <line x1="15" y1="20" x2="12" y2="4" />
+        <line x1="9" y1="14" x2="15" y2="14" />
+        <line x1="10" y1="9" x2="14" y2="9" />
+        <line x1="9" y1="14" x2="14" y2="9" />
+        <line x1="15" y1="14" x2="10" y2="9" />
+        <path d="M2 17 Q3.5 14.5 5 17" strokeOpacity="0.6" />
+        <path d="M19 17 Q20.5 14.5 22 17" strokeOpacity="0.6" />
+      </svg>
+    ),
+    titulo: "Ensaios Estáticos e Dinâmicos em Estruturas Especiais",
+    descricao:
+      "Validação experimental de torres, pontes, viadutos e instalações de eventos — acelerômetros triaxiais, strain gages e Lynx ADS2000. Torre da tirolesa The Town 2025.",
+  },
 ];
 
 const servicosMoveis = [
@@ -205,7 +225,8 @@ export default function Services() {
   const f2 = useScrollReveal({ threshold: 0.1 });
   const f3 = useScrollReveal({ threshold: 0.1 });
   const f4 = useScrollReveal({ threshold: 0.1 });
-  const fixosRefs = [f0, f1, f2, f3, f4];
+  const f5 = useScrollReveal({ threshold: 0.1 });
+  const fixosRefs = [f0, f1, f2, f3, f4, f5];
 
   const m0 = useScrollReveal({ threshold: 0.1 });
   const m1 = useScrollReveal({ threshold: 0.1 });
@@ -250,7 +271,7 @@ export default function Services() {
               Estruturas Fixas — 60%
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             {servicosFixos.map((servico, i) => {
               const { ref, montado, visivel } = fixosRefs[i];
               return (

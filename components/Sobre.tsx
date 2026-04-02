@@ -33,12 +33,6 @@ const historico = [
   },
 ];
 
-const obrasDestaque = [
-  { nome: "Ponte Rio–Niterói", estado: "RJ" },
-  { nome: "Museu do Amanhã", estado: "RJ" },
-  { nome: "Arena Corinthians", estado: "SP" },
-  { nome: "Ponte Octávio Frias", estado: "SP" },
-];
 
 export default function About() {
   const label = useScrollReveal({ threshold: 0.15 });
@@ -50,11 +44,6 @@ export default function About() {
   const timeline2 = useScrollReveal({ threshold: 0.1 });
   const timelineRefs = [timeline0, timeline1, timeline2];
 
-  const obras0 = useScrollReveal({ threshold: 0.1 });
-  const obras1 = useScrollReveal({ threshold: 0.1 });
-  const obras2 = useScrollReveal({ threshold: 0.1 });
-  const obras3 = useScrollReveal({ threshold: 0.1 });
-  const obrasRefs = [obras0, obras1, obras2, obras3];
 
   return (
     <section id="sobre" className="py-24 md:py-32 bg-(--bg-principal)">
@@ -162,28 +151,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Barra de destaques */}
-        <div className="mt-20 pt-10 border-t border-(--borda-principal) grid grid-cols-2 md:grid-cols-4 gap-6">
-          {obrasDestaque.map((obra, i) => {
-            const { ref, montado, visivel } = obrasRefs[i];
-            return (
-              <div
-                key={obra.nome}
-                ref={ref}
-                className={`flex items-center gap-3 p-4 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
-                style={{ transitionDelay: `${i * 100}ms` }}
-              >
-                <div className="w-1.5 h-6 bg-(--destaque-laranja) rounded-full shrink-0" />
-                <div>
-                  <p className="text-(--texto-principal) text-sm font-semibold leading-snug">
-                    {obra.nome}
-                  </p>
-                  <p className="text-(--texto-suave) text-xs">{obra.estado}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );

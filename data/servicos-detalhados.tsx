@@ -822,4 +822,52 @@ export const servicosDetalhados: ServicoDetalhado[] = [
       { titulo: "Torre da Tirolesa — The Town 2025", local: "São Paulo, SP", tipo: "Ensaio estático e dinâmico" },
     ],
   },
+
+  // ── 12 ────────────────────────────────────────────────────
+  {
+    slug: "arrancamento-soldas",
+    titulo: "Ensaio de Arrancamento e Verificação de Soldas Estruturais",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
+    acento: "laranja",
+    subtitulo:
+      "Avaliação da resistência à tração, integridade e desempenho mecânico de soldas em barras de ancoragem, chapas metálicas e componentes estruturais — carregamento controlado com macaco hidráulico calibrado, strain gages e sensor de pressão.",
+    sobre: [
+      "O Ensaio de Arrancamento e Verificação de Soldas Estruturais tem como objetivo avaliar a resistência à tração, integridade e desempenho mecânico das soldas aplicadas em barras de ancoragem, chapas metálicas e componentes estruturais. O ensaio permite identificar falhas prematuras, avaliar reforços e validar processos de soldagem, assegurando que cada ponto soldado atenda aos critérios de segurança e desempenho normativos.",
+      "Durante o ensaio, a amostra é instrumentada com strain gages para medição das deformações específicas e conectada a um sensor de pressão acoplado ao sistema de aquisição de dados, permitindo o registro simultâneo da força aplicada e da deformação estrutural ao longo de todo o carregamento.",
+      "O carregamento é aplicado de forma controlada por meio de macaco hidráulico calibrado. Os dados adquiridos possibilitam a geração de gráficos de carga versus deformação e carga versus deslocamento, fundamentais para determinar o comportamento da solda até o ponto de ruptura ou escoamento e para a caracterização completa da resposta mecânica do elemento soldado.",
+      "A OFM fornece relatórios técnicos completos com análise gráfica, resultados precisos e rastreáveis, garantindo confiabilidade, qualidade e desempenho estrutural em aplicações industriais e civis. Os ensaios seguem as normas AWS D1.1/D1.1M (American Welding Society) ou as normas brasileiras equivalentes ABNT NBR 6492 e ABNT NBR 8800, conforme a tipologia estrutural e o processo de soldagem utilizado.",
+    ],
+    metricas: [
+      { valor: "F×δ", rotulo: "Curva carga vs deformação" },
+      { valor: "AWS", rotulo: "D1.1/D1.1M" },
+      { valor: "Ruptura", rotulo: "Ou escoamento" },
+      { valor: "HJ", rotulo: "Macaco hidráulico calibrado" },
+    ],
+    aplicacoes: [
+      {
+        titulo: "Barras de Ancoragem",
+        descricao: "Verificação da resistência à tração de chumbadores, tirantes e ancoragens estruturais fixados em concreto ou aço.",
+      },
+      {
+        titulo: "Chapas e Ligações Metálicas",
+        descricao: "Avaliação da integridade de soldas em chapas de ligação, placas de base e nós estruturais.",
+      },
+      {
+        titulo: "Validação de Processos de Soldagem",
+        descricao: "Qualificação experimental de procedimentos de soldagem — determinação da resistência real dos cordões executados.",
+      },
+      {
+        titulo: "Reforços e Reparos Estruturais",
+        descricao: "Ensaios em soldas de intervenções de reforço e reparo — verificação do desempenho mecânico pós-execução.",
+      },
+    ],
+    equipamentos: [
+      { nome: "Macaco Hidráulico Calibrado", detalhe: "Aplicação controlada da carga de tração" },
+      { nome: "Sensor de Pressão", detalhe: "Registro da força aplicada em tempo real" },
+      { nome: "Strain Gages", detalhe: "Deformações específicas ao longo do carregamento" },
+      { nome: "Sistema de Aquisição", detalhe: "Registro simultâneo de força e deformação" },
+    ],
+    normas: ["AWS D1.1/D1.1M", "ABNT NBR 6492", "ABNT NBR 8800"],
+    obras: [],
+  },
 ];

@@ -213,6 +213,25 @@ const servicosMoveis = [
     descricao:
       "Validação estrutural de sistemas de armazenagem em campo e fábrica — strain gages e LVDTs nas longarinas, com carga máxima e 40% de margem de segurança conforme ABNT NBR 14762.",
   },
+  {
+    slug: "arrancamento-soldas",
+    icon: (
+      // Cordão de solda com seta de tração (arrancamento)
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <line x1="4" y1="14" x2="20" y2="14" />
+        <path d="M4 14 Q6 11 8 14 Q10 17 12 14 Q14 11 16 14 Q18 17 20 14" strokeOpacity="0.7" />
+        <line x1="12" y1="14" x2="12" y2="5" />
+        <polyline points="9 8 12 5 15 8" />
+        <line x1="6" y1="19" x2="18" y2="19" />
+        <line x1="6" y1="22" x2="18" y2="22" />
+        <line x1="6" y1="19" x2="6" y2="22" />
+        <line x1="18" y1="19" x2="18" y2="22" />
+      </svg>
+    ),
+    titulo: "Arrancamento e Verificação de Soldas Estruturais",
+    descricao:
+      "Resistência à tração e integridade de soldas em ancoragens e chapas metálicas — macaco hidráulico calibrado, strain gages e curvas carga-deformação conforme AWS D1.1.",
+  },
 ];
 
 export default function Services() {
@@ -234,7 +253,8 @@ export default function Services() {
   const m3 = useScrollReveal({ threshold: 0.1 });
   const m4 = useScrollReveal({ threshold: 0.1 });
   const m5 = useScrollReveal({ threshold: 0.1 });
-  const moveisRefs = [m0, m1, m2, m3, m4, m5];
+  const m6 = useScrollReveal({ threshold: 0.1 });
+  const moveisRefs = [m0, m1, m2, m3, m4, m5, m6];
 
   return (
     <section id="servicos" className="py-24 md:py-32 bg-(--bg-secao)">
@@ -321,7 +341,7 @@ export default function Services() {
               Ensaios Especiais e Instrumentação — 40%
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-4">
             {servicosMoveis.map((servico, i) => {
               const { ref, montado, visivel } = moveisRefs[i];
               return (

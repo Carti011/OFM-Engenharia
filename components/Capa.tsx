@@ -59,7 +59,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-(--bg-principal)"
+      className="relative min-h-dvh flex flex-col justify-center overflow-hidden bg-(--bg-principal)"
     >
       {/* Blueprint grid background */}
       <div

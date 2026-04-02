@@ -29,7 +29,7 @@ function NavServico({ titulo }: { titulo: string }) {
 
             <div className="hidden sm:flex items-center gap-1.5 text-xs text-(--texto-suave) min-w-0">
               <Link
-                href="/#servicos"
+                href="/servicos"
                 className="hover:text-(--texto-principal) transition-colors duration-200 cursor-pointer shrink-0"
               >
                 Serviços
@@ -43,7 +43,7 @@ function NavServico({ titulo }: { titulo: string }) {
             <div className="flex items-center gap-2 shrink-0">
               <BotaoTema />
               <Link
-                href="/#servicos"
+                href="/servicos"
                 className="sm:hidden flex items-center gap-1.5 text-xs text-(--texto-secundario) hover:text-(--texto-principal) transition-colors duration-200 cursor-pointer"
               >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">

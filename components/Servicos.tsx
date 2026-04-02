@@ -72,6 +72,22 @@ const servicosFixos = [
     descricao:
       "Calibração experimental de simulações estruturais em elementos finitos — correlacionando dados de campo com modelos computacionais.",
   },
+  {
+    slug: "provas-de-carga-hidraulica",
+    icon: (
+      // Lâmina d'água sobre viga com seta de pressão hidrostática
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 18 Q5 14 7 18 Q9 22 11 18 Q13 14 15 18 Q17 22 19 18" />
+        <line x1="2" y1="12" x2="22" y2="12" strokeDasharray="2 2" strokeOpacity="0.4" />
+        <line x1="4" y1="22" x2="20" y2="22" />
+        <line x1="12" y1="4" x2="12" y2="10" />
+        <polyline points="9 7 12 4 15 7" />
+      </svg>
+    ),
+    titulo: "Provas de Carga Hidráulica",
+    descricao:
+      "Aplicação de carga por lâmina d'água em reservatórios e lajes. Monitoramento com strain gages e LVDTs nas vigas principais conforme NBR 6118.",
+  },
 ];
 
 const servicosMoveis = [
@@ -138,7 +154,8 @@ export default function Services() {
   const f1 = useScrollReveal({ threshold: 0.1 });
   const f2 = useScrollReveal({ threshold: 0.1 });
   const f3 = useScrollReveal({ threshold: 0.1 });
-  const fixosRefs = [f0, f1, f2, f3];
+  const f4 = useScrollReveal({ threshold: 0.1 });
+  const fixosRefs = [f0, f1, f2, f3, f4];
 
   const m0 = useScrollReveal({ threshold: 0.1 });
   const m1 = useScrollReveal({ threshold: 0.1 });
@@ -180,7 +197,7 @@ export default function Services() {
               Estruturas Fixas — 60%
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {servicosFixos.map((servico, i) => {
               const { ref, montado, visivel } = fixosRefs[i];
               return (

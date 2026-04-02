@@ -145,6 +145,84 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
   },
 
+  // ── 1b ────────────────────────────────────────────────────
+  {
+    slug: "provas-de-carga-hidraulica",
+    titulo: "Provas de Carga Hidráulica",
+    categoriaLabel: "Estruturas Fixas",
+    acento: "azul",
+    subtitulo:
+      "Aplicação gradual de carga por lâmina d'água em reservatórios e lajes — monitoramento com strain gages e LVDTs para avaliar rigidez, distribuição de tensões e integridade estrutural.",
+    imagemHero: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-05.png",
+    sobre: [
+      "Os ensaios de prova de carga hidráulica consistem na aplicação gradual de carregamentos por lâminas d'água, simulando condições reais de uso em estruturas como reservatórios e lajes de edificações.",
+      "Antes do carregamento, são instalados extensômetros elétricos (strain gages) e transdutores de deslocamento linear (LVDTs) para monitorar deformações e flechas nas vigas principais, avaliando o comportamento elástico e o limite de deformação admissível dos elementos estruturais.",
+      "Os dados obtidos são processados e comparados com os critérios normativos da ABNT NBR 6118 e NBR 14931, assegurando que a estrutura atenda aos requisitos de segurança, rigidez e desempenho estrutural.",
+    ],
+    metricas: [
+      { valor: "Lâmina", rotulo: "D'água como carga" },
+      { valor: "LVDT", rotulo: "+ Strain Gages" },
+      { valor: "Radial", rotulo: "Vigas monitoradas" },
+      { valor: "NBR", rotulo: "6118 / 14931" },
+    ],
+    aplicacoes: [
+      {
+        titulo: "Reservatórios",
+        descricao: "Análise do comportamento das vigas radiais sob pressão hidrostática — verificação de distribuição de tensões e integridade estrutural.",
+      },
+      {
+        titulo: "Lajes de Edificações",
+        descricao: "Simulação das condições reais de uso com lâmina d'água para verificação de rigidez e capacidade de serviço.",
+      },
+      {
+        titulo: "Tanques e Estruturas Hídricas",
+        descricao: "Ensaios em estruturas destinadas ao armazenamento ou condução de fluidos, com monitoramento de deformações e flechas.",
+      },
+      {
+        titulo: "Validação Pós-Construção",
+        descricao: "Verificação do desempenho real antes da entrega da obra — confronto dos dados com o modelo estrutural de projeto.",
+      },
+    ],
+    equipamentos: [
+      { nome: "Strain Gages", detalhe: "Extensômetros nas vigas principais" },
+      { nome: "LVDTs", detalhe: "Flechas e deslocamentos verticais" },
+      { nome: "Sistema Multicanal", detalhe: "Aquisição em tempo real" },
+      { nome: "Mapeamento de pontos", detalhe: "Posicionamento por análise prévia" },
+    ],
+    normas: ["ABNT NBR 6118", "ABNT NBR 14931", "ABNT NBR 12655"],
+    obras: [
+      // [TODO] Confirmar nome do cliente / obra do reservatório com o cliente
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-02.png",
+        alt: "LVDT instalado na viga para monitoramento de deslocamentos",
+        legenda: "LVDT fixado na viga principal — medição de flechas durante o enchimento",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-01.png",
+        alt: "Strain gages instalados na estrutura do reservatório",
+        legenda: "Extensômetros instalados na face inferior da viga — monitoramento de deformações",
+      },
+      {
+        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-03.png",
+        alt: "Sistema de aquisição multicanal conectado aos sensores",
+        legenda: "Sistema de aquisição com múltiplos canais conectados simultaneamente",
+      },
+      {
+        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-06.png",
+        alt: "Laptop com dados de aquisição em tempo real durante o ensaio",
+        legenda: "Monitoramento em tempo real dos dados durante o enchimento com água",
+      },
+      {
+        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-04.png",
+        alt: "Diagrama de posicionamento dos extensômetros no reservatório",
+        legenda: "Planta de localização dos extensômetros — posicionamento definido por análise estrutural",
+      },
+    ],
+  },
+
   // ── 2 ─────────────────────────────────────────────────────
   {
     slug: "conforto-e-vibracao",

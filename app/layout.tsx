@@ -18,7 +18,7 @@ const workSans = Work_Sans({
 });
 
 const URL_BASE = "https://ofmengenharia.com.br";
-const TITULO = "OFM | Engenharia, Instrumentações e Análises Estruturais";
+const TITULO = "OFM | Engenharia, Instrumentações, Inspeções e Análises Estruturais";
 const DESCRICAO =
   "Empresa especializada em instrumentação de alta precisão, provas de carga, ensaios dinâmicos e análises estruturais. Veja nosso portfólio.";
 

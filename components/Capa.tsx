@@ -109,7 +109,7 @@ export default function Hero() {
                 ...fadeUp(300),
               }}
             >
-              Engenharia, Instrumentações e{" "}
+              Engenharia, Instrumentações, Inspeções e{" "}
               <span className="text-(--texto-principal) font-semibold">Análises Estruturais</span>
             </h2>
 

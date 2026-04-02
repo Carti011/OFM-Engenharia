@@ -32,7 +32,7 @@ export default function Footer() {
                 OFM
               </span>
               <span className="text-[10px] tracking-[0.3em] text-(--destaque-laranja) uppercase font-medium">
-                Engenharia Instrumentações e Análises Estruturais
+                Engenharia, Instrumentações, Inspeções e Análises Estruturais
               </span>
             </a>
             <p className="text-(--texto-suave) text-sm leading-relaxed max-w-xs">

@@ -418,37 +418,66 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Ensaios Industriais Especiais",
     categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
+    imagemHero: "/images/Obras/ensaio-cilindros-pneumaticos-03.png",
     subtitulo:
-      "Testes experimentais sob demanda para componentes industriais de alta precisão — pistões, cilindros pneumáticos, dispositivos de precisão e validação de soldas.",
+      "Verificação de torque, desempenho e integridade de componentes industriais sob condições controladas — cilindros pneumáticos, pistões, fixadores e sistemas de acionamento eletropneumático.",
     sobre: [
-      // [TODO] Completar com texto do PDF — esta seção tem bastante conteúdo no PDF
-      "A OFM oferece ensaios experimentais customizados para aplicações industriais onde os métodos convencionais de ensaio não são suficientes ou não existem padronizados.",
-      "Com equipamentos de alta sensibilidade e experiência em metrologia de precisão, a equipe desenvolve procedimentos específicos para cada demanda — desde a verificação de novos dispositivos até a validação de processos de fabricação.",
-      // [TODO] Adicionar casos específicos: ThyssenKrupp Synergy, etc.
+      "O Ensaio de Verificação de Torque e Desempenho de Cilindros Pneumáticos tem como objetivo avaliar a resistência mecânica, a integridade dos fixadores e o comportamento estrutural dos conjuntos pneumáticos submetidos a esforços cíclicos e controlados.",
+      "Durante o procedimento, o sistema é instrumentado com sensores de deslocamento e torque calibrados, sendo acionado por um circuito automatizado de controle eletropneumático e temporizador que reproduz as condições reais de operação.",
+      "O ensaio permite identificar falhas prematuras, perdas de torque, desprendimentos de componentes e não conformidades em relação às especificações do fabricante — fornecendo dados precisos para otimização de projeto, validação de componentes e análise de desempenho.",
+      "Com medições de alta resolução e aquisição em tempo real, a OFM garante resultados confiáveis, rastreáveis e tecnicamente fundamentados, essenciais para o controle de qualidade e certificação de sistemas pneumáticos em aplicações industriais e automotivas.",
     ],
     metricas: [
-      // [TODO] Preencher com dados do PDF
-      { valor: "Sob", rotulo: "Demanda" },
-      { valor: "Alta", rotulo: "Precisão metrológica" },
-      { valor: "Custom", rotulo: "Procedimentos" },
-      { valor: "Exp.", rotulo: "Desenvolvimento" },
+      { valor: "Cíclico", rotulo: "Esforços controlados" },
+      { valor: "Real", rotulo: "Aquisição em tempo real" },
+      { valor: "Alta", rotulo: "Resolução metrológica" },
+      { valor: "RBC", rotulo: "Rastreabilidade" },
     ],
     aplicacoes: [
-      { titulo: "Pistões e Atuadores", descricao: "Validação experimental de pistões e atuadores hidráulicos e pneumáticos." },
-      { titulo: "Validação de Soldas", descricao: "Ensaios de integridade e resistência em juntas soldadas." },
-      { titulo: "Dispositivos de Precisão", descricao: "Testes experimentais de componentes com tolerâncias críticas." },
-      // [TODO] Adicionar mais aplicações do PDF
+      {
+        titulo: "Cilindros Pneumáticos",
+        descricao: "Verificação de torque, desempenho e integridade estrutural de cilindros pneumáticos sob esforços cíclicos reproduzindo condições reais de operação.",
+      },
+      {
+        titulo: "Pistões e Atuadores",
+        descricao: "Validação experimental de pistões e atuadores — identificação de falhas prematuras e não conformidades com especificações do fabricante.",
+      },
+      {
+        titulo: "Sistemas Eletropneumáticos",
+        descricao: "Ensaios com circuito automatizado de controle eletropneumático e temporizador, simulando ciclos reais de trabalho.",
+      },
+      {
+        titulo: "Controle de Qualidade Industrial",
+        descricao: "Certificação e validação de componentes para aplicações industriais e automotivas com dados rastreáveis e laudo técnico.",
+      },
     ],
     equipamentos: [
-      // [TODO] Confirmar equipamentos com o cliente
-      { nome: "Strain Gages", detalhe: "Alta resolução para peças metálicas" },
-      { nome: "Células de Carga", detalhe: "Força com rastreabilidade metrológica" },
-      { nome: "Extensômetros", detalhe: "Deformação em componentes industriais" },
-      { nome: "Sistema de Aquisição", detalhe: "Alta taxa de amostragem" },
+      { nome: "Sensores de Torque", detalhe: "Calibrados com rastreabilidade metrológica" },
+      { nome: "Sensores de Deslocamento", detalhe: "Alta resolução para detecção de folgas" },
+      { nome: "Circuito Eletropneumático", detalhe: "Controle automatizado de ciclos" },
+      { nome: "Sistema de Aquisição", detalhe: "Tempo real, multicanal" },
     ],
-    normas: ["ASTM E8", "ISO 6892-1", "AWS D1.1"],
+    normas: ["ABNT NBR ISO 6358", "ISO 15552", "ASTM E8"],
     obras: [
-      // [TODO] Adicionar projetos industriais específicos (ThyssenKrupp, etc.)
+      // [TODO] Confirmar nome do cliente dos cilindros pneumáticos com o cliente
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/ensaio-cilindros-pneumaticos-04.png",
+        alt: "Bancada de ensaio com cilindro pneumático montado e haste estendida",
+        legenda: "Setup completo do ensaio — cilindro pneumático montado na bancada com haste em posição de trabalho",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/ensaio-cilindros-pneumaticos-01.png",
+        alt: "Strain gage instalado no corpo do cilindro pneumático",
+        legenda: "Strain gage fixado no cilindro — monitoramento de deformações durante os ciclos de esforço",
+      },
+      {
+        src: "/images/Obras/ensaio-cilindros-pneumaticos-02.png",
+        alt: "Sensor de deslocamento acoplado ao fixture de torque",
+        legenda: "Sensor de deslocamento calibrado no fixture — medição da variação angular durante o ensaio de torque",
+      },
     ],
   },
 

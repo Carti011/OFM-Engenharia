@@ -869,5 +869,29 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     normas: ["AWS D1.1/D1.1M", "ABNT NBR 6492", "ABNT NBR 8800"],
     obras: [],
+    imagemHero: "/images/Obras/arrancamento-soldas-03.png",
+    galeria: [
+      {
+        src: "/images/Obras/arrancamento-soldas-03.png",
+        alt: "Macaco hidráulico com célula de carga acoplado a barra de ancoragem sob laje de concreto armado",
+        legenda: "Setup do ensaio — macaco hidráulico e célula de carga aplicando carga de tração na barra de ancoragem",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/arrancamento-soldas-01.png",
+        alt: "Engenheiro com capacete vermelho acompanhando leitura do sistema de aquisição em campo",
+        legenda: "Monitoramento em tempo real — operador acompanha as leituras de força e deformação durante o ensaio",
+      },
+      {
+        src: "/images/Obras/arrancamento-soldas-02.png",
+        alt: "Sensor e cabos de instrumentação fixados na face inferior de viga metálica",
+        legenda: "Instrumentação na viga — sensor posicionado na face inferior para medição durante o carregamento",
+      },
+      {
+        src: "/images/Obras/arrancamento-soldas-04.png",
+        alt: "Soldador realizando solda em viga metálica com faíscas visíveis",
+        legenda: "Execução da solda — registro do processo de soldagem antes da verificação experimental",
+      },
+    ],
   },
 ];

@@ -182,7 +182,7 @@ body {
 .hero-img {
   position: relative;
   z-index: 1;
-  width: 180%;
+  width: 190%;
   max-width: none;
   height: auto;
   filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.8));
@@ -222,6 +222,20 @@ body {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+/* ============================================================
+   CARDS DE SERVIÇOS — Linha âmbar deslizante no hover
+   ============================================================ */
+
+.card-linha-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background-color: #1a5cff;
+  transition: width 0.3s ease-out;
+  z-index: 10;
 }
 
 @media (prefers-reduced-motion: reduce) {

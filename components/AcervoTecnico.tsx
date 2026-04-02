@@ -124,9 +124,10 @@ export default function TechnicalScope() {
                 <div
                   key={programa.nome}
                   ref={ref}
-                  className={`p-5 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                  className={`relative overflow-hidden group p-5 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
+                  <div className="card-linha-hover w-0 group-hover:w-full" />
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-10 h-10 rounded-sm overflow-hidden shrink-0 bg-[#e8e8e8]">
                       <Image

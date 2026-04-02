@@ -123,9 +123,10 @@ export default function Portfolio() {
               <article
                 key={i}
                 ref={ref}
-                className={`group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 cursor-default ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                className={`relative group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 cursor-default ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
+                <div className="card-linha-hover w-0 group-hover:w-full" />
                 {/* Placeholder de imagem */}
                 <div className="relative h-44 bg-(--bg-elevado) flex flex-col items-center justify-center gap-2 overflow-hidden">
                   <div

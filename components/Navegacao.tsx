@@ -39,9 +39,9 @@ export default function Navbar() {
               <Image
                 src="/images/Logos/logo_navbar_2x Removido.png"
                 alt="OFM Engenharia"
-                width={100}
+                width={180}
                 height={40}
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain"
                 priority
                 unoptimized
               />

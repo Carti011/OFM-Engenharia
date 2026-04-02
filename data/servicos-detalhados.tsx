@@ -348,7 +348,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
   {
     slug: "trafegabilidade",
     titulo: "Ensaios de Trafegabilidade",
-    categoriaLabel: "Estruturas Móveis e Especiais",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
     subtitulo:
       "Avaliação da integridade estrutural e comportamento dinâmico de carretas transportadoras de subestações móveis — instrumentação em duas fases, com strain gages e acelerômetros de alta precisão.",
@@ -416,7 +416,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
   {
     slug: "ensaios-industriais",
     titulo: "Ensaios Industriais Especiais",
-    categoriaLabel: "Estruturas Móveis e Especiais",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
     subtitulo:
       "Testes experimentais sob demanda para componentes industriais de alta precisão — pistões, cilindros pneumáticos, dispositivos de precisão e validação de soldas.",
@@ -456,7 +456,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
   {
     slug: "celulas-de-carga",
     titulo: "Fabricação e Calibração de Células de Carga",
-    categoriaLabel: "Estruturas Móveis e Especiais",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
     subtitulo:
       "Produção de células de carga sob medida para validações estruturais e sistemas de medição — com rastreabilidade metrológica e calibração certificada.",
@@ -488,6 +488,74 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     normas: ["OIML R 60", "ABNT NBR ISO 376", "VIM — Vocabulário Internacional de Metrologia"],
     obras: [
       // [TODO] Adicionar projetos onde células OFM foram utilizadas
+    ],
+  },
+
+  // ── 8 ─────────────────────────────────────────────────────
+  {
+    slug: "monitoramento-termico",
+    titulo: "Monitoramento Térmico e Detecção de Fumaça",
+    categoriaLabel: "Ensaios Especiais e Instrumentação",
+    acento: "laranja",
+    subtitulo:
+      "Ensaios de estudo de fuga de fumaça com sensores PT100 posicionados estrategicamente em pontos críticos — detecção precoce de variações térmicas e integração com sistemas de alarme em ambientes industriais e comerciais.",
+    imagemHero: "/images/Obras/monitoramento-termico-01.png",
+    sobre: [
+      "O ensaio de estudo de fuga de fumaça com sensores PT100 é uma abordagem eficaz para monitorar e controlar a segurança em ambientes industriais e comerciais. O sensor PT100 é um termorresistor que oferece medição precisa da temperatura, essencial para detectar variações térmicas associadas à presença de fumaça.",
+      "Durante o ensaio, os sensores são estrategicamente posicionados em locais críticos para garantir cobertura abrangente do ambiente. A detecção precoce de aumentos de temperatura indica a presença de fumaça, possibilitando resposta rápida para mitigar riscos de incêndio.",
+      "A integração dos sensores com sistemas de alarme e controle automatizados aprimora a eficácia do monitoramento. A análise dos dados coletados permite ajustes e melhorias no sistema, garantindo que ele atenda aos padrões de segurança e eficiência exigidos.",
+    ],
+    metricas: [
+      { valor: "PT100", rotulo: "Termorresistores de precisão" },
+      { valor: "Early", rotulo: "Detecção precoce" },
+      { valor: "360°", rotulo: "Cobertura do ambiente" },
+      { valor: "Auto", rotulo: "Integração com alarmes" },
+    ],
+    aplicacoes: [
+      {
+        titulo: "Hangares e Galpões Industriais",
+        descricao: "Ensaios em grandes estruturas com pé-direito elevado — posicionamento de sensores via plataforma elevatória para cobertura de toda a área.",
+      },
+      {
+        titulo: "Ambientes Comerciais",
+        descricao: "Verificação da eficácia do sistema de detecção e evacuação de fumaça em shoppings, arenas e edificações com público.",
+      },
+      {
+        titulo: "Integração com Alarmes",
+        descricao: "Validação da resposta automática dos sistemas de alarme e supressão de incêndio a partir das leituras térmicas dos sensores.",
+      },
+      {
+        titulo: "Adequação Normativa",
+        descricao: "Ensaios para certificação e conformidade com normas de segurança contra incêndio vigentes.",
+      },
+    ],
+    equipamentos: [
+      { nome: "Sensores PT100", detalhe: "Termorresistores de alta precisão" },
+      { nome: "Sistema de Aquisição", detalhe: "Registro multicanal em tempo real" },
+      { nome: "Plataforma Elevatória", detalhe: "Posicionamento em alturas críticas" },
+      { nome: "Software de Análise", detalhe: "Mapeamento térmico e geração de relatórios" },
+    ],
+    normas: ["ABNT NBR 9441", "ABNT NBR 17240", "IT-14 CBPMESP"],
+    obras: [
+      // [TODO] Confirmar nome do cliente / local do ensaio (hangar) com o cliente
+    ],
+    galeria: [
+      {
+        src: "/images/Obras/monitoramento-termico-04.png",
+        alt: "Plataforma elevatória posicionando sensores PT100 na estrutura metálica do teto",
+        legenda: "Instalação dos sensores PT100 na estrutura do teto — posicionamento estratégico por plataforma elevatória",
+        destaque: true,
+      },
+      {
+        src: "/images/Obras/monitoramento-termico-02.png",
+        alt: "Incêndio controlado durante ensaio de fuga de fumaça no hangar",
+        legenda: "Fogo controlado durante o ensaio — simulação das condições reais de incêndio",
+      },
+      {
+        src: "/images/Obras/monitoramento-termico-03.png",
+        alt: "Sensor PT100 — termorresistor de alta precisão utilizado no monitoramento",
+        legenda: "Sensor PT100 — termorresistor com blindagem para medição de temperatura em campo",
+      },
     ],
   },
 ];

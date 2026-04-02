@@ -143,6 +143,21 @@ const servicosMoveis = [
     descricao:
       "Produção sob medida para validações estruturais e sistemas de medição. Células calibradas com rastreabilidade metrológica.",
   },
+  {
+    slug: "monitoramento-termico",
+    icon: (
+      // Termômetro com onda de calor irradiando
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+        <line x1="17" y1="5" x2="19" y2="5" />
+        <line x1="17" y1="8" x2="20" y2="8" />
+        <line x1="17" y1="11" x2="19" y2="11" />
+      </svg>
+    ),
+    titulo: "Monitoramento Térmico e Detecção de Fumaça",
+    descricao:
+      "Ensaios de fuga de fumaça com sensores PT100 posicionados em pontos críticos — detecção precoce de variações térmicas e integração com sistemas de alarme.",
+  },
 ];
 
 export default function Services() {
@@ -160,7 +175,8 @@ export default function Services() {
   const m0 = useScrollReveal({ threshold: 0.1 });
   const m1 = useScrollReveal({ threshold: 0.1 });
   const m2 = useScrollReveal({ threshold: 0.1 });
-  const moveisRefs = [m0, m1, m2];
+  const m3 = useScrollReveal({ threshold: 0.1 });
+  const moveisRefs = [m0, m1, m2, m3];
 
   return (
     <section id="servicos" className="py-24 md:py-32 bg-(--bg-secao)">
@@ -244,10 +260,10 @@ export default function Services() {
               className="text-sm font-bold text-(--destaque-laranja) tracking-widest uppercase"
               style={{ fontFamily: "var(--font-outfit)" }}
             >
-              Estruturas Móveis e Especiais — 40%
+              Ensaios Especiais e Instrumentação — 40%
             </span>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {servicosMoveis.map((servico, i) => {
               const { ref, montado, visivel } = moveisRefs[i];
               return (

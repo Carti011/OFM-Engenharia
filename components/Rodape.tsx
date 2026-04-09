@@ -3,11 +3,11 @@
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const itensNav = [
-  { rotulo: "Sobre", ancora: "#sobre" },
-  { rotulo: "Serviços", ancora: "#servicos" },
-  { rotulo: "Obras", ancora: "#obras" },
-  { rotulo: "Acervo Técnico", ancora: "#acervo" },
-  { rotulo: "Contato", ancora: "#contato" },
+  { rotulo: "Sobre", ancora: "/#sobre" },
+  { rotulo: "Serviços", ancora: "/#servicos" },
+  { rotulo: "Obras", ancora: "/#obras" },
+  { rotulo: "Acervo Técnico", ancora: "/#acervo" },
+  { rotulo: "Contato", ancora: "/#contato" },
 ];
 
 export default function Footer() {

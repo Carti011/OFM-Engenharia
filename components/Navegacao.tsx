@@ -5,11 +5,11 @@ import Image from "next/image";
 import BotaoTema from "@/components/BotaoTema";
 
 const itensNav = [
-  { rotulo: "Sobre", ancora: "#sobre" },
-  { rotulo: "Serviços", ancora: "#servicos" },
-  { rotulo: "Obras", ancora: "#obras" },
-  { rotulo: "Acervo", ancora: "#acervo" },
-  { rotulo: "Contato", ancora: "#contato" },
+  { rotulo: "Sobre", ancora: "/#sobre" },
+  { rotulo: "Serviços", ancora: "/#servicos" },
+  { rotulo: "Obras", ancora: "/#obras" },
+  { rotulo: "Acervo", ancora: "/#acervo" },
+  { rotulo: "Contato", ancora: "/#contato" },
 ];
 
 export default function Navbar() {
@@ -35,7 +35,7 @@ export default function Navbar() {
         >
           <nav className="px-5 py-2.5 flex items-center justify-between gap-6">
             {/* Logo */}
-            <a href="#" className="cursor-pointer shrink-0">
+            <a href="/" className="cursor-pointer shrink-0">
               <Image
                 src="/images/Logos/logo_navbar_2x Removido.png"
                 alt="OFM Engenharia"
@@ -65,7 +65,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center gap-2 shrink-0">
               <BotaoTema />
               <a
-                href="#contato"
+                href="/#contato"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
@@ -113,7 +113,7 @@ export default function Navbar() {
                 ))}
                 <li className="pt-1">
                   <a
-                    href="#contato"
+                    href="/#contato"
                     onClick={() => setMenuAberto(false)}
                     className="inline-flex items-center px-4 py-2 bg-(--destaque-laranja) text-white text-sm font-semibold rounded-xl cursor-pointer"
                   >

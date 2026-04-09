@@ -117,7 +117,7 @@ export default function Footer() {
               © {new Date().getFullYear()} OFM Engenharia e Inspeções Ltda. — CNPJ 65.669.828/0001-82
             </p>
             <p className="text-(--texto-fraco) text-xs">
-              Responsável Técnico: Fernando Franco de Oliveira
+              Responsável Técnico: Fernando Franco de Oliveira — CREA-SP 5063897008
             </p>
           </div>
           <a

@@ -433,7 +433,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
       "O Ensaio de Verificação de Torque e Desempenho de Cilindros Pneumáticos tem como objetivo avaliar a resistência mecânica, a integridade dos fixadores e o comportamento estrutural dos conjuntos pneumáticos submetidos a esforços cíclicos e controlados.",
       "Durante o procedimento, o sistema é instrumentado com sensores de deslocamento e torque calibrados, sendo acionado por um circuito automatizado de controle eletropneumático e temporizador que reproduz as condições reais de operação.",
       "O ensaio permite identificar falhas prematuras, perdas de torque, desprendimentos de componentes e não conformidades em relação às especificações do fabricante — fornecendo dados precisos para otimização de projeto, validação de componentes e análise de desempenho.",
-      "Com medições de alta resolução e aquisição em tempo real, a OFM garante resultados confiáveis, rastreáveis e tecnicamente fundamentados, essenciais para o controle de qualidade e certificação de sistemas pneumáticos em aplicações industriais e automotivas.",
+      "Com medições de alta resolução e aquisição em tempo real, os resultados gerados pela OFM são confiáveis, rastreáveis e tecnicamente fundamentados — essenciais para o controle de qualidade e certificação de sistemas pneumáticos em aplicações industriais e automotivas.",
     ],
     metricas: [
       { valor: "Cíclico", rotulo: "Esforços controlados" },

@@ -122,7 +122,7 @@ export default function Hero() {
               }}
             >
               Transformando medições em conhecimento estrutural — promovendo
-              segurança, desempenho e inovação em obras de grande porte.
+              segurança, desempenho e inovação em obras de pequeno, médio e grande porte.
             </p>
 
             {/* Linha ECG */}

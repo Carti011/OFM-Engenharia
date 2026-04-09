@@ -34,7 +34,8 @@ const programas = [
 const normas = ["ABNT NBR 6118", "NBR 7188", "NBR 8800", "NBR 14931", "NBR 14762", "AWS D1.1", "ISO 6892-1"];
 
 export default function TechnicalScope() {
-  const header = useScrollReveal({ threshold: 0.15 });
+  const header    = useScrollReveal({ threshold: 0.15 });
+  const destaque  = useScrollReveal({ threshold: 0.15 });
 
   const c0  = useScrollReveal({ threshold: 0.05 });
   const c1  = useScrollReveal({ threshold: 0.05 });
@@ -75,6 +76,26 @@ export default function TechnicalScope() {
             <br />
             <span className="text-(--destaque-azul)">Técnico</span>
           </h2>
+        </div>
+
+        {/* Destaque: equipamentos próprios */}
+        <div
+          ref={destaque.ref}
+          className={`mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 bg-(--bg-cartao) border border-(--destaque-laranja)/30 rounded-sm ${destaque.montado ? "reveal-fade-up" : ""} ${destaque.visivel ? "is-visible" : ""}`}
+        >
+          <div className="w-10 h-10 bg-(--destaque-laranja)/10 border border-(--destaque-laranja)/30 rounded-sm flex items-center justify-center shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--destaque-laranja)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-(--texto-principal) text-sm font-bold mb-0.5" style={{ fontFamily: "var(--font-outfit)" }}>
+              Equipamentos 100% próprios
+            </p>
+            <p className="text-(--texto-suave) text-xs leading-relaxed">
+              Todos os instrumentos e sistemas de aquisição de dados são de propriedade da OFM — sem locação, sem dependência de terceiros. Isso garante disponibilidade imediata, calibração controlada e redução de custo para o cliente.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-12">

@@ -93,9 +93,11 @@ export default function About() {
                 , promovendo segurança, desempenho e inovação.
               </p>
               <p>
-                Cada projeto é conduzido com rigor metrológico, tecnologia de
-                ponta e comprometimento técnico — da instrumentação ao relatório
-                final.
+                Cada projeto é conduzido com rigor metrológico e comprometimento técnico — da instrumentação ao relatório final. Com{" "}
+                <span className="text-(--texto-principal) font-medium">
+                  equipamentos 100% próprios
+                </span>
+                , a OFM garante disponibilidade imediata e controle total sobre calibração e qualidade, sem depender de locação de instrumentos.
               </p>
             </div>
           </div>

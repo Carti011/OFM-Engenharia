@@ -97,9 +97,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <span className="text-(--texto-suave) text-sm">
-                  Av. dos Autonomistas, 503
-                </span>
+                <a
+                  href="https://maps.google.com/?q=Rua+Pangar%C3%A9,+40,+Vila+Butan%C3%A3,+S%C3%A3o+Paulo,+SP,+05360-130"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-(--texto-suave) hover:text-(--texto-principal) text-sm transition-colors cursor-pointer"
+                >
+                  Rua Pangaré, 40 — Vila Butantã, São Paulo - SP, 05360-130
+                </a>
               </li>
             </ul>
           </div>
@@ -115,9 +120,14 @@ export default function Footer() {
               Responsável Técnico: Fernando Franco de Oliveira
             </p>
           </div>
-          <p className="text-(--texto-fraco) text-xs text-right">
-            Av. dos Autonomistas, 503 — São Paulo, SP
-          </p>
+          <a
+            href="https://maps.google.com/?q=Rua+Pangar%C3%A9,+40,+Vila+Butan%C3%A3,+S%C3%A3o+Paulo,+SP,+05360-130"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-(--texto-fraco) text-xs text-right hover:text-(--texto-suave) transition-colors duration-200 cursor-pointer"
+          >
+            Rua Pangaré, 40 — Vila Butantã — São Paulo, SP, 05360-130
+          </a>
         </div>
       </div>
     </footer>

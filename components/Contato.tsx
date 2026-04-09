@@ -316,14 +316,22 @@ export default function Contact() {
                       <circle cx="12" cy="10" r="3" />
                     </svg>
                   </div>
-                  <div>
+                  <a
+                    href="https://maps.google.com/?q=Rua+Pangar%C3%A9,+40,+Vila+Butan%C3%A3,+S%C3%A3o+Paulo,+SP,+05360-130"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+                  >
                     <p className="text-xs text-(--texto-suave) uppercase tracking-wide mb-0.5">
                       Endereço
                     </p>
                     <p className="text-(--texto-principal) text-sm font-medium">
-                      Avenida dos Autonomistas, 503
+                      Rua Pangaré, 40 — Vila Butantã
                     </p>
-                  </div>
+                    <p className="text-(--texto-principal) text-sm font-medium">
+                      São Paulo — SP, 05360-130
+                    </p>
+                  </a>
                 </div>
               </div>
             </div>

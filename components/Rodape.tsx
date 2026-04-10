@@ -12,7 +12,7 @@ const itensNav = [
 
 export default function Footer() {
   const brand = useScrollReveal({ threshold: 0.15 });
-  const nav   = useScrollReveal({ threshold: 0.15 });
+  const nav = useScrollReveal({ threshold: 0.15 });
   const contato = useScrollReveal({ threshold: 0.15 });
 
   return (
@@ -24,7 +24,10 @@ export default function Footer() {
             ref={brand.ref}
             className={`${brand.montado ? "reveal-fade-up" : ""} ${brand.visivel ? "is-visible" : ""}`}
           >
-            <a href="#" className="flex flex-col leading-none mb-4 cursor-pointer">
+            <a
+              href="#"
+              className="flex flex-col leading-none mb-4 cursor-pointer"
+            >
               <span
                 className="text-3xl font-black text-(--texto-principal) tracking-tight"
                 style={{ fontFamily: "var(--font-outfit)" }}
@@ -37,7 +40,8 @@ export default function Footer() {
             </a>
             <p className="text-(--texto-suave) text-sm leading-relaxed max-w-xs">
               Transformando medições em conhecimento estrutural — segurança,
-              desempenho e inovação em obras de grande porte desde 2002.
+              desempenho e inovação em obras de pequeno, médio e grande porte
+              desde 2002.
             </p>
           </div>
 
@@ -114,10 +118,12 @@ export default function Footer() {
         <div className="pt-8 border-t border-(--borda-fina) flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col gap-1">
             <p className="text-(--texto-fraco) text-xs">
-              © {new Date().getFullYear()} OFM Engenharia e Inspeções Ltda. — CNPJ 65.669.828/0001-82
+              © {new Date().getFullYear()} OFM Engenharia e Inspeções Ltda. —
+              CNPJ 65.669.828/0001-82
             </p>
             <p className="text-(--texto-fraco) text-xs">
-              Responsável Técnico: Fernando Franco de Oliveira — CREA-SP 5063897008
+              Responsável Técnico: Fernando Franco de Oliveira — CREA-SP
+              5063897008
             </p>
           </div>
           <a

@@ -14,6 +14,7 @@ const obras = [
     etiquetas: ["Vibração", "ADS", "Acelerômetros"],
     slug: "ponte-rio-niteroi",
     imagem: "/images/Obras/Fernando-Ponte Rio Niteroi.jpeg",
+    acervo: false,
   },
   {
     titulo: "Museu do Amanhã",
@@ -24,66 +25,73 @@ const obras = [
     etiquetas: ["Strain Gages", "Extensometria", "Estrutura Metálica"],
     slug: "museu-do-amanha",
     imagem: "/images/Obras/Museu do Amanhã.jpeg",
+    acervo: false,
   },
   {
     titulo: "Arena Corinthians",
     local: "São Paulo, SP",
     tipo: "Prova de Carga",
     descricao:
-      "Ensaios de desempenho estrutural nas arquibancadas e lajes do estádio. Monitoramento de deformações e deslocamentos.",
-    etiquetas: ["LVDT", "Prova de Carga", "Estádio"],
-    slug: null,
-    imagem: null,
+      "Provas de carga estática e dinâmica nas arquibancadas da Copa 2014. Shaker de 1 a 10 Hz, strain gages e monitoramento ao vivo no primeiro jogo.",
+    etiquetas: ["Strain Gages", "Prova de Carga", "Shaker", "Copa 2014"],
+    slug: "arena-corinthians",
+    imagem: "/images/Obras/Arena Corinthians/capa.jpg",
+    acervo: true,
   },
   {
     titulo: "Ponte Estaiada Octávio Frias",
     local: "São Paulo, SP",
     tipo: "Análise Estrutural",
     descricao:
-      "Instrumentação e análise de comportamento dinâmico da icônica ponte estaiada da capital paulista.",
-    etiquetas: ["Pontes", "Dinâmica", "SP"],
-    slug: null,
-    imagem: null,
+      "Instrumentação completa da icônica ponte estaiada da capital paulista, da construção à inauguração. Células de carga nos estais, PT-100, inclinômetros, LVDTs, anemômetros e acelerômetros.",
+    etiquetas: ["Pontes Estaiadas", "Célula de Carga", "SP"],
+    slug: "ponte-estaiada-octavio-frias",
+    imagem: "/images/Obras/Ponte Estaiada Octávio Frias/Ponte estaida octavio Frias (SP).jpeg",
+    acervo: true,
   },
   {
     titulo: "Ponte Newton Navarro",
     local: "Natal, RN",
     tipo: "Ensaio Estrutural",
     descricao:
-      "Monitoramento estrutural e validação experimental da maior ponte estaiada do nordeste brasileiro.",
+      "Instrumentação completa da maior ponte estaiada do Nordeste. Mesma metodologia da Octávio Frias: célula de carga por estai, PT-100, inclinômetros, LVDTs, anemômetros e acelerômetros.",
     etiquetas: ["Pontes Estaiadas", "RN", "Monitoramento"],
-    slug: null,
-    imagem: null,
+    slug: "ponte-newton-navarro",
+    imagem: "/images/Obras/Ponte Newton Navarro/Ponte Estaiada Newton Navarro (Natal-RN).jpeg",
+    acervo: true,
   },
   {
     titulo: "The Town 2025",
     local: "São Paulo, SP",
     tipo: "Estrutura Temporária",
     descricao:
-      "Ensaio completo da torre da tirolesa com strain gages, LVDTs e acelerômetros triaxiais integrados ao Lynx ADS2000.",
-    etiquetas: ["Torre", "Estático", "Dinâmico"],
-    slug: null,
-    imagem: null,
+      "Prova de carga estática e dinâmica na Torre da Tirolesa. Três cabos com 200 kg cada, 4 pontos de extensometria e 4 de aceleração — estrutura aprovada para o evento.",
+    etiquetas: ["Torre", "Tirolesa", "Estático", "Dinâmico"],
+    slug: "the-town-2025",
+    imagem: "/images/Obras/The Town 2025/capa.jpg",
+    acervo: false,
   },
   {
     titulo: "WEG – Subestação Móvel",
     local: "Brasil",
     tipo: "Trafegabilidade",
     descricao:
-      "Ensaio de integridade estrutural e comportamento dinâmico durante transporte. Verificação com acelerômetros de alta precisão.",
-    etiquetas: ["Trafegabilidade", "Industrial", "WEG"],
-    slug: null,
-    imagem: null,
+      "Carregamento estático com transformador de 38 t e trafegabilidade em via pública. Extensômetros nas vigas e acelerômetros para validação dos componentes da subestação.",
+    etiquetas: ["Trafegabilidade", "Industrial", "WEG", "Extensômetros"],
+    slug: "weg-subestacao-movel",
+    imagem: "/images/Obras/WEG – Subestação Móvel/capa.jpg",
+    acervo: false,
   },
   {
     titulo: "Metrô RJ / CPTM",
-    local: "Rio de Janeiro & São Paulo",
-    tipo: "Ferroviário",
+    local: "Rio de Janeiro, RJ",
+    tipo: "Prova de Carga",
     descricao:
-      "Ensaios estruturais em vagões ferroviários, estruturas de plataforma e componentes de via permanente.",
-    etiquetas: ["Ferroviário", "Metrô", "CPTM"],
-    slug: null,
-    imagem: null,
+      "Prova de carga em 10 vagões com extensômetros, LVDT e PT-100 de temperatura. Ciclos de carregamento e descarregamento com estabilização — todos aprovados.",
+    etiquetas: ["Extensômetros", "LVDT", "PT-100", "Ferroviário"],
+    slug: "metro-rj-cptm",
+    imagem: "/images/Obras/Metrô RJ : CPTM/capa.jpg",
+    acervo: false,
   },
 ];
 
@@ -122,13 +130,27 @@ export default function Portfolio() {
               <span className="text-(--destaque-azul)">Destaque</span>
             </h2>
           </div>
-          <p
+          <div
             ref={textoDir.ref}
-            className={`text-(--texto-suave) text-sm max-w-xs leading-relaxed ${textoDir.montado ? "reveal-fade-left" : ""} ${textoDir.visivel ? "is-visible" : ""}`}
+            className={`flex flex-col gap-4 ${textoDir.montado ? "reveal-fade-left" : ""} ${textoDir.visivel ? "is-visible" : ""}`}
           >
-            Participação em projetos de referência nacional e internacional,
-            com instrumentação e análises de alto nível técnico.
-          </p>
+            <p className="text-(--texto-suave) text-sm max-w-xs leading-relaxed">
+              Projetos executados pela OFM e obras do acervo técnico do
+              engenheiro responsável — referência em instrumentação estrutural
+              com décadas de atuação nacional.
+            </p>
+            {/* Legenda */}
+            <div className="flex items-center gap-4 text-[10px] tracking-widest uppercase">
+              <span className="flex items-center gap-1.5 text-(--texto-fraco)">
+                <span className="w-2 h-2 rounded-none bg-(--destaque-laranja) inline-block" />
+                OFM Engenharia
+              </span>
+              <span className="flex items-center gap-1.5 text-(--texto-fraco)">
+                <span className="w-2 h-2 rounded-none bg-(--destaque-azul)/60 inline-block" />
+                Acervo do Engenheiro
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Grid */}
@@ -140,7 +162,7 @@ export default function Portfolio() {
               <article
                 key={i}
                 ref={ref}
-                className={`relative group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                className={`relative group bg-(--bg-cartao) border rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${obra.acervo ? "border-(--borda-principal) hover:border-(--destaque-azul)/20" : "border-(--borda-principal) hover:border-(--destaque-laranja)/30"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
                 <div className="card-linha-hover w-0 group-hover:w-full" />
@@ -218,16 +240,26 @@ export default function Portfolio() {
                   )}
 
                   {/* Badge de tipo (sempre visível) */}
-                  <span className="absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-(--destaque-laranja) text-[10px] font-bold tracking-wide uppercase rounded-sm">
+                  <span
+                    className={`absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-[10px] font-bold tracking-wide uppercase rounded-sm ${obra.acervo ? "text-(--destaque-azul)/70" : "text-(--destaque-laranja)"}`}
+                  >
                     {obra.tipo}
                   </span>
                 </div>
 
                 {/* Conteúdo */}
                 <div className="p-5">
-                  <p className="text-[10px] text-(--texto-fraco) tracking-widest uppercase mb-1">
-                    {obra.local}
-                  </p>
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-[10px] text-(--texto-fraco) tracking-widest uppercase">
+                      {obra.local}
+                    </p>
+                    {obra.acervo && (
+                      <span className="flex items-center gap-1 text-[9px] tracking-widest uppercase text-(--destaque-azul)/60 font-medium">
+                        <span className="w-1.5 h-1.5 bg-(--destaque-azul)/60 inline-block" />
+                        Acervo Técnico
+                      </span>
+                    )}
+                  </div>
                   <h3
                     className="text-sm font-bold text-(--texto-principal) mb-2 leading-snug group-hover:text-(--destaque-azul-hover) transition-colors duration-200"
                     style={{ fontFamily: "var(--font-outfit)" }}

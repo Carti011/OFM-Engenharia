@@ -43,10 +43,10 @@ const obras = [
     local: "São Paulo, SP",
     tipo: "Análise Estrutural",
     descricao:
-      "Instrumentação e análise de comportamento dinâmico da icônica ponte estaiada da capital paulista.",
-    etiquetas: ["Pontes", "Dinâmica", "SP"],
-    slug: null,
-    imagem: null,
+      "Instrumentação completa da icônica ponte estaiada da capital paulista, da construção à inauguração. Células de carga nos estais, PT-100, inclinômetros, LVDTs, anemômetros e acelerômetros.",
+    etiquetas: ["Pontes Estaiadas", "Célula de Carga", "SP"],
+    slug: "ponte-estaiada-octavio-frias",
+    imagem: "/images/Obras/Ponte Estaiada Octávio Frias/Ponte estaida octavio Frias (SP).jpeg",
     acervo: true,
   },
   {
@@ -54,10 +54,10 @@ const obras = [
     local: "Natal, RN",
     tipo: "Ensaio Estrutural",
     descricao:
-      "Monitoramento estrutural e validação experimental da maior ponte estaiada do nordeste brasileiro.",
+      "Instrumentação completa da maior ponte estaiada do Nordeste. Mesma metodologia da Octávio Frias: célula de carga por estai, PT-100, inclinômetros, LVDTs, anemômetros e acelerômetros.",
     etiquetas: ["Pontes Estaiadas", "RN", "Monitoramento"],
-    slug: null,
-    imagem: null,
+    slug: "ponte-newton-navarro",
+    imagem: "/images/Obras/Ponte Newton Navarro/Ponte Estaiada Newton Navarro (Natal-RN).jpeg",
     acervo: true,
   },
   {

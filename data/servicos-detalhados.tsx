@@ -306,7 +306,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     normas: ["NBR 6118", "NBR 6120", "ISO 13822"],
     obras: [
-      { titulo: "Ponte Newton Navarro", local: "Natal, RN", tipo: "Ensaio Estrutural" },
+      { titulo: "Ponte Newton Navarro", local: "Natal, RN", tipo: "Ensaio Estrutural", slug: "ponte-newton-navarro" },
       { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário", slug: "metro-rj-cptm" },
       { titulo: "Museu do Amanhã", local: "Rio de Janeiro, RJ", tipo: "Descimbramento", slug: "museu-do-amanha" },
     ],

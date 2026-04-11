@@ -65,10 +65,10 @@ const obras = [
     local: "São Paulo, SP",
     tipo: "Estrutura Temporária",
     descricao:
-      "Ensaio completo da torre da tirolesa com strain gages, LVDTs e acelerômetros triaxiais integrados ao Lynx ADS2000.",
-    etiquetas: ["Torre", "Estático", "Dinâmico"],
-    slug: null,
-    imagem: null,
+      "Prova de carga estática e dinâmica na Torre da Tirolesa. Três cabos com 200 kg cada, 4 pontos de extensometria e 4 de aceleração — estrutura aprovada para o evento.",
+    etiquetas: ["Torre", "Tirolesa", "Estático", "Dinâmico"],
+    slug: "the-town-2025",
+    imagem: "/images/Obras/The Town 2025/capa.jpg",
     acervo: false,
   },
   {

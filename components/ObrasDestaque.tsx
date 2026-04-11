@@ -13,7 +13,7 @@ const obras = [
       "Aferição dos Atenuadores Dinâmicos Sincronizados (ADS) da maior ponte do Brasil. Acelerômetros Dytran e sistema Lynx ADS2002 a 1024 Hz.",
     etiquetas: ["Vibração", "ADS", "Acelerômetros"],
     slug: "ponte-rio-niteroi",
-    imagem: "/images/Obras/Fernando-Ponte Rio Niteroi.jpeg",
+    imagem: "/images/Obras/Ponte Rio–Niterói/Capa.jpg",
     acervo: false,
   },
   {

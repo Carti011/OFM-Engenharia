@@ -64,7 +64,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     acento: "azul",
     subtitulo:
       "Avaliação da rigidez, capacidade resistente e deformabilidade de estruturas sob carregamento controlado — com strain gages, LVDTs e aquisição multicanal em tempo real.",
-    imagemHero: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-02.png",
+    imagemHero: "/images/Obras/Arena Corinthians/capa.jpg",
     sobre: [
       "O ensaio de desempenho estrutural e comportamento sob carga tem como objetivo avaliar a rigidez, a capacidade resistente e a deformabilidade de elementos estruturais submetidos a carregamentos controlados, reproduzindo as condições reais de utilização e verificando a integridade e o desempenho do sistema.",
       "Esses ensaios são amplamente aplicados em lajes de edifícios, arquibancadas, vagões ferroviários, passarelas e outras estruturas especiais, permitindo validar projetos, simulações numéricas e modelos de elementos finitos. Nas estruturas são monitoradas as deformações por strain gages e os deslocamentos verticais por LVDTs, possibilitando a obtenção do comportamento elástico e a verificação do limite de escoamento.",
@@ -108,46 +108,46 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-05.png",
-        alt: "Equipe aplicando carga nas arquibancadas da Arena Corinthians",
-        legenda: "Aplicação controlada de carga nas arquibancadas — Arena Corinthians, São Paulo",
+        src: "/images/Obras/Arena Corinthians/20140612_162007-PANO.jpg",
+        alt: "Vista panorâmica das arquibancadas da Arena Corinthians durante o ensaio",
+        legenda: "Vista panorâmica das arquibancadas — Arena Corinthians, Copa 2014",
         destaque: true,
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-06.png",
-        alt: "Strain gage instalado na estrutura para monitoramento de deformações",
-        legenda: "Strain gage fixado na armadura — monitoramento de deformações específicas",
+        src: "/images/Obras/Arena Corinthians/20140605_095714.jpg",
+        alt: "Instrumentação nas arquibancadas da Arena Corinthians",
+        legenda: "Instalação dos sensores nas arquibancadas — Arena Corinthians",
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-01.png",
-        alt: "Carregamento do vagão Metrô RJ para ensaio estrutural",
-        legenda: "Carregamento do vagão Metrô RJ — simulação das condições de serviço",
+        src: "/images/Obras/Metrô RJ : CPTM/capa.jpg",
+        alt: "Vagão do Metrô RJ durante ensaio de prova de carga",
+        legenda: "Prova de carga nos vagões do Metrô RJ / CPTM — simulação de lotação real",
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-4.png",
+        src: "/images/Obras/Metrô RJ : CPTM/20221227_131758.jpg",
         alt: "Interior do vagão com carga distribuída durante o ensaio",
-        legenda: "Carga distribuída no interior do vagão reproduzindo lotação real",
+        legenda: "Carga distribuída no interior do vagão — ciclos de carregamento e descarregamento",
         destaque: true,
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-09.png",
-        alt: "Sistema de aquisição multicanal Lynx com dados em tempo real",
-        legenda: "Sistema Lynx multicanal — aquisição e processamento em tempo real",
+        src: "/images/Obras/Metrô RJ : CPTM/20221216_135437.jpg",
+        alt: "Instrumentação no vagão ferroviário — strain gages e LVDTs",
+        legenda: "Instrumentação com strain gages, LVDTs e PT-100 — monitoramento em tempo real",
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-07.png",
-        alt: "LVDT instalado sob estrutura para monitoramento de deslocamentos",
-        legenda: "LVDT posicionado para medição de deslocamentos verticais",
+        src: "/images/Obras/Arena Corinthians/20140605_095747.jpg",
+        alt: "Equipe de instrumentação nas arquibancadas da Arena Corinthians",
+        legenda: "Equipe em campo — instalação dos pontos de medição nas arquibancadas",
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-03.png",
-        alt: "Prova de carga em ponte CCR com veículo de referência",
-        legenda: "Prova de carga em ponte — carregamento com veículo CCR de referência",
+        src: "/images/Obras/Metrô RJ : CPTM/20221227_131813.jpg",
+        alt: "Equipamentos de aquisição durante o ensaio no Metrô RJ",
+        legenda: "Sistema de aquisição em operação — registro contínuo durante o carregamento",
       },
       {
-        src: "/images/Obras/Ensaio Desempenho Estrutural e Comportamento sob Carga-08.png",
-        alt: "Arena Corinthians em operação com torcida — estrutura validada",
-        legenda: "Arena Corinthians em operação — estrutura validada pelo ensaio antes da inauguração",
+        src: "/images/Obras/Arena Corinthians/Capa-2-opcao.jpg",
+        alt: "Arena Corinthians — estrutura validada para a Copa do Mundo 2014",
+        legenda: "Arena Corinthians — estrutura validada e aprovada antes da inauguração para a Copa 2014",
         destaque: true,
       },
     ],
@@ -161,7 +161,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     acento: "azul",
     subtitulo:
       "Aplicação gradual de carga por lâmina d'água em reservatórios e lajes — monitoramento com strain gages e LVDTs para avaliar rigidez, distribuição de tensões e integridade estrutural.",
-    imagemHero: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-05.png",
+    imagemHero: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-05.png",
     sobre: [
       "Os ensaios de prova de carga hidráulica consistem na aplicação gradual de carregamentos por lâminas d'água, simulando condições reais de uso em estruturas como reservatórios e lajes de edificações.",
       "Antes do carregamento, são instalados extensômetros elétricos (strain gages) e transdutores de deslocamento linear (LVDTs) para monitorar deformações e flechas nas vigas principais, avaliando o comportamento elástico e o limite de deformação admissível dos elementos estruturais.",
@@ -203,28 +203,28 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-02.png",
+        src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-02.png",
         alt: "LVDT instalado na viga para monitoramento de deslocamentos",
         legenda: "LVDT fixado na viga principal — medição de flechas durante o enchimento",
         destaque: true,
       },
       {
-        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-01.png",
+        src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-01.png",
         alt: "Strain gages instalados na estrutura do reservatório",
         legenda: "Extensômetros instalados na face inferior da viga — monitoramento de deformações",
       },
       {
-        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-03.png",
+        src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-03.png",
         alt: "Sistema de aquisição multicanal conectado aos sensores",
         legenda: "Sistema de aquisição com múltiplos canais conectados simultaneamente",
       },
       {
-        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-06.png",
+        src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-06.png",
         alt: "Laptop com dados de aquisição em tempo real durante o ensaio",
         legenda: "Monitoramento em tempo real dos dados durante o enchimento com água",
       },
       {
-        src: "/images/Obras/Prova de Carga Hidráulica e Análise de Deformações Estruturais-04.png",
+        src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-04.png",
         alt: "Diagrama de posicionamento dos extensômetros no reservatório",
         legenda: "Planta de localização dos extensômetros — posicionamento definido por análise estrutural",
       },
@@ -237,6 +237,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Ensaios de Conforto Humano e Vibração",
     categoriaLabel: "Estruturas Fixas",
     acento: "azul",
+    imagemHero: "/images/Obras/Ponte Rio–Niterói/destaque.jpg",
     subtitulo:
       "Avaliação de vibrações ambientais e conforto estrutural conforme NBR 6118 e 7188 — identificação de frequências naturais, amortecimentos e resposta dinâmica.",
     sobre: [
@@ -360,7 +361,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     acento: "laranja",
     subtitulo:
       "Avaliação da integridade estrutural e comportamento dinâmico de carretas transportadoras de subestações móveis — instrumentação em duas fases, com strain gages e acelerômetros de alta precisão.",
-    imagemHero: "/images/Obras/Ensaio de Trafegabilidade-03.png",
+    imagemHero: "/images/Obras/WEG – Subestação Móvel/capa.jpg",
     sobre: [
       "O ensaio de trafegabilidade tem como objetivo avaliar a integridade estrutural e o comportamento dinâmico da carreta que transporta a subestação móvel, garantindo que a unidade possa trafegar com segurança e confiabilidade entre as cidades.",
       "Na primeira fase, o ensaio é realizado com a carreta vazia. Strain gages são posicionados nos pontos de maior solicitação, previamente identificados por análise em elementos finitos. As medições determinam as deformações e tensões atuantes, verificando se estão dentro do limite de 70% da tensão de escoamento do material.",
@@ -402,20 +403,20 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/Ensaio de Trafegabilidade-02.png",
-        alt: "Acelerômetro instalado na estrutura da carreta",
-        legenda: "Acelerômetro posicionado nos pontos críticos da estrutura metálica da carreta",
+        src: "/images/Obras/WEG – Subestação Móvel/20200603_114552.jpg",
+        alt: "Instrumentação da carreta WEG com strain gages e acelerômetros",
+        legenda: "Instrumentação em campo — strain gages posicionados por análise de elementos finitos",
         destaque: true,
       },
       {
-        src: "/images/Obras/Ensaio de Trafegabilidade-01.png",
-        alt: "Sistema de aquisição monitorando vibrações em campo",
-        legenda: "Sistema de aquisição em operação durante o ensaio de deslocamento",
+        src: "/images/Obras/WEG – Subestação Móvel/P_20190915_082733.jpg",
+        alt: "Sistema de aquisição monitorando vibrações durante o tráfego",
+        legenda: "Sistema de aquisição em operação durante o ensaio de deslocamento em via pública",
       },
       {
-        src: "/images/Obras/Ensaio de Trafegabilidade-03.png",
-        alt: "Subestação móvel em deslocamento sob monitoramento",
-        legenda: "Unidade móvel em tráfego com instrumentação ativa",
+        src: "/images/Obras/WEG – Subestação Móvel/DSC00013.JPG",
+        alt: "Subestação móvel WEG em deslocamento sob monitoramento",
+        legenda: "Subestação móvel WEG em tráfego com instrumentação ativa — acelerômetros nos componentes",
       },
     ],
   },
@@ -426,7 +427,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Ensaios Industriais Especiais",
     categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
-    imagemHero: "/images/Obras/ensaio-cilindros-pneumaticos-03.png",
+    imagemHero: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-03.png",
     subtitulo:
       "Verificação de torque, desempenho e integridade de componentes industriais sob condições controladas — cilindros pneumáticos, pistões, fixadores e sistemas de acionamento eletropneumático.",
     sobre: [
@@ -471,18 +472,18 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/ensaio-cilindros-pneumaticos-04.png",
+        src: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-04.png",
         alt: "Bancada de ensaio com cilindro pneumático montado e haste estendida",
         legenda: "Setup completo do ensaio — cilindro pneumático montado na bancada com haste em posição de trabalho",
         destaque: true,
       },
       {
-        src: "/images/Obras/ensaio-cilindros-pneumaticos-01.png",
+        src: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-01.png",
         alt: "Strain gage instalado no corpo do cilindro pneumático",
         legenda: "Strain gage fixado no cilindro — monitoramento de deformações durante os ciclos de esforço",
       },
       {
-        src: "/images/Obras/ensaio-cilindros-pneumaticos-02.png",
+        src: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-02.png",
         alt: "Sensor de deslocamento acoplado ao fixture de torque",
         legenda: "Sensor de deslocamento calibrado no fixture — medição da variação angular durante o ensaio de torque",
       },
@@ -534,7 +535,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Análise de Vibração e Frequências Naturais",
     categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
-    imagemHero: "/images/Obras/analise-vibracao-03.png",
+    imagemHero: "/images/Servicos/analise-de-vibracao/analise-vibracao-03.png",
     subtitulo:
       "Identificação de frequências de ressonância e modos de vibração em máquinas, equipamentos e estruturas de apoio — processamento espectral em tempo real para diagnóstico e prevenção de falhas.",
     sobre: [
@@ -579,13 +580,13 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/analise-vibracao-01.png",
+        src: "/images/Servicos/analise-de-vibracao/analise-vibracao-01.png",
         alt: "Setup completo do ensaio com sistema de aquisição multicanal e laptop em campo",
         legenda: "Setup em campo — sistema de aquisição multicanal com processamento espectral em tempo real",
         destaque: true,
       },
       {
-        src: "/images/Obras/analise-vibracao-02.png",
+        src: "/images/Servicos/analise-de-vibracao/analise-vibracao-02.png",
         alt: "Acelerômetro instalado na base metálica do equipamento",
         legenda: "Acelerômetro posicionado na base estrutural — separação das componentes de vibração",
       },
@@ -598,7 +599,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Ensaio de Carga em Porta Paletes",
     categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
-    imagemHero: "/images/Obras/porta-paletes-06.png",
+    imagemHero: "/images/Servicos/porta-paletes/porta-paletes-06.png",
     subtitulo:
       "Validação estrutural de sistemas de armazenagem em campo e fábrica — aplicação controlada de carga por etapas com strain gages e LVDTs nas longarinas, garantindo conformidade com a ABNT NBR 14762.",
     sobre: [
@@ -643,28 +644,28 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/porta-paletes-04.png",
+        src: "/images/Servicos/porta-paletes/porta-paletes-04.png",
         alt: "LVDT instalado na longarina azul para medição de deflexão",
         legenda: "LVDT posicionado na longarina — medição da deflexão durante o carregamento progressivo",
         destaque: true,
       },
       {
-        src: "/images/Obras/porta-paletes-05.png",
+        src: "/images/Servicos/porta-paletes/porta-paletes-05.png",
         alt: "LVDT em ensaio de fábrica com estrutura laranja antes da liberação",
         legenda: "Ensaio em fábrica — LVDT na estrutura antes da liberação para uso comercial",
       },
       {
-        src: "/images/Obras/porta-paletes-01.png",
+        src: "/images/Servicos/porta-paletes/porta-paletes-01.png",
         alt: "Sistema de aquisição instalado em campo durante ensaio em supermercado",
         legenda: "Aquisição em campo — sistema multicanal durante ensaio em estrutura instalada",
       },
       {
-        src: "/images/Obras/porta-paletes-02.png",
+        src: "/images/Servicos/porta-paletes/porta-paletes-02.png",
         alt: "Strain gage biaxial instalado na longarina metálica",
         legenda: "Strain gage biaxial fixado na longarina — monitoramento de deformações nas direções principais",
       },
       {
-        src: "/images/Obras/porta-paletes-03.png",
+        src: "/images/Servicos/porta-paletes/porta-paletes-03.png",
         alt: "LVDT sob longarina vermelha medindo deflexão vertical",
         legenda: "LVDT sob a longarina — medição precisa da deflexão vertical sob carga",
       },
@@ -680,23 +681,23 @@ export const servicosDetalhados: ServicoDetalhado[] = [
       ],
       galeria: [
         {
-          src: "/images/Obras/bracos-porta-paletes-01.png",
+          src: "/images/Servicos/porta-paletes/bracos-porta-paletes-01.png",
           alt: "Bancada de ensaio com célula de carga e LVDT posicionados no braço de porta-paletes",
           legenda: "Bancada de ensaio — célula de carga e LVDT posicionados para aplicação e medição de carga no braço",
           destaque: true,
         },
         {
-          src: "/images/Obras/bracos-porta-paletes-02.png",
+          src: "/images/Servicos/porta-paletes/bracos-porta-paletes-02.png",
           alt: "Sistema de aquisição de dados multicanal conectado aos sensores em bancada",
           legenda: "Sistema de aquisição multicanal — leitura simultânea de todos os sensores durante o ensaio",
         },
         {
-          src: "/images/Obras/bracos-porta-paletes-03.png",
+          src: "/images/Servicos/porta-paletes/bracos-porta-paletes-03.png",
           alt: "Célula de carga calibrada fixada no ponto de aplicação de carga do braço",
           legenda: "Célula de carga calibrada — controle preciso da força aplicada ao braço durante cada etapa",
         },
         {
-          src: "/images/Obras/bracos-porta-paletes-04.png",
+          src: "/images/Servicos/porta-paletes/bracos-porta-paletes-04.png",
           alt: "Strain gage instalado no braço metálico para medição de deformação específica",
           legenda: "Strain gage fixado no braço — monitoramento das deformações nos pontos de maior solicitação",
         },
@@ -712,7 +713,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     acento: "laranja",
     subtitulo:
       "Ensaios de estudo de fuga de fumaça com sensores PT100 posicionados estrategicamente em pontos críticos — detecção precoce de variações térmicas e integração com sistemas de alarme em ambientes industriais e comerciais.",
-    imagemHero: "/images/Obras/monitoramento-termico-01.png",
+    imagemHero: "/images/Servicos/monitoramento-termico/monitoramento-termico-01.png",
     sobre: [
       "O ensaio de estudo de fuga de fumaça com sensores PT100 é uma abordagem eficaz para monitorar e controlar a segurança em ambientes industriais e comerciais. O sensor PT100 é um termorresistor que oferece medição precisa da temperatura, essencial para detectar variações térmicas associadas à presença de fumaça.",
       "Durante o ensaio, os sensores são estrategicamente posicionados em locais críticos para garantir cobertura abrangente do ambiente. A detecção precoce de aumentos de temperatura indica a presença de fumaça, possibilitando resposta rápida para mitigar riscos de incêndio.",
@@ -754,18 +755,18 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     galeria: [
       {
-        src: "/images/Obras/monitoramento-termico-04.png",
+        src: "/images/Servicos/monitoramento-termico/monitoramento-termico-04.png",
         alt: "Plataforma elevatória posicionando sensores PT100 na estrutura metálica do teto",
         legenda: "Instalação dos sensores PT100 na estrutura do teto — posicionamento estratégico por plataforma elevatória",
         destaque: true,
       },
       {
-        src: "/images/Obras/monitoramento-termico-02.png",
+        src: "/images/Servicos/monitoramento-termico/monitoramento-termico-02.png",
         alt: "Incêndio controlado durante ensaio de fuga de fumaça no hangar",
         legenda: "Fogo controlado durante o ensaio — simulação das condições reais de incêndio",
       },
       {
-        src: "/images/Obras/monitoramento-termico-03.png",
+        src: "/images/Servicos/monitoramento-termico/monitoramento-termico-03.png",
         alt: "Sensor PT100 — termorresistor de alta precisão utilizado no monitoramento",
         legenda: "Sensor PT100 — termorresistor com blindagem para medição de temperatura em campo",
       },
@@ -778,6 +779,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Ensaios Estáticos e Dinâmicos em Estruturas Especiais",
     categoriaLabel: "Estruturas Fixas",
     acento: "azul",
+    imagemHero: "/images/Obras/The Town 2025/coloque-em-relavancia-essa.jpeg",
     subtitulo:
       "Validação experimental de estruturas temporárias e permanentes — ensaios estáticos e dinâmicos com acelerômetros triaxiais, strain gages e LVDTs integrados ao sistema Lynx ADS2000, garantindo segurança, desempenho e rastreabilidade técnica.",
     sobre: [
@@ -869,26 +871,26 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     normas: ["AWS D1.1/D1.1M", "ABNT NBR 6492", "ABNT NBR 8800"],
     obras: [],
-    imagemHero: "/images/Obras/arrancamento-soldas-03.png",
+    imagemHero: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-03.png",
     galeria: [
       {
-        src: "/images/Obras/arrancamento-soldas-03.png",
+        src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-03.png",
         alt: "Macaco hidráulico com célula de carga acoplado a barra de ancoragem sob laje de concreto armado",
         legenda: "Setup do ensaio — macaco hidráulico e célula de carga aplicando carga de tração na barra de ancoragem",
         destaque: true,
       },
       {
-        src: "/images/Obras/arrancamento-soldas-01.png",
+        src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-01.png",
         alt: "Engenheiro com capacete vermelho acompanhando leitura do sistema de aquisição em campo",
         legenda: "Monitoramento em tempo real — operador acompanha as leituras de força e deformação durante o ensaio",
       },
       {
-        src: "/images/Obras/arrancamento-soldas-02.png",
+        src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-02.png",
         alt: "Sensor e cabos de instrumentação fixados na face inferior de viga metálica",
         legenda: "Instrumentação na viga — sensor posicionado na face inferior para medição durante o carregamento",
       },
       {
-        src: "/images/Obras/arrancamento-soldas-04.png",
+        src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-04.png",
         alt: "Soldador realizando solda em viga metálica com faíscas visíveis",
         legenda: "Execução da solda — registro do processo de soldagem antes da verificação experimental",
       },

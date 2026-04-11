@@ -13,7 +13,7 @@ const obras = [
       "Aferição dos Atenuadores Dinâmicos Sincronizados (ADS) da maior ponte do Brasil. Acelerômetros Dytran e sistema Lynx ADS2002 a 1024 Hz.",
     etiquetas: ["Vibração", "ADS", "Acelerômetros"],
     slug: "ponte-rio-niteroi",
-    imagem: "/images/Obras/Fernando-Ponte Rio Niteroi.jpeg",
+    imagem: "/images/Obras/Ponte Rio–Niterói/Capa.jpg",
     acervo: false,
   },
   {
@@ -21,11 +21,11 @@ const obras = [
     local: "Rio de Janeiro, RJ",
     tipo: "Descimbramento",
     descricao:
-      "Instrumentação de 10 pontos de extensiometria na estrutura metálica. Resultados citados em publicação técnica internacional.",
+      "Monitoramento de 16 pontos de extensometria durante o descimbramento dos balanços de 70 m da cobertura metálica. Resultados publicados em artigo técnico internacional.",
     etiquetas: ["Strain Gages", "Extensometria", "Estrutura Metálica"],
     slug: "museu-do-amanha",
-    imagem: "/images/Obras/Museu do Amanhã.jpeg",
-    acervo: false,
+    imagem: "/images/Obras/Museu do Amanhã/Vista panorâmica do Museu do Amanhã na praça Mauá.png",
+    acervo: true,
   },
   {
     titulo: "Arena Corinthians",

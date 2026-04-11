@@ -70,8 +70,8 @@ function NavObra() {
 // ── Dados da obra ────────────────────────────────────────────
 const metricas = [
   {
-    valor: "10",
-    rotulo: "Pontos Instrumentados",
+    valor: "16",
+    rotulo: "Pontos de Extensometria",
     icone: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="3" />
@@ -80,28 +80,29 @@ const metricas = [
     ),
   },
   {
-    valor: "4",
-    rotulo: "Extensômetros Triaxiais",
+    valor: "2",
+    rotulo: "Balanços — Terra e Mar",
     icone: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
       </svg>
     ),
   },
   {
-    valor: "8",
-    rotulo: "Extensômetros Uniaxiais",
+    valor: "70",
+    unidade: "m",
+    rotulo: "Maior Balanço — Lado Terra",
     icone: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <line x1="5" y1="12" x2="19" y2="12" />
-        <polyline points="12 5 19 12 12 19" />
+        <path d="M2 12h20M2 12c0-3 2-5 5-5s5 2 5 5 2 5 5 5 5-2 5-5" />
+        <path d="M7 12v4M17 12v4" />
       </svg>
     ),
   },
   {
     valor: "Intl.",
-    rotulo: "Publicação Citada",
+    rotulo: "Artigo Publicado",
     icone: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -113,13 +114,16 @@ const metricas = [
 
 const fichaTecnica = [
   { campo: "Local", valor: "Rio de Janeiro, RJ" },
-  { campo: "Tipo de Ensaio", valor: "Descimbramento Estrutural" },
-  { campo: "Estrutura", valor: "Metálica (Santiago Calatrava)" },
-  { campo: "Pontos de Medição", valor: "10 pontos" },
-  { campo: "Extensômetros Triaxiais", valor: "4 unidades" },
-  { campo: "Extensômetros Uniaxiais", valor: "8 unidades" },
-  { campo: "Validação", valor: "Modelo estrutural em projeto" },
-  { campo: "Referência", valor: "Publicação técnica internacional" },
+  { campo: "Tipo de Ensaio", valor: "Descimbramento — Monitoramento de Tensões" },
+  { campo: "Estrutura", valor: "Metálica — 3.810 t de aço (Santiago Calatrava)" },
+  { campo: "Balanços", valor: "Lado terra: 70 m / Lado mar: 65 m" },
+  { campo: "Pontos de Medição", valor: "16 pontos — 8 por balanço" },
+  { campo: "Sensores", valor: "Excel Sensors PA-06-250BA-120L (120 Ω, Constantan)" },
+  { campo: "Sistema de Aquisição", valor: "Lynx ADS2000-IP — AqDados 7.2" },
+  { campo: "Taxa de Aquisição", valor: "60 Hz" },
+  { campo: "Duração", valor: "13 h (lado terra) / 15 h (lado mar)" },
+  { campo: "Resultado", valor: "Tensões dentro do regime elástico — até 40% do previsto" },
+  { campo: "Responsabilidade Técnica", valor: "Eng. Fernando Franco de Oliveira" },
 ];
 
 // ── Página ───────────────────────────────────────────────────
@@ -139,8 +143,8 @@ export default function MuseuDoAmanhaPage() {
         <section className="relative min-h-[75vh] flex items-end overflow-hidden">
           {/* Foto de fundo */}
           <Image
-            src="/images/Obras/Museu do Amanhã.jpeg"
-            alt="Museu do Amanhã — Rio de Janeiro"
+            src="/images/Obras/Museu do Amanhã/Vista panorâmica do Museu do Amanhã na praça Mauá.png"
+            alt="Museu do Amanhã — Vista panorâmica da Praça Mauá"
             fill
             className="object-cover"
             unoptimized
@@ -191,8 +195,11 @@ export default function MuseuDoAmanhaPage() {
               <span className="px-3 py-1 bg-white/10 border border-white/20 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
                 Rio de Janeiro, RJ
               </span>
-              <span className="px-3 py-1 bg-(--destaque-azul)/15 border border-(--destaque-azul)/30 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
+              <span className="px-3 py-1 bg-white/10 border border-white/20 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
                 Publicação Internacional
+              </span>
+              <span className="px-3 py-1 bg-(--destaque-azul)/10 border border-(--destaque-azul)/20 text-(--destaque-azul)/80 text-[11px] tracking-[0.2em] uppercase rounded-sm">
+                Acervo do Engenheiro
               </span>
             </div>
 
@@ -203,7 +210,7 @@ export default function MuseuDoAmanhaPage() {
               Museu do Amanhã
             </h1>
             <p className="text-sm md:text-base text-white/65 max-w-2xl leading-relaxed">
-              Instrumentação e monitoramento de 10 pontos de extensiometria na estrutura metálica projetada por Santiago Calatrava — resultados citados em publicação técnica internacional.
+              16 pontos de extensometria monitorando as tensões mecânicas durante o descimbramento dos balanços de 70 m e 65 m da cobertura metálica de 3.810 t — os maiores do Brasil à época. Resultados publicados em artigo técnico internacional.
             </p>
           </div>
         </section>
@@ -262,46 +269,43 @@ export default function MuseuDoAmanhaPage() {
                 </h2>
                 <div className="space-y-5 text-sm text-(--texto-secundario) leading-relaxed">
                   <p>
-                    O ensaio de descimbramento do Museu do Amanhã consistiu na instrumentação e monitoramento de{" "}
-                    <strong className="text-(--texto-principal) font-semibold">
-                      10 pontos de extensiometria
-                    </strong>
-                    , distribuídos nas principais regiões de solicitação da estrutura metálica.
+                    O Museu do Amanhã, projetado pelo arquiteto Santiago Calatrava, possui uma cobertura metálica de{" "}
+                    <strong className="text-(--texto-principal) font-semibold">3.810 t de aço</strong>{" "}
+                    com dois imponentes balanços — 70 m no lado terra e 65 m no lado mar — que, na época da construção, eram os maiores do Brasil. O descimbramento desses balanços foi um dos maiores desafios da engenharia nacional.
                   </p>
                   <p>
-                    Foram utilizados{" "}
-                    <strong className="text-(--texto-principal) font-semibold">
-                      4 extensômetros triaxiais
-                    </strong>{" "}
-                    para determinação das tensões principais, e{" "}
-                    <strong className="text-(--texto-principal) font-semibold">
-                      8 uniaxiais
-                    </strong>{" "}
-                    posicionados conforme a direção de esforços conhecidos, garantindo a leitura precisa das deformações durante o alívio das cargas do cimbramento.
+                    Foram instalados{" "}
+                    <strong className="text-(--texto-principal) font-semibold">16 pontos de extensometria</strong>{" "}
+                    (8 por balanço), distribuídos em 4 pontos nos banzos superiores e 4 nos banzos inferiores de cada balanço. Os sensores utilizados foram extensômetros elétricos{" "}
+                    <strong className="text-(--texto-principal) font-semibold">Excel Sensors PA-06-250BA-120L</strong>{" "}
+                    (120 Ω, Constantan), adquiridos a 60 Hz pelo sistema{" "}
+                    <strong className="text-(--texto-principal) font-semibold">Lynx ADS2000-IP</strong>.
                   </p>
                   <p>
-                    O procedimento foi conduzido com{" "}
-                    <strong className="text-(--texto-principal) font-semibold">
-                      alta precisão metrológica
-                    </strong>
-                    , validando o modelo estrutural e assegurando o comportamento previsto em projeto.
+                    Os dados foram acompanhados em tempo real pelo projetista e pelo fabricante. O monitoramento durou{" "}
+                    <strong className="text-(--texto-principal) font-semibold">13 horas no lado terra</strong>{" "}
+                    e{" "}
+                    <strong className="text-(--texto-principal) font-semibold">15 horas no lado mar</strong>, com período adicional pós-descimbre para estabilização. Todas as tensões ficaram dentro do regime elástico do aço, atingindo no máximo 40% dos valores previstos no modelo numérico — resultado muito bem sucedido.
+                  </p>
+                  <p>
+                    O trabalho foi documentado e publicado como{" "}
+                    <strong className="text-(--texto-principal) font-semibold">artigo técnico internacional</strong>, apresentado pelo Grupo Falcão Bauer, com a participação direta do Eng. Fernando Franco de Oliveira na execução do ensaio.
                   </p>
                 </div>
 
-                {/* Linha separadora */}
                 <div className="my-8 h-px bg-(--borda-principal)" />
 
-                {/* Metodologia resumida */}
                 <p className="text-xs tracking-[0.3em] text-(--texto-suave) uppercase font-medium mb-4">
-                  Metodologia
+                  Etapas do Processo
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Mapeamento das regiões críticas de solicitação",
-                    "Instalação dos extensômetros com fixação de precisão",
-                    "Aquisição simultânea durante o descimbramento",
-                    "Correlação com o modelo numérico em projeto",
-                    "Validação experimental e documentação técnica",
+                    "Inspeção e análise dos extensômetros previamente instalados",
+                    "Conexão ao sistema de aquisição Lynx ADS2000-IP",
+                    "Aquisição contínua a 60 Hz durante o descimbramento",
+                    "Acompanhamento em tempo real pelo projetista e fabricante",
+                    "Monitoramento de 6 h pós-descimbre para estabilização",
+                    "Correlação com modelo de elementos finitos fornecido pelo projetista",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-(--texto-secundario)">
                       <span className="mt-1 w-1.5 h-1.5 rounded-full bg-(--destaque-azul)/60 shrink-0" />
@@ -351,10 +355,10 @@ export default function MuseuDoAmanhaPage() {
                   </p>
                   <div className="grid grid-cols-2 gap-2">
                     {[
-                      { nome: "Extensômetros Triaxiais", detalhe: "Tensões principais" },
-                      { nome: "Extensômetros Uniaxiais", detalhe: "Direção de esforços" },
-                      { nome: "Sistema de Aquisição", detalhe: "Alta resolução" },
-                      { nome: "Metrologia de Precisão", detalhe: "Calibração certificada" },
+                      { nome: "Excel Sensors PA-06-250BA-120L", detalhe: "120 Ω — Constantan" },
+                      { nome: "Lynx ADS2000-IP", detalhe: "Sistema de aquisição" },
+                      { nome: "AqDados 7.2", detalhe: "Software de aquisição" },
+                      { nome: "AqDAnalysis", detalhe: "Tratamento de dados" },
                     ].map((eq, i) => (
                       <div
                         key={i}
@@ -402,21 +406,16 @@ export default function MuseuDoAmanhaPage() {
                 </svg>
 
                 <p className="text-base md:text-lg text-(--texto-principal) leading-relaxed mb-6">
-                  "Os resultados apresentaram{" "}
-                  <strong className="text-(--destaque-azul)">
-                    excelente correlação com as análises numéricas
-                  </strong>
-                  , sendo reconhecidos pela equipe de cálculo e posteriormente citados em{" "}
-                  <strong className="text-(--destaque-azul)">
-                    publicação técnica internacional
-                  </strong>{" "}
-                  como referência em controle experimental de estruturas de grande porte."
+                  "Todas as variações de tensões mecânicas e suas magnitudes ficaram abaixo das tensões previstas e{" "}
+                  <strong className="text-(--destaque-azul)">bem abaixo do limite de escoamento do aço ASTM A572</strong>{" "}
+                  — as tensões se estabilizaram em até 40% das previstas, confirmando que a estrutura trabalhou dentro do{" "}
+                  <strong className="text-(--destaque-azul)">regime elástico e das condições de projeto</strong>. Foi feito com dados muito precisos e foi muito bem sucedido."
                 </p>
 
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-px bg-(--destaque-azul)/40" />
                   <p className="text-[11px] text-(--texto-suave) uppercase tracking-[0.25em]">
-                    OFM — Documentação Técnica do Ensaio
+                    Eng. Fernando Franco de Oliveira — Responsabilidade Técnica
                   </p>
                 </div>
               </div>
@@ -434,73 +433,55 @@ export default function MuseuDoAmanhaPage() {
               <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-3">
                 Galeria
               </p>
-              <div className="flex items-end justify-between gap-4">
-                <h2
-                  className="text-2xl md:text-3xl font-black text-(--texto-principal)"
-                  style={{ fontFamily: "var(--font-outfit)" }}
-                >
-                  Registros do Ensaio
-                </h2>
-                <p className="text-xs text-(--texto-suave) hidden sm:block">
-                  Mais imagens em breve
-                </p>
-              </div>
+              <h2
+                className="text-2xl md:text-3xl font-black text-(--texto-principal)"
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
+                Registros do Ensaio
+              </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Imagem principal */}
               <div className="md:col-span-2 relative h-72 md:h-[420px] bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden">
                 <Image
-                  src="/images/Obras/Museu do Amanhã.jpeg"
-                  alt="Museu do Amanhã — Vista da estrutura metálica"
+                  src="/images/Obras/Museu do Amanhã/003.jpg"
+                  alt="Museu do Amanhã — Descimbramento lado terra"
                   fill
                   className="object-cover"
                   unoptimized
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/70 to-transparent">
-                  <p className="text-xs text-white/70 tracking-wide">
-                    Vista da estrutura metálica — Museu do Amanhã, Rio de Janeiro
-                  </p>
+                  <p className="text-xs text-white/70 tracking-wide">Lado terra durante o descimbramento — 20/02/2015</p>
                 </div>
               </div>
-
-              {/* Placeholders para fotos futuras */}
               <div className="flex flex-col gap-4">
-                {["Instrumentação — pontos de medição", "Equipamentos de aquisição"].map((legenda, i) => (
-                  <div
-                    key={i}
-                    className="relative flex-1 min-h-[120px] md:min-h-0 bg-(--bg-cartao) border border-(--borda-principal) border-dashed rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden"
-                  >
-                    <div
-                      className="absolute inset-0 opacity-[0.07]"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(var(--blueprint-30) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-30) 1px, transparent 1px)",
-                        backgroundSize: "24px 24px",
-                      }}
-                    />
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      className="text-(--icone-placeholder) relative z-10"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
-                    <span className="text-[10px] text-(--icone-placeholder) tracking-[0.2em] uppercase relative z-10 text-center px-4">
-                      {legenda}
-                    </span>
-                    <span className="text-[9px] text-(--icone-placeholder)/60 tracking-widest uppercase relative z-10">
-                      Em breve
-                    </span>
+                {[
+                  { src: "/images/Obras/Museu do Amanhã/001.jpg", legenda: "Balanço lado terra sendo montado — 10/01/2015" },
+                  { src: "/images/Obras/Museu do Amanhã/002.jpg", legenda: "Ponta içada e cimbramento completo — 14/02/2015" },
+                ].map((foto, i) => (
+                  <div key={i} className="relative flex-1 min-h-49 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden">
+                    <Image src={foto.src} alt={foto.legenda} fill className="object-cover" unoptimized />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                      <p className="text-[10px] text-white/60 tracking-wide">{foto.legenda}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+              {[
+                { src: "/images/Obras/Museu do Amanhã/004.jpg", legenda: "Após descimbramento — 05/04/2015" },
+                { src: "/images/Obras/Museu do Amanhã/005.jpg", legenda: "Balanço lado mar — montagem — 10/01/2015" },
+                { src: "/images/Obras/Museu do Amanhã/006.jpg", legenda: "Lado mar durante descimbramento — 09/04/2015" },
+              ].map((foto, i) => (
+                <div key={i} className="relative h-56 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden">
+                  <Image src={foto.src} alt={foto.legenda} fill className="object-cover" unoptimized />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                    <p className="text-[10px] text-white/60 tracking-wide">{foto.legenda}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -114,7 +114,8 @@ const metricas = [
 const fichaTecnica = [
   { campo: "Nome Oficial", valor: "Ponte Presidente Costa e Silva" },
   { campo: "Local", valor: "Rio de Janeiro, RJ" },
-  { campo: "Tipo de Ensaio", valor: "Análise Dinâmica — Aferição de ADS" },
+  { campo: "Tipo de Ensaio", valor: "Análise Dinâmica — Aferição de ADS + Tensões Atuantes" },
+  { campo: "Trechos Instrumentados", valor: "Concreto e metálico (vão central)" },
   { campo: "Extensão", valor: "13,29 km" },
   { campo: "Vão Central", valor: "300 m" },
   { campo: "Acelerômetros", valor: "Dytran (alta sensibilidade, EUA)" },
@@ -138,7 +139,7 @@ export default function PonteRioNiteroiPage() {
         {/* ── HERO ────────────────────────────────────────── */}
         <section className="relative min-h-[75vh] flex items-end overflow-hidden">
           <Image
-            src="/images/Obras/Fernando-Ponte Rio Niteroi.jpeg"
+            src="/images/Obras/Ponte Rio–Niterói/Capa.jpg"
             alt="Ponte Rio–Niterói — Aferição dos ADS"
             fill
             className="object-cover"
@@ -281,6 +282,17 @@ export default function PonteRioNiteroiPage() {
                     . As medições permitiram identificar frequências naturais, amortecimentos e respostas dinâmicas da estrutura.
                   </p>
                   <p>
+                    Além da aferição dos ADS, foi realizada a{" "}
+                    <strong className="text-(--texto-principal) font-semibold">
+                      instrumentação estrutural nos dois trechos distintos da ponte
+                    </strong>
+                    : o trecho em concreto e o trecho metálico — localizado no vão central. A aquisição dos dados permitiu determinar as{" "}
+                    <strong className="text-(--texto-principal) font-semibold">
+                      tensões atuantes
+                    </strong>{" "}
+                    em ambos os materiais durante o ensaio dinâmico, ampliando o diagnóstico estrutural para além do comportamento dos atenuadores.
+                  </p>
+                  <p>
                     A Ponte Presidente Costa e Silva possui{" "}
                     <strong className="text-(--texto-principal) font-semibold">
                       13,29 km de extensão
@@ -300,11 +312,12 @@ export default function PonteRioNiteroiPage() {
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "Verificação das frequências naturais dos ADS",
+                    "Aferição das frequências naturais dos ADS",
                     "Determinação dos coeficientes de amortecimento",
+                    "Medição das tensões atuantes no trecho de concreto",
+                    "Medição das tensões atuantes no trecho metálico (vão central)",
                     "Avaliação da resposta dinâmica da estrutura",
                     "Validação do desempenho dos atenuadores instalados",
-                    "Asseguramento da segurança operacional da ponte",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-(--texto-secundario)">
                       <span className="mt-1 w-1.5 h-1.5 rounded-full bg-(--destaque-azul)/60 shrink-0" />
@@ -442,16 +455,13 @@ export default function PonteRioNiteroiPage() {
                 >
                   Registros do Ensaio
                 </h2>
-                <p className="text-xs text-(--texto-suave) hidden sm:block">
-                  Mais imagens em breve
-                </p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="md:col-span-2 relative h-72 md:h-[420px] bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden">
                 <Image
-                  src="/images/Obras/Fernando-Ponte Rio Niteroi.jpeg"
+                  src="/images/Obras/Ponte Rio–Niterói/destaque.jpg"
                   alt="Ponte Rio–Niterói — Aferição dos ADS"
                   fill
                   className="object-cover"
@@ -465,41 +475,32 @@ export default function PonteRioNiteroiPage() {
               </div>
 
               <div className="flex flex-col gap-4">
-                {["Acelerômetros Dytran instalados", "Sistema Lynx ADS2002"].map((legenda, i) => (
-                  <div
-                    key={i}
-                    className="relative flex-1 min-h-[120px] md:min-h-0 bg-(--bg-cartao) border border-(--borda-principal) border-dashed rounded-sm flex flex-col items-center justify-center gap-2 overflow-hidden"
-                  >
-                    <div
-                      className="absolute inset-0 opacity-[0.07]"
-                      style={{
-                        backgroundImage:
-                          "linear-gradient(var(--blueprint-30) 1px, transparent 1px), linear-gradient(90deg, var(--blueprint-30) 1px, transparent 1px)",
-                        backgroundSize: "24px 24px",
-                      }}
-                    />
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      className="text-(--icone-placeholder) relative z-10"
-                    >
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
-                    <span className="text-[10px] text-(--icone-placeholder) tracking-[0.2em] uppercase relative z-10 text-center px-4">
-                      {legenda}
-                    </span>
-                    <span className="text-[9px] text-(--icone-placeholder)/60 tracking-widest uppercase relative z-10">
-                      Em breve
-                    </span>
+                {[
+                  { src: "/images/Obras/Ponte Rio–Niterói/20231212_084526.jpg", legenda: "Instrumentação em campo" },
+                  { src: "/images/Obras/Ponte Rio–Niterói/20240306_120934.jpg", legenda: "Equipamentos de monitoramento" },
+                ].map((foto, i) => (
+                  <div key={i} className="relative flex-1 min-h-49 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden">
+                    <Image src={foto.src} alt={foto.legenda} fill className="object-cover" unoptimized />
+                    <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                      <p className="text-[10px] text-white/60 tracking-wide">{foto.legenda}</p>
+                    </div>
                   </div>
                 ))}
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+              {[
+                { src: "/images/Obras/Ponte Rio–Niterói/TimePhoto_20240729_102052.jpg", legenda: "Ensaio dinâmico" },
+                { src: "/images/Obras/Ponte Rio–Niterói/TimePhoto_20240729_102058.jpg", legenda: "Medições acelerométricas" },
+              ].map((foto, i) => (
+                <div key={i} className="relative h-56 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden">
+                  <Image src={foto.src} alt={foto.legenda} fill className="object-cover" unoptimized />
+                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                    <p className="text-[10px] text-white/60 tracking-wide">{foto.legenda}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

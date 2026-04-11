@@ -84,13 +84,13 @@ const obras = [
   },
   {
     titulo: "Metrô RJ / CPTM",
-    local: "Rio de Janeiro & São Paulo",
-    tipo: "Ferroviário",
+    local: "Rio de Janeiro, RJ",
+    tipo: "Prova de Carga",
     descricao:
-      "Ensaios estruturais em vagões ferroviários, estruturas de plataforma e componentes de via permanente.",
-    etiquetas: ["Ferroviário", "Metrô", "CPTM"],
-    slug: null,
-    imagem: null,
+      "Prova de carga em 10 vagões com extensômetros, LVDT e PT-100 de temperatura. Ciclos de carregamento e descarregamento com estabilização — todos aprovados.",
+    etiquetas: ["Extensômetros", "LVDT", "PT-100", "Ferroviário"],
+    slug: "metro-rj-cptm",
+    imagem: "/images/Obras/Metrô RJ : CPTM/capa.jpg",
     acervo: false,
   },
 ];

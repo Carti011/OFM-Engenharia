@@ -102,7 +102,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     normas: ["ABNT NBR 6118", "ABNT NBR 7188", "ABNT NBR 14931"],
     obras: [
-      { titulo: "Arena Corinthians", local: "São Paulo, SP", tipo: "Prova de Carga" },
+      { titulo: "Arena Corinthians", local: "São Paulo, SP", tipo: "Prova de Carga", slug: "arena-corinthians" },
       { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário" },
       { titulo: "Ponte Rio–Niterói", local: "Rio de Janeiro, RJ", tipo: "Análise Dinâmica", slug: "ponte-rio-niteroi" },
     ],

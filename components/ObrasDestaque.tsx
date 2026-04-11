@@ -14,6 +14,7 @@ const obras = [
     etiquetas: ["Vibração", "ADS", "Acelerômetros"],
     slug: "ponte-rio-niteroi",
     imagem: "/images/Obras/Fernando-Ponte Rio Niteroi.jpeg",
+    acervo: false,
   },
   {
     titulo: "Museu do Amanhã",
@@ -24,16 +25,18 @@ const obras = [
     etiquetas: ["Strain Gages", "Extensometria", "Estrutura Metálica"],
     slug: "museu-do-amanha",
     imagem: "/images/Obras/Museu do Amanhã.jpeg",
+    acervo: false,
   },
   {
     titulo: "Arena Corinthians",
     local: "São Paulo, SP",
     tipo: "Prova de Carga",
     descricao:
-      "Ensaios de desempenho estrutural nas arquibancadas e lajes do estádio. Monitoramento de deformações e deslocamentos.",
-    etiquetas: ["LVDT", "Prova de Carga", "Estádio"],
-    slug: null,
-    imagem: null,
+      "Provas de carga estática e dinâmica nas arquibancadas da Copa 2014. Shaker de 1 a 10 Hz, strain gages e monitoramento ao vivo no primeiro jogo.",
+    etiquetas: ["Strain Gages", "Prova de Carga", "Shaker", "Copa 2014"],
+    slug: "arena-corinthians",
+    imagem: "/images/Obras/Arena Corinthians/capa.jpg",
+    acervo: true,
   },
   {
     titulo: "Ponte Estaiada Octávio Frias",
@@ -44,6 +47,7 @@ const obras = [
     etiquetas: ["Pontes", "Dinâmica", "SP"],
     slug: null,
     imagem: null,
+    acervo: true,
   },
   {
     titulo: "Ponte Newton Navarro",
@@ -54,6 +58,7 @@ const obras = [
     etiquetas: ["Pontes Estaiadas", "RN", "Monitoramento"],
     slug: null,
     imagem: null,
+    acervo: true,
   },
   {
     titulo: "The Town 2025",
@@ -64,6 +69,7 @@ const obras = [
     etiquetas: ["Torre", "Estático", "Dinâmico"],
     slug: null,
     imagem: null,
+    acervo: false,
   },
   {
     titulo: "WEG – Subestação Móvel",
@@ -74,6 +80,7 @@ const obras = [
     etiquetas: ["Trafegabilidade", "Industrial", "WEG"],
     slug: null,
     imagem: null,
+    acervo: false,
   },
   {
     titulo: "Metrô RJ / CPTM",
@@ -84,6 +91,7 @@ const obras = [
     etiquetas: ["Ferroviário", "Metrô", "CPTM"],
     slug: null,
     imagem: null,
+    acervo: false,
   },
 ];
 
@@ -122,13 +130,27 @@ export default function Portfolio() {
               <span className="text-(--destaque-azul)">Destaque</span>
             </h2>
           </div>
-          <p
+          <div
             ref={textoDir.ref}
-            className={`text-(--texto-suave) text-sm max-w-xs leading-relaxed ${textoDir.montado ? "reveal-fade-left" : ""} ${textoDir.visivel ? "is-visible" : ""}`}
+            className={`flex flex-col gap-4 ${textoDir.montado ? "reveal-fade-left" : ""} ${textoDir.visivel ? "is-visible" : ""}`}
           >
-            Participação em projetos de referência nacional e internacional,
-            com instrumentação e análises de alto nível técnico.
-          </p>
+            <p className="text-(--texto-suave) text-sm max-w-xs leading-relaxed">
+              Projetos executados pela OFM e obras do acervo técnico do
+              engenheiro responsável — referência em instrumentação estrutural
+              com décadas de atuação nacional.
+            </p>
+            {/* Legenda */}
+            <div className="flex items-center gap-4 text-[10px] tracking-widest uppercase">
+              <span className="flex items-center gap-1.5 text-(--texto-fraco)">
+                <span className="w-2 h-2 rounded-none bg-(--destaque-laranja) inline-block" />
+                OFM Engenharia
+              </span>
+              <span className="flex items-center gap-1.5 text-(--texto-fraco)">
+                <span className="w-2 h-2 rounded-none bg-(--destaque-azul)/60 inline-block" />
+                Acervo do Engenheiro
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Grid */}
@@ -140,7 +162,7 @@ export default function Portfolio() {
               <article
                 key={i}
                 ref={ref}
-                className={`relative group bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/30 rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                className={`relative group bg-(--bg-cartao) border rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${obra.acervo ? "border-(--borda-principal) hover:border-(--destaque-azul)/20" : "border-(--borda-principal) hover:border-(--destaque-laranja)/30"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
                 <div className="card-linha-hover w-0 group-hover:w-full" />
@@ -218,16 +240,26 @@ export default function Portfolio() {
                   )}
 
                   {/* Badge de tipo (sempre visível) */}
-                  <span className="absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-(--destaque-laranja) text-[10px] font-bold tracking-wide uppercase rounded-sm">
+                  <span
+                    className={`absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-[10px] font-bold tracking-wide uppercase rounded-sm ${obra.acervo ? "text-(--destaque-azul)/70" : "text-(--destaque-laranja)"}`}
+                  >
                     {obra.tipo}
                   </span>
                 </div>
 
                 {/* Conteúdo */}
                 <div className="p-5">
-                  <p className="text-[10px] text-(--texto-fraco) tracking-widest uppercase mb-1">
-                    {obra.local}
-                  </p>
+                  <div className="flex items-center justify-between mb-1">
+                    <p className="text-[10px] text-(--texto-fraco) tracking-widest uppercase">
+                      {obra.local}
+                    </p>
+                    {obra.acervo && (
+                      <span className="flex items-center gap-1 text-[9px] tracking-widest uppercase text-(--destaque-azul)/60 font-medium">
+                        <span className="w-1.5 h-1.5 bg-(--destaque-azul)/60 inline-block" />
+                        Acervo Técnico
+                      </span>
+                    )}
+                  </div>
                   <h3
                     className="text-sm font-bold text-(--texto-principal) mb-2 leading-snug group-hover:text-(--destaque-azul-hover) transition-colors duration-200"
                     style={{ fontFamily: "var(--font-outfit)" }}

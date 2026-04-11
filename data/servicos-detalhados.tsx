@@ -103,7 +103,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     normas: ["ABNT NBR 6118", "ABNT NBR 7188", "ABNT NBR 14931"],
     obras: [
       { titulo: "Arena Corinthians", local: "São Paulo, SP", tipo: "Prova de Carga", slug: "arena-corinthians" },
-      { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário" },
+      { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário", slug: "metro-rj-cptm" },
       { titulo: "Ponte Rio–Niterói", local: "Rio de Janeiro, RJ", tipo: "Análise Dinâmica", slug: "ponte-rio-niteroi" },
     ],
     galeria: [
@@ -267,7 +267,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     normas: ["NBR 6118", "NBR 7188", "ISO 10137", "AISC Design Guide 11"],
     obras: [
       { titulo: "Ponte Rio–Niterói", local: "Rio de Janeiro, RJ", tipo: "Análise Dinâmica", slug: "ponte-rio-niteroi" },
-      { titulo: "The Town 2025", local: "São Paulo, SP", tipo: "Estrutura Temporária" },
+      { titulo: "The Town 2025", local: "São Paulo, SP", tipo: "Estrutura Temporária", slug: "the-town-2025" },
     ],
   },
 
@@ -307,7 +307,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     normas: ["NBR 6118", "NBR 6120", "ISO 13822"],
     obras: [
       { titulo: "Ponte Newton Navarro", local: "Natal, RN", tipo: "Ensaio Estrutural" },
-      { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário" },
+      { titulo: "Metrô RJ / CPTM", local: "Rio de Janeiro & São Paulo", tipo: "Ferroviário", slug: "metro-rj-cptm" },
       { titulo: "Museu do Amanhã", local: "Rio de Janeiro, RJ", tipo: "Descimbramento", slug: "museu-do-amanha" },
     ],
   },
@@ -398,7 +398,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     normas: ["IEC 60068-2-64", "ABNT NBR 5422", "MIL-STD-810"],
     obras: [
-      { titulo: "WEG – Subestação Móvel", local: "Brasil", tipo: "Trafegabilidade" },
+      { titulo: "WEG – Subestação Móvel", local: "Brasil", tipo: "Trafegabilidade", slug: "weg-subestacao-movel" },
     ],
     galeria: [
       {
@@ -819,7 +819,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     ],
     normas: ["ABNT NBR 8800", "ABNT NBR 6118"],
     obras: [
-      { titulo: "Torre da Tirolesa — The Town 2025", local: "São Paulo, SP", tipo: "Ensaio estático e dinâmico" },
+      { titulo: "Torre da Tirolesa — The Town 2025", local: "São Paulo, SP", tipo: "Ensaio estático e dinâmico", slug: "the-town-2025" },
     ],
   },
 

@@ -76,10 +76,10 @@ const obras = [
     local: "Brasil",
     tipo: "Trafegabilidade",
     descricao:
-      "Ensaio de integridade estrutural e comportamento dinâmico durante transporte. Verificação com acelerômetros de alta precisão.",
-    etiquetas: ["Trafegabilidade", "Industrial", "WEG"],
-    slug: null,
-    imagem: null,
+      "Carregamento estático com transformador de 38 t e trafegabilidade em via pública. Extensômetros nas vigas e acelerômetros para validação dos componentes da subestação.",
+    etiquetas: ["Trafegabilidade", "Industrial", "WEG", "Extensômetros"],
+    slug: "weg-subestacao-movel",
+    imagem: "/images/Obras/WEG – Subestação Móvel/capa.jpg",
     acervo: false,
   },
   {

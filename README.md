@@ -28,8 +28,10 @@ empresa especializada em instrumentação e análise experimental de estruturas 
   layout.tsx            — metadados globais, fontes e configurações
   page.tsx              — composição das seções da página principal
   /obras
-    /museu-do-amanha/   — página de detalhe de obra
-    /ponte-rio-niteroi/ — página de detalhe de obra
+    /museu-do-amanha/              — página de detalhe de obra
+    /ponte-rio-niteroi/            — página de detalhe de obra
+    /ponte-estaiada-octavio-frias/ — página de detalhe de obra
+    /ponte-newton-navarro/         — página de detalhe de obra
   /servicos
     page.tsx            — listagem de todos os serviços
     /[slug]/
@@ -56,7 +58,10 @@ empresa especializada em instrumentação e análise experimental de estruturas 
 /hooks
   useScrollReveal.ts    — IntersectionObserver nativo para animações de entrada
 
-/public/images/         — fotos das obras e logos institucionais
+/public/images/
+  /Obras/               — fotos organizadas por obra (subpasta por nome da obra)
+  /Servicos/            — fotos editoriais organizadas por slug de serviço
+  /Logos/               — logos institucionais (OFM, USP, Falcão Bauer)
 
 /docs
   /adr                  — Architecture Decision Records

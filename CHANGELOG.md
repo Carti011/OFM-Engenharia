@@ -10,6 +10,29 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Novas páginas de obras, conteúdo técnico e reorganização de imagens
+
+### Adicionado
+
+- Página `/obras/ponte-estaiada-octavio-frias` — hero com foto, métricas, ficha técnica, galeria e CTA; instrumentação completa da construção à inauguração (6 tipos de sensores: células de carga nos estais, PT-100, inclinômetros, LVDTs, anemômetros, acelerômetros); badge "Acervo do Engenheiro"
+- Página `/obras/ponte-newton-navarro` — mesma metodologia da Octávio Frias (maior ponte estaiada do Nordeste); callout Eng. Fernando Franco de Oliveira; badge "Acervo do Engenheiro"
+- ADR 009 — reorganização de imagens em dois grupos (`Obras/` e `Servicos/`) com subpastas por obra/slug
+- Screenshot da página inicial adicionado ao `README.md` (`docs/home.png`)
+
+### Alterado
+
+- Página `/obras/museu-do-amanha` reescrita com dados do artigo técnico (PDF Falcão Bauer): 16 pontos de extensometria, balanços de 70m + 65m, sensores Excel Sensors PA-06-250BA-120L, Lynx ADS2000-IP, AqDados 7.2, 3.810t de aço, 13h + 15h de monitoramento; callout Eng. Fernando; badge "Acervo do Engenheiro"; galeria com 6 fotos reais
+- Página `/obras/ponte-rio-niteroi` atualizada com dados novos do cliente: instrumentação do trecho de concreto e do trecho metálico (vão central) para medição de tensões atuantes; galeria expandida para 6 fotos reais; ficha técnica com campo "Trechos Instrumentados"
+- `components/ObrasDestaque.tsx`: slugs e imagens corretos para Ponte Estaiada Octávio Frias, Ponte Newton Navarro, Museu do Amanhã (com `acervo: true`) e Ponte Rio-Niterói
+- Páginas de serviço em `data/servicos-detalhados.tsx` passam a usar fotos reais das obras vinculadas: `provas-de-carga` (Arena Corinthians + Metrô RJ), `trafegabilidade` (WEG – Subestação Móvel), `conforto-e-vibracao` e `estruturas-especiais` ganham `imagemHero`
+- `README.md`: estrutura de pastas atualizada para incluir obras novas e subpastas de imagens (`Obras/`, `Servicos/`, `Logos/`)
+
+### Reorganizado
+
+- `public/images/` dividida em dois grupos com subpastas: `Obras/[nome-da-obra]/` para fotos de portfólio e `Servicos/[slug]/` para fotos editoriais dos serviços — remove imagens soltas na raiz de `Obras/` e vincula cada foto à sua origem
+
+---
+
 ## [2026-04-16] — Documentação do repositório
 
 ### Adicionado

@@ -10,6 +10,20 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Atualização de e-mails para domínio profissional
+
+### Alterado
+
+- Botão "E-mail" no formulário de contato passa a enviar para `ofmengenharia@ofmengenharia.com.br`
+- Card de informações de contato exibe `fernando.franco@ofmengenharia.com.br` (link principal) e `ofmengenharia@ofmengenharia.com.br` (referência secundária)
+- Link de e-mail no rodapé atualizado para `ofmengenharia@ofmengenharia.com.br`
+
+### Removido
+
+- Todas as referências ao e-mail pessoal `oliveiraff2@gmail.com` removidas do projeto
+
+---
+
 ## [2026-04-16] — Reorganização da seção de serviços e página de catálogo
 
 ### Adicionado

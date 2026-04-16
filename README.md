@@ -100,7 +100,7 @@ Este projeto não utiliza variáveis de ambiente. Não há backend, banco de dad
 Não utiliza backend. O usuário preenche os campos e escolhe o canal de envio:
 
 - **WhatsApp** — abre `wa.me/5511964866459` com a mensagem pré-formatada
-- **E-mail** — abre o cliente de e-mail com `mailto:oliveiraff2@gmail.com`, assunto e corpo pré-preenchidos
+- **E-mail** — abre o cliente de e-mail com `mailto:ofmengenharia@ofmengenharia.com.br`, assunto e corpo pré-preenchidos
 
 ## Tema claro/escuro
 

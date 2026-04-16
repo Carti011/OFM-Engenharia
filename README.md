@@ -39,7 +39,13 @@ empresa especializada em monitoramento e avaliação de estruturas civis.
   Rodape.tsx           — rodapé institucional
   BotaoWhatsApp.tsx    — botão flutuante de contato
 
+/hooks
+  useScrollReveal.ts   — IntersectionObserver nativo para animações de entrada
+
 /public/images/        — fotos das obras do portfólio
+
+/docs
+  /adr                 — Architecture Decision Records
 ```
 
 ---

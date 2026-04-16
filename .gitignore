@@ -83,3 +83,8 @@ desktop.ini
 # ================================
 CLAUDE.md
 .claude/
+
+# ================================
+# Documentação interna de IA
+# ================================
+docs/handoff/

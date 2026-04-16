@@ -10,6 +10,20 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Documentação do repositório
+
+### Adicionado
+
+- `README.md` na raiz com documentação completa: descrição, stack,
+  estrutura de pastas, pré-requisitos, como rodar, build, variáveis
+  de ambiente, formulário de contato, portfólio e créditos
+- `docs/diagrama-rotas.md` — mapa de rotas em Mermaid
+  (home, âncoras, `/servicos/[slug]`, `/obras/*`)
+- `docs/diagrama-fluxo-contato.md` — fluxo do formulário em Mermaid
+  (validação → WhatsApp ou e-mail)
+
+---
+
 ## [2026-04-16] — Dados institucionais, diferenciais e redesign do Acervo Técnico
 
 ### Adicionado

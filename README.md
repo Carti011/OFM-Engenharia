@@ -44,6 +44,11 @@ empresa especializada em monitoramento e avaliação de estruturas civis.
 
 ---
 
+## Pré-requisitos
+
+- Node.js 18+
+- npm 9+
+
 ## Como rodar localmente
 
 ```bash
@@ -58,6 +63,10 @@ npm run build     # gera export estático em /out
 ```
 
 O deploy é feito automaticamente via Vercel a cada push na branch `main`.
+
+## Variáveis de ambiente
+
+Este projeto não utiliza variáveis de ambiente. Não há backend, banco de dados ou serviços externos autenticados — o número de WhatsApp da empresa está hardcoded no componente `Contato.tsx`.
 
 ---
 

@@ -6,7 +6,7 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 const tiposEnsaio = [
   "Prova de Carga Estática",
   "Prova de Carga Dinâmica",
-  "Análise de Vibração",
+  "Análise de Vibração / Conforto Humano",
   "Ensaio de Trafegabilidade",
   "Monitoramento Estrutural",
   "Validação de Modelo Numérico",

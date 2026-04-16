@@ -29,20 +29,22 @@ empresa especializada em monitoramento e avaliação de estruturas civis.
   page.tsx         — composição das seções da página
 
 /components
-  Navegacao.tsx        — navbar fixa com detecção de scroll
+  Navegacao.tsx        — navbar flutuante (ilha) com logo e toggle de tema
   Capa.tsx             — seção hero com fundo blueprint
-  Sobre.tsx            — história e timeline da empresa
+  Sobre.tsx            — história e timeline com logos institucionais
   Servicos.tsx         — serviços por categoria
-  ObrasDestaque.tsx    — portfólio de obras
-  AcervoTecnico.tsx    — acervo técnico e normas de referência
-  Contato.tsx          — formulário de proposta via WhatsApp
-  Rodape.tsx           — rodapé institucional
+  ObrasDestaque.tsx    — portfólio de obras (placeholders até chegarem as fotos)
+  AcervoTecnico.tsx    — acervo técnico, normas e softwares utilizados
+  Contato.tsx          — formulário de proposta via WhatsApp ou e-mail
+  Rodape.tsx           — rodapé com dados institucionais (CNPJ, RT)
   BotaoWhatsApp.tsx    — botão flutuante de contato
+  ProvedorTema.tsx     — wrapper next-themes (dark/light)
+  BotaoTema.tsx        — toggle de tema com SVG (sol/lua)
 
 /hooks
   useScrollReveal.ts   — IntersectionObserver nativo para animações de entrada
 
-/public/images/        — fotos das obras do portfólio
+/public/images/        — fotos das obras e logos institucionais
 
 /docs
   /adr                 — Architecture Decision Records
@@ -78,8 +80,16 @@ Este projeto não utiliza variáveis de ambiente. Não há backend, banco de dad
 
 ## Formulário de contato
 
-Não utiliza backend. Os dados preenchidos são formatados e enviados
-como mensagem pré-preenchida via URL `wa.me` para o WhatsApp da empresa.
+Não utiliza backend. O usuário preenche os campos e escolhe o canal de envio:
+
+- **WhatsApp** — abre `wa.me/5511964866459` com a mensagem pré-formatada
+- **E-mail** — abre o cliente de e-mail com `mailto:oliveiraff2@gmail.com`, assunto e corpo pré-preenchidos
+
+## Tema claro/escuro
+
+O site oferece alternância entre tema escuro (padrão) e claro via `next-themes`.
+O toggle fica na navbar. O tema é persistido no `localStorage` do navegador.
+As cores são controladas inteiramente por CSS custom properties em `app/globals.css`.
 
 ---
 

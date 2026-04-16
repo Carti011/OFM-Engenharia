@@ -10,6 +10,49 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Reorganização da seção de serviços e página de catálogo
+
+### Adicionado
+
+- Página `/servicos` (server component) com todos os 13 serviços organizados por categoria — Estruturas Fixas (`lg:grid-cols-3`) e Ensaios Especiais e Instrumentação (`xl:grid-cols-4`)
+- Hero com blueprint grid, CTA de proposta e rodapé completo na página `/servicos`
+- Metadados SEO (`metadata`) exportados da página `/servicos`
+- ADR 008 — arquitetura em dois níveis para a seção de serviços
+
+### Alterado
+
+- `Servicos.tsx` (home) reduzido de 13 cards em dois grids para 5 serviços âncora em grid único (`xl:grid-cols-5`)
+- Âncoras selecionados: Provas de Carga, Estruturas Especiais, Trafegabilidade, Porta Paletes, Arrancamento de Soldas
+- Link "Ver todos os N serviços" adicionado no header da seção e como botão no rodapé — número dinâmico via `servicosDetalhados.length`
+- Breadcrumb "Serviços" em `PaginaServico.tsx` atualizado de `/#servicos` para `/servicos`
+
+---
+
+## [2026-04-16] — Páginas de obras, serviços e conteúdo técnico dos PDFs
+
+### Adicionado
+
+- Páginas dedicadas para obras: `/obras/museu-do-amanha` e `/obras/ponte-rio-niteroi` — hero com foto, métricas, galeria, CTA e navegação com breadcrumb
+- Rota dinâmica `/servicos/[slug]` com padrão server+client (ADR 007): `page.tsx` exporta `generateStaticParams`, `PaginaServico.tsx` tem a UI com hooks
+- `data/servicos-detalhados.tsx` — fonte de verdade para conteúdo de todos os serviços (interface `ServicoDetalhado`, array `servicosDetalhados`)
+- Conteúdo completo de PDFs adicionado para: `provas-de-carga`, `provas-de-carga-hidraulica`, `trafegabilidade`, `monitoramento-termico`, `ensaios-industriais`, `estruturas-especiais`, `porta-paletes`, `arrancamento-soldas`, `analise-de-vibracao`
+- Suporte a `imagemHero` opcional nos serviços — serviços sem foto usam blueprint grid como hero
+- Galeria de imagens nas páginas de serviço (campo `galeria?: GaleriaItem[]`)
+- Cards de obras e serviços clicáveis: `<Link className="absolute inset-0 z-20" />` invisível + indicador "Ver detalhes →" ao hover
+- ADR 007 — páginas dedicadas para serviços e obras com rota dinâmica
+
+### Alterado
+
+- Nome da empresa atualizado para "OFM — Engenharia, Instrumentações, Inspeções e Análises Estruturais" em `Capa.tsx`, `Rodape.tsx` e `layout.tsx`
+- Categorias de serviços renomeadas: "Estruturas Móveis e Especiais" → "Ensaios Especiais e Instrumentação"
+
+### Corrigido
+
+- Scroll horizontal no mobile corrigido via `overflow-x: hidden` em `body` no `globals.css`
+- Gradient Tailwind v4 corrigido de `bg-gradient-to-t` para `bg-linear-to-t` nas páginas de obra e serviço
+
+---
+
 ## [2026-04-16] — Hero redesenhado, tipografia e identidade visual
 
 ### Adicionado

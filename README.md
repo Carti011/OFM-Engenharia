@@ -11,13 +11,13 @@ empresa especializada em monitoramento e avaliação de estruturas civis.
 
 ## Stack
 
-| Camada    | Tecnologia                        |
-| --------- | --------------------------------- |
-| Framework | Next.js 16 (App Router)           |
-| Linguagem | TypeScript                        |
-| Estilo    | Tailwind CSS v4                   |
-| Fontes    | Outfit + Work Sans (Google Fonts) |
-| Deploy    | Vercel (export estático)          |
+| Camada    | Tecnologia                                               |
+| --------- | -------------------------------------------------------- |
+| Framework | Next.js 16 (App Router)                                  |
+| Linguagem | TypeScript                                               |
+| Estilo    | Tailwind CSS v4                                          |
+| Fontes    | Barlow Condensed + Barlow + IBM Plex Mono (Google Fonts) |
+| Deploy    | Vercel (export estático)                                 |
 
 ---
 

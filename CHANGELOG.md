@@ -10,6 +10,34 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Hero redesenhado, tipografia e identidade visual
+
+### Adicionado
+
+- Seção hero com capacete flutuante na coluna direita (`/public/images/Capacete_fundo.png`) — visível apenas em desktop (`hidden md:flex`)
+- Glow âmbar/azul por trás do capacete via classe `.hero-glow` com `radial-gradient`
+- Linha ECG animada (`stroke-dasharray/offset`, duração 2s) em SVG inline abaixo do título, com espessura 3.5px no mobile
+- Animação de contagem ao carregar: stats `20+` anos e `100+` obras sobem de 0 com easing cúbico via `requestAnimationFrame`
+- Linha de hover deslizante em cards de Obras de Destaque e Acervo Técnico (`.card-linha-hover w-0 group-hover:w-full`)
+- Indicador "Ver obra →" nos cards de Obras de Destaque ao hover — visível apenas ao passar o mouse
+
+### Alterado
+
+- Tipografia migrada de Outfit/Work Sans para **Barlow Condensed** (títulos), **Barlow** (corpo) e **IBM Plex Mono** (dados técnicos) — variáveis CSS mantidas para zero refatoração de componentes (ADR-005)
+- Accent laranja (`#b45309`) substituído globalmente por azul `#1A5CFF` em todas as variáveis, classes e SVGs inline — CTAs, hover, ECG, glow e linha de cards (ADR-006)
+- Visibilidade das linhas do grid blueprint aumentada: `rgba(71, 85, 105, 0.22)` dark / `rgba(51, 65, 85, 0.18)` light
+- Hero migrado de `min-h-screen` para `min-h-dvh` para corrigir espaço excessivo no iOS Safari (barra de endereço não subtrai do `100vh`)
+- Botões CTA do hero reorganizados: "Solicitar Proposta" e "Nossos Serviços" lado a lado com `flex-1` em todos os breakpoints (antes "Nossos Serviços" era `hidden` no mobile)
+- Padding-top do hero ajustado para `103px` (media query `844px` aplica `101px`) via classe `.hero-inner`
+- Grid do hero rebalanceado para `grid-cols-[3fr_2fr]` para aproximar o texto da imagem do capacete
+
+### Removido
+
+- Bloco "Obras em Destaque" dentro da seção `Sobre` — redundante com a seção `ObrasDestaque` já existente na página
+- Botão "Nossos Serviços" oculto no mobile foi reativado (agora aparece lado a lado com "Solicitar Proposta")
+
+---
+
 ## [2026-04-16] — Ajustes de logo na navbar
 
 ### Alterado

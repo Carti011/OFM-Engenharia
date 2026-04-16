@@ -10,6 +10,27 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Dados institucionais, diferenciais e redesign do Acervo Técnico
+
+### Adicionado
+
+- Banner de destaque "Equipamentos 100% próprios" na seção Acervo Técnico — com ícone, borda laranja e texto explicativo do diferencial competitivo
+- Menção a equipamentos próprios no último parágrafo da seção Sobre
+- CREA-SP 5063897008 do Responsável Técnico exibido no rodapé junto ao CNPJ
+
+### Alterado
+
+- Endereço atualizado para Rua Pangaré, 40 — Vila Butantã, São Paulo - SP, 05360-130 nos três pontos onde aparecia (`Contato.tsx`, `Rodape.tsx` lista e barra inferior)
+- Endereço convertido em link clicável apontando para Google Maps em todos os locais
+- Copy da hero e do rodapé: "obras de grande porte" → "obras de pequeno, médio e grande porte"
+- Layout desktop da seção Acervo Técnico reorganizado em três blocos empilhados: (1) Título + Banner lado a lado, (2) Capacidades em 3 colunas, (3) Softwares + Normas em linha — elimina desequilíbrio de altura entre colunas
+
+### Corrigido
+
+- Texto em `data/servicos-detalhados.tsx` (Ensaio de Cilindros Pneumáticos): substituído "a OFM garante resultados" por "os resultados gerados pela OFM são" — remove promessa de resultado da empresa como sujeito
+
+---
+
 ## [2026-04-16] — Correção de links de navegação em sub-rotas
 
 ### Corrigido

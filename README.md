@@ -11,13 +11,13 @@ empresa especializada em instrumentação e análise experimental de estruturas 
 
 ## Stack
 
-| Camada    | Tecnologia                                               |
-| --------- | -------------------------------------------------------- |
-| Framework | Next.js 16 (App Router, `output: 'export'`)              |
-| Linguagem | TypeScript                                               |
-| Estilo    | Tailwind CSS v4                                          |
-| Fontes    | Barlow Condensed + Barlow + IBM Plex Mono (Google Fonts) |
-| Deploy    | Vercel (export estático)                                 |
+| Camada    | Tecnologia                                                    |
+| --------- | ------------------------------------------------------------- |
+| Framework | Next.js 16 (App Router, `output: 'export'`)                   |
+| Linguagem | TypeScript                                                    |
+| Estilo    | Tailwind CSS v4                                               |
+| Fontes    | Outfit (títulos) + Work Sans (corpo) — via `next/font/google` |
+| Deploy    | Vercel (export estático)                                      |
 
 ---
 

@@ -5,12 +5,14 @@ empresa especializada em monitoramento e avaliação de estruturas civis.
 
 **Acesso:** [ofmengenharia.com.br](https://ofmengenharia.com.br)
 
+<img src="docs/home.png" alt="Preview da página inicial" width="600" />
+
 ---
 
 ## Stack
 
 | Camada    | Tecnologia                        |
-|-----------|-----------------------------------|
+| --------- | --------------------------------- |
 | Framework | Next.js 16 (App Router)           |
 | Linguagem | TypeScript                        |
 | Estilo    | Tailwind CSS v4                   |
@@ -21,7 +23,7 @@ empresa especializada em monitoramento e avaliação de estruturas civis.
 
 ## Estrutura
 
-```
+```text
 /app
   layout.tsx       — metadados globais, fontes e configurações
   page.tsx         — composição das seções da página

@@ -10,6 +10,16 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-16] — Correção de links de navegação em sub-rotas
+
+### Corrigido
+
+- Links de navegação na Navbar e no Rodapé usavam âncoras relativas (`#sobre`, `#servicos`, etc.) — em sub-rotas como `/servicos/provas-de-carga` o browser resolvia para `/servicos/provas-de-carga#servicos`, URL inexistente
+- Âncoras corrigidas para absolutas (`/#sobre`, `/#servicos`, etc.) em `Navegacao.tsx` e `Rodape.tsx`
+- Logo da navbar corrigida de `href="#"` para `href="/"` — evita reload indesejado ao clicar estando em sub-rota
+
+---
+
 ## [2026-04-16] — Atualização de e-mails para domínio profissional
 
 ### Alterado

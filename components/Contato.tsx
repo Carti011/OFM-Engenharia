@@ -84,7 +84,7 @@ export default function Contact() {
           ref={header.ref}
           className={`mb-16 ${header.montado ? "reveal-fade-right" : ""} ${header.visivel ? "is-visible" : ""}`}
         >
-          <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+          <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
             Entre em Contato
           </p>
           <h2
@@ -93,7 +93,7 @@ export default function Contact() {
           >
             Solicitar
             <br />
-            <span className="text-(--destaque-laranja)">Proposta</span>
+            <span className="text-(--destaque-azul)">Proposta</span>
           </h2>
         </div>
 

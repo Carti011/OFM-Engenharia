@@ -27,7 +27,7 @@ function NavObra() {
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><polyline points="15 18 9 12 15 6" /></svg>
                 Voltar
               </Link>
-              <Link href="/#contato" className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer">
+              <Link href="/#contato" className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer">
                 Solicitar Proposta
               </Link>
             </div>
@@ -140,7 +140,7 @@ export default function PonteNewtonNavarroPage() {
             </Link>
 
             <div className="flex flex-wrap gap-2 mb-5">
-              <span className="px-3 py-1 bg-(--destaque-laranja)/20 border border-(--destaque-laranja)/40 text-(--destaque-laranja) text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm">
+              <span className="px-3 py-1 bg-(--destaque-azul)/20 border border-(--destaque-azul)/40 text-(--destaque-azul) text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm">
                 Ensaio Estrutural
               </span>
               <span className="px-3 py-1 bg-white/10 border border-white/20 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
@@ -201,7 +201,7 @@ export default function PonteNewtonNavarroPage() {
                 ref={sDescricao.ref}
                 className={`${sDescricao.montado ? "reveal-fade-right" : ""} ${sDescricao.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">Sobre o Ensaio</p>
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">Sobre o Ensaio</p>
                 <h2
                   className="text-2xl md:text-3xl font-black text-(--texto-principal) mb-6 leading-tight"
                   style={{ fontFamily: "var(--font-outfit)" }}
@@ -251,7 +251,7 @@ export default function PonteNewtonNavarroPage() {
                 ref={sFicha.ref}
                 className={`${sFicha.montado ? "reveal-fade-left" : ""} ${sFicha.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">Ficha Técnica</p>
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">Ficha Técnica</p>
                 <h2
                   className="text-2xl md:text-3xl font-black text-(--texto-principal) mb-6 leading-tight"
                   style={{ fontFamily: "var(--font-outfit)" }}
@@ -329,7 +329,7 @@ export default function PonteNewtonNavarroPage() {
               ref={sGaleria.ref}
               className={`mb-10 ${sGaleria.montado ? "reveal-fade-up" : ""} ${sGaleria.visivel ? "is-visible" : ""}`}
             >
-              <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-3">Galeria</p>
+              <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-3">Galeria</p>
               <div className="flex items-end justify-between gap-4">
                 <h2 className="text-2xl md:text-3xl font-black text-(--texto-principal)" style={{ fontFamily: "var(--font-outfit)" }}>
                   Registros do Ensaio
@@ -378,7 +378,7 @@ export default function PonteNewtonNavarroPage() {
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             </div>
-            <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">Precisa instrumentar uma grande estrutura?</p>
+            <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">Precisa instrumentar uma grande estrutura?</p>
             <h2 className="text-3xl md:text-4xl font-black text-(--texto-principal) mb-4 leading-tight" style={{ fontFamily: "var(--font-outfit)" }}>
               Fale com a OFM
             </h2>
@@ -386,7 +386,7 @@ export default function PonteNewtonNavarroPage() {
               Instrumentação completa de pontes e grandes estruturas — células de carga, PT-100, inclinômetros, LVDTs, anemômetros e acelerômetros, do início da construção à inauguração.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/#contato" className="inline-flex items-center gap-2 px-6 py-3 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer">
+              <Link href="/#contato" className="inline-flex items-center gap-2 px-6 py-3 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer">
                 Solicitar Proposta
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6" /></svg>
               </Link>

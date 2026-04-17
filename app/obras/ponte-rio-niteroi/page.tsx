@@ -52,7 +52,7 @@ function NavObra() {
               </Link>
               <Link
                 href="/#contato"
-                className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
+                className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
               </Link>
@@ -180,7 +180,7 @@ export default function PonteRioNiteroiPage() {
             </Link>
 
             <div className="flex flex-wrap gap-2 mb-5">
-              <span className="px-3 py-1 bg-(--destaque-laranja)/20 border border-(--destaque-laranja)/40 text-(--destaque-laranja) text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm">
+              <span className="px-3 py-1 bg-(--destaque-azul)/20 border border-(--destaque-azul)/40 text-(--destaque-azul) text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm">
                 Análise Dinâmica
               </span>
               <span className="px-3 py-1 bg-white/10 border border-white/20 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
@@ -249,7 +249,7 @@ export default function PonteRioNiteroiPage() {
                 ref={sDescricao.ref}
                 className={`${sDescricao.montado ? "reveal-fade-right" : ""} ${sDescricao.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
                   Sobre o Ensaio
                 </p>
                 <h2
@@ -332,7 +332,7 @@ export default function PonteRioNiteroiPage() {
                 ref={sFicha.ref}
                 className={`${sFicha.montado ? "reveal-fade-left" : ""} ${sFicha.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
                   Ficha Técnica
                 </p>
                 <h2
@@ -445,7 +445,7 @@ export default function PonteRioNiteroiPage() {
               ref={sGaleria.ref}
               className={`mb-10 ${sGaleria.montado ? "reveal-fade-up" : ""} ${sGaleria.visivel ? "is-visible" : ""}`}
             >
-              <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-3">
+              <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-3">
                 Galeria
               </p>
               <div className="flex items-end justify-between gap-4">
@@ -517,7 +517,7 @@ export default function PonteRioNiteroiPage() {
               </svg>
             </div>
 
-            <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+            <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
               Precisa de monitoramento dinâmico?
             </p>
             <h2
@@ -533,7 +533,7 @@ export default function PonteRioNiteroiPage() {
             <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href="/#contato"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

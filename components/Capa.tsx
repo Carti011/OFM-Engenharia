@@ -83,7 +83,7 @@ export default function Hero() {
           <div>
             {/* Eyebrow */}
             <p
-              className="text-xs tracking-[0.4em] text-(--destaque-laranja) uppercase font-medium mb-6"
+              className="text-xs tracking-[0.4em] text-(--destaque-azul) uppercase font-medium mb-6"
               style={{
                 fontFamily: "var(--font-work-sans)",
                 ...fadeUp(100),
@@ -147,7 +147,7 @@ export default function Hero() {
             <div className="flex flex-row gap-3" style={fadeUp(500)}>
               <a
                 href="#contato"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white font-bold text-sm sm:text-base rounded-sm transition-colors duration-200 cursor-pointer"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-4 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white font-bold text-sm sm:text-base rounded-sm transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -38,10 +38,10 @@ html.dark {
   --texto-suave: #6b7280;
   --texto-fraco: #4b5563;
 
-  --destaque-azul: #475569;
-  --destaque-azul-hover: #64748b;
-  --destaque-laranja: #1a5cff;
-  --destaque-laranja-hover: #1248cc;
+  --destaque-azul: #1a5cff;
+  --destaque-azul-hover: #1248cc;
+  --destaque-cinza: #475569;
+  --destaque-cinza-hover: #64748b;
 
   --blueprint-15: rgba(71, 85, 105, 0.22);
   --blueprint-30: rgba(71, 85, 105, 0.38);
@@ -72,10 +72,10 @@ html.light {
   --texto-suave: #6b6460;
   --texto-fraco: #7a7470;
 
-  --destaque-azul: #334155;
-  --destaque-azul-hover: #475569;
-  --destaque-laranja: #1248cc;
-  --destaque-laranja-hover: #0e38a8;
+  --destaque-azul: #1248cc;
+  --destaque-azul-hover: #0e38a8;
+  --destaque-cinza: #334155;
+  --destaque-cinza-hover: #475569;
 
   --blueprint-15: rgba(51, 65, 85, 0.18);
   --blueprint-30: rgba(51, 65, 85, 0.32);

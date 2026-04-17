@@ -72,7 +72,7 @@ function NavListagem() {
               </Link>
               <Link
                 href="/#contato"
-                className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
+                className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
               </Link>
@@ -109,7 +109,7 @@ export default function PaginaListaServicos() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,var(--bg-principal)_100%)]" />
         <div className="relative z-10 max-w-5xl mx-auto px-6">
           <p
-            className="text-xs tracking-[0.4em] text-(--destaque-laranja) uppercase font-medium mb-4"
+            className="text-xs tracking-[0.4em] text-(--destaque-azul) uppercase font-medium mb-4"
             style={{ fontFamily: "var(--font-work-sans)" }}
           >
             O que fazemos
@@ -189,9 +189,9 @@ export default function PaginaListaServicos() {
           {/* Ensaios Especiais e Instrumentação */}
           <div>
             <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-8 bg-(--destaque-laranja)" />
+              <div className="h-px w-8 bg-(--destaque-azul)" />
               <span
-                className="text-sm font-bold text-(--destaque-laranja) tracking-widest uppercase"
+                className="text-sm font-bold text-(--destaque-azul) tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-outfit)" }}
               >
                 Ensaios Especiais e Instrumentação
@@ -201,7 +201,7 @@ export default function PaginaListaServicos() {
               {especiais.map((servico) => (
                 <div
                   key={servico.slug}
-                  className="relative overflow-hidden p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-laranja)/40 rounded-sm transition-colors duration-200 cursor-pointer group"
+                  className="relative overflow-hidden p-6 bg-(--bg-cartao) border border-(--borda-principal) hover:border-(--destaque-azul)/40 rounded-sm transition-colors duration-200 cursor-pointer group"
                 >
                   <div className="card-linha-hover w-0 group-hover:w-full" />
                   <Link
@@ -210,7 +210,7 @@ export default function PaginaListaServicos() {
                     aria-label={`Ver serviço: ${servico.titulo}`}
                   />
                   <h3
-                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug group-hover:text-(--destaque-laranja) transition-colors duration-200"
+                    className="text-sm font-bold text-(--texto-principal) mb-3 leading-snug group-hover:text-(--destaque-azul) transition-colors duration-200"
                     style={{ fontFamily: "var(--font-outfit)" }}
                   >
                     {servico.titulo}
@@ -218,7 +218,7 @@ export default function PaginaListaServicos() {
                   <p className="text-xs text-(--texto-suave) leading-relaxed line-clamp-3">
                     {servico.subtitulo}
                   </p>
-                  <div className="mt-4 flex items-center gap-1.5 text-[11px] text-(--destaque-laranja) font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <div className="mt-4 flex items-center gap-1.5 text-[11px] text-(--destaque-azul) font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                     Ver serviço
                     <svg
                       width="11"
@@ -259,7 +259,7 @@ export default function PaginaListaServicos() {
           </p>
           <Link
             href="/#contato"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white font-bold rounded-sm transition-colors duration-200 cursor-pointer"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white font-bold rounded-sm transition-colors duration-200 cursor-pointer"
           >
             Solicitar Proposta
             <svg

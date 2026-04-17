@@ -6,7 +6,7 @@ import Rodape from "@/components/Rodape";
 import BotaoWhatsApp from "@/components/BotaoWhatsApp";
 import BotaoTema from "@/components/BotaoTema";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import type { ServicoDetalhado } from "@/data/servicos-detalhados";
+import type { ServicoDetalhado, BlocoServico } from "@/data/servicos-detalhados";
 
 // ── Navegação ────────────────────────────────────────────────
 function NavServico({ titulo }: { titulo: string }) {
@@ -65,9 +65,211 @@ function NavServico({ titulo }: { titulo: string }) {
   );
 }
 
+// ── Bloco de tipo de serviço (subcomponente com hooks próprios) ──
+function SecaoBloco({
+  bloco,
+  ehAzul,
+  indice,
+  total,
+}: {
+  bloco: BlocoServico;
+  ehAzul: boolean;
+  indice: number;
+  total: number;
+}) {
+  const sSobre = useScrollReveal({ threshold: 0.08 });
+  const sAplicacoes = useScrollReveal({ threshold: 0.06 });
+  const sEquipamentos = useScrollReveal({ threshold: 0.06 });
+  const sNormas = useScrollReveal({ threshold: 0.08 });
+  const sGaleria = useScrollReveal({ threshold: 0.05 });
+
+  const corAcento = ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-laranja)";
+  const bgAcento = ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-laranja)";
+  const bgAcentoSuave = ehAzul ? "bg-(--destaque-azul)/10" : "bg-(--destaque-laranja)/10";
+  const bordaAcento = ehAzul ? "border-(--destaque-azul)/30" : "border-(--destaque-laranja)/30";
+  const ultimoBloco = indice === total - 1;
+
+  return (
+    <div
+      id={bloco.ancora}
+      className={`border-t border-(--borda-principal) ${ultimoBloco ? "" : ""}`}
+    >
+      {/* Cabeçalho do bloco */}
+      <div className={`py-16 md:py-20 ${indice % 2 === 0 ? "bg-(--bg-principal)" : "bg-(--bg-cartao)"}`}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div
+            ref={sSobre.ref}
+            className={`${sSobre.montado ? "reveal-fade-right" : ""} ${sSobre.visivel ? "is-visible" : ""}`}
+          >
+            {/* Indicador numérico + título */}
+            <div className="flex items-start gap-5 mb-8">
+              <div
+                className={`shrink-0 w-10 h-10 flex items-center justify-center rounded-sm border ${bgAcentoSuave} ${bordaAcento} ${corAcento} font-black text-sm`}
+                style={{ fontFamily: "var(--font-outfit)" }}
+              >
+                {String(indice + 1).padStart(2, "0")}
+              </div>
+              <div>
+                <h2
+                  className="text-2xl md:text-3xl font-black text-(--texto-principal) leading-tight mb-2"
+                  style={{ fontFamily: "var(--font-outfit)" }}
+                >
+                  {bloco.titulo}
+                </h2>
+                <p className="text-sm text-(--texto-secundario) leading-relaxed max-w-2xl">
+                  {bloco.subtitulo}
+                </p>
+              </div>
+            </div>
+
+            {/* Parágrafos */}
+            <div className="max-w-3xl space-y-4 pl-15">
+              {bloco.sobre.map((p, i) => (
+                <p key={i} className="text-sm text-(--texto-secundario) leading-relaxed">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Aplicações */}
+      {bloco.aplicacoes && bloco.aplicacoes.length > 0 && (
+        <div className={`py-14 border-t border-(--borda-principal) ${indice % 2 === 0 ? "bg-(--bg-cartao)" : "bg-(--bg-principal)"}`}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div
+              ref={sAplicacoes.ref}
+              className={`${sAplicacoes.montado ? "reveal-fade-up" : ""} ${sAplicacoes.visivel ? "is-visible" : ""}`}
+            >
+              <p className={`text-xs tracking-[0.35em] uppercase font-medium mb-3 ${corAcento}`}>
+                Onde Aplicamos
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {bloco.aplicacoes.map((a, i) => (
+                  <div
+                    key={i}
+                    className={`p-5 border border-(--borda-principal) rounded-sm ${indice % 2 === 0 ? "bg-(--bg-principal)" : "bg-(--bg-cartao)"}`}
+                  >
+                    <div className={`w-1.5 h-1.5 rounded-full mb-4 ${bgAcento}`} />
+                    <h3
+                      className="text-sm font-bold text-(--texto-principal) mb-2 leading-snug"
+                      style={{ fontFamily: "var(--font-outfit)" }}
+                    >
+                      {a.titulo}
+                    </h3>
+                    <p className="text-xs text-(--texto-suave) leading-relaxed">{a.descricao}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Equipamentos */}
+      {bloco.equipamentos && bloco.equipamentos.length > 0 && (
+        <div className={`py-14 border-t border-(--borda-principal) ${indice % 2 === 0 ? "bg-(--bg-principal)" : "bg-(--bg-cartao)"}`}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div
+              ref={sEquipamentos.ref}
+              className={`${sEquipamentos.montado ? "reveal-fade-up" : ""} ${sEquipamentos.visivel ? "is-visible" : ""}`}
+            >
+              <p className={`text-xs tracking-[0.35em] uppercase font-medium mb-3 ${corAcento}`}>
+                Instrumentação
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {bloco.equipamentos.map((e, i) => (
+                  <div
+                    key={i}
+                    className={`p-4 border border-(--borda-principal) rounded-sm ${indice % 2 === 0 ? "bg-(--bg-cartao)" : "bg-(--bg-principal)"}`}
+                  >
+                    <div className={`h-0.5 w-6 mb-4 ${bgAcento}/60`} />
+                    <p className="text-xs font-bold text-(--texto-principal) mb-1 leading-snug">
+                      {e.nome}
+                    </p>
+                    <p className="text-[11px] text-(--texto-suave) leading-relaxed">{e.detalhe}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Normas do bloco */}
+      {bloco.normas && bloco.normas.length > 0 && (
+        <div className={`py-8 border-t border-(--borda-principal) ${indice % 2 === 0 ? "bg-(--bg-cartao)" : "bg-(--bg-principal)"}`}>
+          <div
+            ref={sNormas.ref}
+            className={`max-w-7xl mx-auto px-6 ${sNormas.montado ? "reveal-fade-up" : ""} ${sNormas.visivel ? "is-visible" : ""}`}
+          >
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <span className="text-[11px] text-(--texto-suave) uppercase tracking-[0.25em] shrink-0">
+                Normas aplicáveis
+              </span>
+              <div className="h-px flex-1 bg-(--borda-principal) hidden sm:block" />
+              <div className="flex flex-wrap gap-2">
+                {bloco.normas.map((n, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[11px] font-mono rounded-sm"
+                  >
+                    {n}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Galeria do bloco */}
+      {bloco.galeria && bloco.galeria.length > 0 && (
+        <div className={`py-14 border-t border-(--borda-principal) ${indice % 2 === 0 ? "bg-(--bg-principal)" : "bg-(--bg-cartao)"}`}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div
+              ref={sGaleria.ref}
+              className={`${sGaleria.montado ? "reveal-fade-up" : ""} ${sGaleria.visivel ? "is-visible" : ""}`}
+            >
+              <p className={`text-xs tracking-[0.35em] uppercase font-medium mb-3 ${corAcento}`}>
+                Galeria
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {bloco.galeria.map((item, i) => (
+                  <div
+                    key={i}
+                    className={`relative bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden ${
+                      item.destaque ? "md:col-span-2 h-72 md:h-95" : "h-52"
+                    }`}
+                  >
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                    {item.legenda && (
+                      <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
+                        <p className="text-[11px] text-white/70 tracking-wide">{item.legenda}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Página ───────────────────────────────────────────────────
 export default function PaginaServico({ servico }: { servico: ServicoDetalhado }) {
   const ehAzul = servico.acento === "azul";
+  const temTipos = !!servico.tiposDeServico && servico.tiposDeServico.length > 0;
 
   const sSobre = useScrollReveal({ threshold: 0.1 });
   const sMetricas = useScrollReveal({ threshold: 0.1 });
@@ -75,9 +277,22 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
   const sEquipamentos = useScrollReveal({ threshold: 0.08 });
   const sNormas = useScrollReveal({ threshold: 0.1 });
   const sGaleria = useScrollReveal({ threshold: 0.08 });
-  const sSubsecao = useScrollReveal({ threshold: 0.06 });
   const sObras = useScrollReveal({ threshold: 0.08 });
   const sCta = useScrollReveal({ threshold: 0.1 });
+  const sNav = useScrollReveal({ threshold: 0.1 });
+
+  const corAcento = ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-laranja)";
+  const bgAcento = ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-laranja)";
+
+  // obras agregadas de todos os tipos (quando tiposDeServico presente)
+  const obrasAgregadas = temTipos
+    ? (servico.tiposDeServico ?? [])
+        .flatMap((t) => t.obras ?? [])
+        .filter(
+          (obra, idx, arr) =>
+            arr.findIndex((o) => o.titulo === obra.titulo) === idx
+        )
+    : servico.obras;
 
   return (
     <>
@@ -86,7 +301,6 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
 
         {/* ── HERO ────────────────────────────────────────── */}
         {servico.imagemHero ? (
-          /* Hero com foto */
           <section className="relative min-h-[65vh] flex items-end overflow-hidden">
             <Image
               src={servico.imagemHero}
@@ -135,7 +349,6 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
             </div>
           </section>
         ) : (
-          /* Hero sem foto — blueprint grid */
           <section className="relative pt-40 pb-20 bg-(--bg-secao) border-b border-(--borda-principal) overflow-hidden">
             <div
               className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -194,11 +407,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
               {servico.metricas.map((m, i) => (
                 <div
                   key={i}
-                  className={`py-8 px-6 flex flex-col gap-1 ${
-                    i < 3 ? "border-r border-(--borda-principal)/60" : ""
-                  } ${
-                    i >= 2 ? "border-t md:border-t-0 border-(--borda-principal)/60" : ""
-                  }`}
+                  className={`py-8 px-6 flex flex-col gap-1 ${i < 3 ? "border-r border-(--borda-principal)/60" : ""} ${i >= 2 ? "border-t md:border-t-0 border-(--borda-principal)/60" : ""}`}
                 >
                   <div className="flex items-baseline gap-1">
                     <span
@@ -222,16 +431,14 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
           </div>
         </section>
 
-        {/* ── SOBRE ────────────────────────────────────────── */}
+        {/* ── SOBRE (intro) ────────────────────────────────── */}
         <section className="py-20 md:py-28 bg-(--bg-principal)">
           <div className="max-w-7xl mx-auto px-6">
             <div
               ref={sSobre.ref}
               className={`max-w-3xl ${sSobre.montado ? "reveal-fade-right" : ""} ${sSobre.visivel ? "is-visible" : ""}`}
             >
-              <p
-                className={`text-xs tracking-[0.35em] uppercase font-medium mb-4 ${ehAzul ? "text-(--destaque-laranja)" : "text-(--destaque-laranja)"}`}
-              >
+              <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
                 Sobre o Serviço
               </p>
               <h2
@@ -251,8 +458,53 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
           </div>
         </section>
 
-        {/* ── APLICAÇÕES ───────────────────────────────────── */}
-        {servico.aplicacoes.length > 0 && (
+        {/* ── NAVEGAÇÃO POR TIPOS (quando tiposDeServico presente) ── */}
+        {temTipos && (
+          <section className="bg-(--bg-cartao) border-y border-(--borda-principal) sticky top-[72px] z-40">
+            <div
+              ref={sNav.ref}
+              className={`max-w-7xl mx-auto px-6 ${sNav.montado ? "reveal-fade-up" : ""} ${sNav.visivel ? "is-visible" : ""}`}
+            >
+              <div className="flex items-center gap-1 overflow-x-auto py-3 no-scrollbar">
+                <span className="text-[10px] text-(--texto-fraco) uppercase tracking-[0.25em] shrink-0 mr-3">
+                  Tipos
+                </span>
+                {servico.tiposDeServico!.map((tipo, i) => (
+                  <a
+                    key={tipo.ancora}
+                    href={`#${tipo.ancora}`}
+                    className={`shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-sm border transition-colors duration-200 cursor-pointer ${
+                      ehAzul
+                        ? "border-(--destaque-azul)/30 text-(--destaque-azul) hover:bg-(--destaque-azul)/10"
+                        : "border-(--destaque-laranja)/30 text-(--destaque-laranja) hover:bg-(--destaque-laranja)/10"
+                    }`}
+                  >
+                    <span className="opacity-50 mr-1.5">{String(i + 1).padStart(2, "0")}</span>
+                    {tipo.titulo}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── TIPOS DE SERVIÇO ─────────────────────────────── */}
+        {temTipos && (
+          <div>
+            {servico.tiposDeServico!.map((bloco, i) => (
+              <SecaoBloco
+                key={bloco.ancora}
+                bloco={bloco}
+                ehAzul={ehAzul}
+                indice={i}
+                total={servico.tiposDeServico!.length}
+              />
+            ))}
+          </div>
+        )}
+
+        {/* ── APLICAÇÕES (serviços sem tiposDeServico) ─────── */}
+        {!temTipos && servico.aplicacoes.length > 0 && (
           <section className="py-16 bg-(--bg-cartao) border-y border-(--borda-principal)">
             <div className="max-w-7xl mx-auto px-6">
               <div
@@ -270,22 +522,15 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {servico.aplicacoes.map((a, i) => (
-                    <div
-                      key={i}
-                      className="p-5 bg-(--bg-principal) border border-(--borda-principal) rounded-sm"
-                    >
-                      <div
-                        className={`w-1.5 h-1.5 rounded-full mb-4 ${ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-laranja)"}`}
-                      />
+                    <div key={i} className="p-5 bg-(--bg-principal) border border-(--borda-principal) rounded-sm">
+                      <div className={`w-1.5 h-1.5 rounded-full mb-4 ${bgAcento}`} />
                       <h3
                         className="text-sm font-bold text-(--texto-principal) mb-2 leading-snug"
                         style={{ fontFamily: "var(--font-outfit)" }}
                       >
                         {a.titulo}
                       </h3>
-                      <p className="text-xs text-(--texto-suave) leading-relaxed">
-                        {a.descricao}
-                      </p>
+                      <p className="text-xs text-(--texto-suave) leading-relaxed">{a.descricao}</p>
                     </div>
                   ))}
                 </div>
@@ -294,8 +539,8 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
           </section>
         )}
 
-        {/* ── EQUIPAMENTOS ─────────────────────────────────── */}
-        {servico.equipamentos.length > 0 && (
+        {/* ── EQUIPAMENTOS (serviços sem tiposDeServico) ───── */}
+        {!temTipos && servico.equipamentos.length > 0 && (
           <section className="py-20 bg-(--bg-principal)">
             <div className="max-w-7xl mx-auto px-6">
               <div
@@ -313,19 +558,10 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   {servico.equipamentos.map((e, i) => (
-                    <div
-                      key={i}
-                      className="p-4 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm group hover:border-(--destaque-azul)/30 transition-colors duration-200"
-                    >
-                      <div
-                        className={`h-0.5 w-6 mb-4 ${ehAzul ? "bg-(--destaque-azul)/60" : "bg-(--destaque-laranja)/60"}`}
-                      />
-                      <p className="text-xs font-bold text-(--texto-principal) mb-1 leading-snug">
-                        {e.nome}
-                      </p>
-                      <p className="text-[11px] text-(--texto-suave) leading-relaxed">
-                        {e.detalhe}
-                      </p>
+                    <div key={i} className="p-4 bg-(--bg-cartao) border border-(--borda-principal) rounded-sm">
+                      <div className={`h-0.5 w-6 mb-4 ${bgAcento}/60`} />
+                      <p className="text-xs font-bold text-(--texto-principal) mb-1 leading-snug">{e.nome}</p>
+                      <p className="text-[11px] text-(--texto-suave) leading-relaxed">{e.detalhe}</p>
                     </div>
                   ))}
                 </div>
@@ -334,8 +570,8 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
           </section>
         )}
 
-        {/* ── NORMAS ───────────────────────────────────────── */}
-        {servico.normas.length > 0 && (
+        {/* ── NORMAS GERAIS (serviços sem tiposDeServico) ──── */}
+        {!temTipos && servico.normas.length > 0 && (
           <section className="py-10 bg-(--bg-cartao) border-y border-(--borda-principal)">
             <div
               ref={sNormas.ref}
@@ -348,10 +584,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 <div className="h-px flex-1 bg-(--borda-principal) hidden sm:block" />
                 <div className="flex flex-wrap gap-2">
                   {servico.normas.map((n, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[11px] font-mono rounded-sm"
-                    >
+                    <span key={i} className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[11px] font-mono rounded-sm">
                       {n}
                     </span>
                   ))}
@@ -361,8 +594,8 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
           </section>
         )}
 
-        {/* ── GALERIA ──────────────────────────────────────── */}
-        {servico.galeria && servico.galeria.length > 0 && (
+        {/* ── GALERIA (serviços sem tiposDeServico) ────────── */}
+        {!temTipos && servico.galeria && servico.galeria.length > 0 && (
           <section className="py-20 bg-(--bg-principal)">
             <div className="max-w-7xl mx-auto px-6">
               <div
@@ -388,18 +621,10 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                         item.destaque ? "md:col-span-2 h-72 md:h-95" : "h-52"
                       }`}
                     >
-                      <Image
-                        src={item.src}
-                        alt={item.alt}
-                        fill
-                        className="object-cover"
-                        unoptimized
-                      />
+                      <Image src={item.src} alt={item.alt} fill className="object-cover" unoptimized />
                       {item.legenda && (
                         <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
-                          <p className="text-[11px] text-white/70 tracking-wide">
-                            {item.legenda}
-                          </p>
+                          <p className="text-[11px] text-white/70 tracking-wide">{item.legenda}</p>
                         </div>
                       )}
                     </div>
@@ -410,74 +635,32 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
           </section>
         )}
 
-        {/* ── SUBSEÇÃO (ex: ensaio de componentes) ─────────── */}
-        {servico.subsecao && (
-          <section className="py-20 md:py-28 bg-(--bg-cartao) border-t border-(--borda-principal)">
-            <div className="max-w-7xl mx-auto px-6">
-              <div
-                ref={sSubsecao.ref}
-                className={`${sSubsecao.montado ? "reveal-fade-up" : ""} ${sSubsecao.visivel ? "is-visible" : ""}`}
-              >
-                {/* Cabeçalho da subseção */}
-                <div className="max-w-3xl mb-12">
-                  <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
-                    Ensaio Complementar
-                  </p>
-                  <h2
-                    className="text-2xl md:text-3xl font-black text-(--texto-principal) mb-5 leading-tight"
-                    style={{ fontFamily: "var(--font-outfit)" }}
-                  >
-                    {servico.subsecao.titulo}
-                  </h2>
-                  <p className="text-sm text-(--texto-secundario) leading-relaxed">
-                    {servico.subsecao.subtitulo}
-                  </p>
-                </div>
-
-                {/* Parágrafos */}
-                <div className="max-w-3xl space-y-5 mb-14">
-                  {servico.subsecao.sobre.map((p, i) => (
-                    <p key={i} className="text-sm text-(--texto-secundario) leading-relaxed">
-                      {p}
-                    </p>
+        {/* ── NORMAS GERAIS (serviços COM tiposDeServico — resumo no final) ── */}
+        {temTipos && servico.normas.length > 0 && (
+          <section className="py-10 bg-(--bg-cartao) border-y border-(--borda-principal)">
+            <div
+              ref={sNormas.ref}
+              className={`max-w-7xl mx-auto px-6 ${sNormas.montado ? "reveal-fade-up" : ""} ${sNormas.visivel ? "is-visible" : ""}`}
+            >
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                <span className="text-[11px] text-(--texto-suave) uppercase tracking-[0.25em] shrink-0">
+                  Normas aplicáveis
+                </span>
+                <div className="h-px flex-1 bg-(--borda-principal) hidden sm:block" />
+                <div className="flex flex-wrap gap-2">
+                  {servico.normas.map((n, i) => (
+                    <span key={i} className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-etiqueta) text-(--texto-suave) text-[11px] font-mono rounded-sm">
+                      {n}
+                    </span>
                   ))}
                 </div>
-
-                {/* Galeria da subseção */}
-                {servico.subsecao.galeria && servico.subsecao.galeria.length > 0 && (
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {servico.subsecao.galeria.map((item, i) => (
-                      <div
-                        key={i}
-                        className={`relative bg-(--bg-elemento) border border-(--borda-principal) rounded-sm overflow-hidden ${
-                          item.destaque ? "md:col-span-2 h-72 md:h-95" : "h-52"
-                        }`}
-                      >
-                        <Image
-                          src={item.src}
-                          alt={item.alt}
-                          fill
-                          className="object-cover"
-                          unoptimized
-                        />
-                        {item.legenda && (
-                          <div className="absolute bottom-0 left-0 right-0 p-3 bg-linear-to-t from-black/70 to-transparent">
-                            <p className="text-[11px] text-white/70 tracking-wide">
-                              {item.legenda}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             </div>
           </section>
         )}
 
         {/* ── OBRAS RELACIONADAS ────────────────────────────── */}
-        {servico.obras.length > 0 && (
+        {obrasAgregadas.length > 0 && (
           <section className="py-20 bg-(--bg-principal)">
             <div className="max-w-7xl mx-auto px-6">
               <div
@@ -494,7 +677,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                   Obras Relacionadas
                 </h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {servico.obras.map((o, i) => {
+                  {obrasAgregadas.map((o, i) => {
                     const conteudo = (
                       <>
                         <div className="card-linha-hover w-0 group-hover:w-full" />
@@ -524,9 +707,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                     );
 
                     const classeBase = `relative group bg-(--bg-cartao) border border-(--borda-principal) rounded-sm overflow-hidden transition-colors duration-200 ${
-                      o.slug
-                        ? "hover:border-(--destaque-azul)/30 cursor-pointer"
-                        : "cursor-default"
+                      o.slug ? "hover:border-(--destaque-azul)/30 cursor-pointer" : "cursor-default"
                     }`;
 
                     return o.slug ? (
@@ -551,9 +732,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
             ref={sCta.ref}
             className={`max-w-3xl mx-auto px-6 text-center ${sCta.montado ? "reveal-fade-up" : ""} ${sCta.visivel ? "is-visible" : ""}`}
           >
-            <div
-              className={`inline-flex items-center justify-center w-12 h-12 bg-(--bg-elevado) border border-(--borda-principal) rounded-sm mb-6 ${ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-laranja)"}`}
-            >
+            <div className={`inline-flex items-center justify-center w-12 h-12 bg-(--bg-elevado) border border-(--borda-principal) rounded-sm mb-6 ${corAcento}`}>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>

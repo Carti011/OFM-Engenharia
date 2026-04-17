@@ -241,35 +241,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Mapeamento de pontos", detalhe: "Posicionamento por análise prévia" },
         ],
         normas: ["ABNT NBR 6118", "ABNT NBR 14931", "ABNT NBR 12655"],
-        galeria: [
-          {
-            src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-02.png",
-            alt: "LVDT instalado na viga para monitoramento de deslocamentos",
-            legenda: "LVDT fixado na viga principal — medição de flechas durante o enchimento",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-01.png",
-            alt: "Strain gages instalados na estrutura do reservatório",
-            legenda: "Extensômetros instalados na face inferior da viga — monitoramento de deformações",
-          },
-          {
-            src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-03.png",
-            alt: "Sistema de aquisição multicanal conectado aos sensores",
-            legenda: "Sistema de aquisição com múltiplos canais conectados simultaneamente",
-          },
-          {
-            src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-06.png",
-            alt: "Laptop com dados de aquisição em tempo real durante o ensaio",
-            legenda: "Monitoramento em tempo real dos dados durante o enchimento com água",
-          },
-          {
-            src: "/images/Servicos/provas-de-carga-hidraulica/Prova de Carga Hidráulica e Análise de Deformações Estruturais-04.png",
-            alt: "Diagrama de posicionamento dos extensômetros no reservatório",
-            legenda:
-              "Planta de localização dos extensômetros — posicionamento definido por análise estrutural",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
 
@@ -314,35 +286,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Cargas Calibradas", detalhe: "Aplicação controlada por etapas" },
         ],
         normas: ["ABNT NBR 14762", "ABNT NBR 8800", "FEM 10.2.02"],
-        galeria: [
-          {
-            src: "/images/Servicos/porta-paletes/porta-paletes-04.png",
-            alt: "LVDT instalado na longarina azul para medição de deflexão",
-            legenda: "LVDT posicionado na longarina — medição da deflexão durante o carregamento progressivo",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/porta-paletes/porta-paletes-05.png",
-            alt: "LVDT em ensaio de fábrica com estrutura laranja antes da liberação",
-            legenda: "Ensaio em fábrica — LVDT na estrutura antes da liberação para uso comercial",
-          },
-          {
-            src: "/images/Servicos/porta-paletes/porta-paletes-01.png",
-            alt: "Sistema de aquisição instalado em campo durante ensaio em supermercado",
-            legenda: "Aquisição em campo — sistema multicanal durante ensaio em estrutura instalada",
-          },
-          {
-            src: "/images/Servicos/porta-paletes/porta-paletes-02.png",
-            alt: "Strain gage biaxial instalado na longarina metálica",
-            legenda:
-              "Strain gage biaxial fixado na longarina — monitoramento de deformações nas direções principais",
-          },
-          {
-            src: "/images/Servicos/porta-paletes/porta-paletes-03.png",
-            alt: "LVDT sob longarina vermelha medindo deflexão vertical",
-            legenda: "LVDT sob a longarina — medição precisa da deflexão vertical sob carga",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
 
@@ -364,33 +308,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Sistema Multicanal", detalhe: "Leitura simultânea de todos os sensores" },
         ],
         normas: ["ABNT NBR 14762", "ABNT NBR 8800"],
-        galeria: [
-          {
-            src: "/images/Servicos/porta-paletes/bracos-porta-paletes-01.png",
-            alt: "Bancada de ensaio com célula de carga e LVDT posicionados no braço de porta-paletes",
-            legenda:
-              "Bancada de ensaio — célula de carga e LVDT posicionados para aplicação e medição de carga no braço",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/porta-paletes/bracos-porta-paletes-02.png",
-            alt: "Sistema de aquisição de dados multicanal conectado aos sensores em bancada",
-            legenda:
-              "Sistema de aquisição multicanal — leitura simultânea de todos os sensores durante o ensaio",
-          },
-          {
-            src: "/images/Servicos/porta-paletes/bracos-porta-paletes-03.png",
-            alt: "Célula de carga calibrada fixada no ponto de aplicação de carga do braço",
-            legenda:
-              "Célula de carga calibrada — controle preciso da força aplicada ao braço durante cada etapa",
-          },
-          {
-            src: "/images/Servicos/porta-paletes/bracos-porta-paletes-04.png",
-            alt: "Strain gage instalado no braço metálico para medição de deformação específica",
-            legenda:
-              "Strain gage fixado no braço — monitoramento das deformações nos pontos de maior solicitação",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
     ],
@@ -528,7 +446,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Ensaios Industriais",
     categoriaLabel: "Ensaios Especiais e Instrumentação",
     acento: "laranja",
-    imagemHero: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-03.png",
+    // imagemHero: "",
     subtitulo:
       "Verificação experimental de componentes, soldas, instrumentos de medição e sistemas de segurança industrial — ensaios rastreáveis com laudo técnico para controle de qualidade e certificação.",
     sobre: [
@@ -599,24 +517,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Sistema de Aquisição", detalhe: "Tempo real, multicanal" },
         ],
         normas: ["ABNT NBR ISO 6358", "ISO 15552", "ASTM E8"],
-        galeria: [
-          {
-            src: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-04.png",
-            alt: "Bancada de ensaio com cilindro pneumático montado e haste estendida",
-            legenda: "Setup completo do ensaio — cilindro pneumático montado na bancada com haste em posição de trabalho",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-01.png",
-            alt: "Strain gage instalado no corpo do cilindro pneumático",
-            legenda: "Strain gage fixado no cilindro — monitoramento de deformações durante os ciclos de esforço",
-          },
-          {
-            src: "/images/Servicos/ensaios-industriais/ensaio-cilindros-pneumaticos-02.png",
-            alt: "Sensor de deslocamento acoplado ao fixture de torque",
-            legenda: "Sensor de deslocamento calibrado no fixture — medição da variação angular durante o ensaio de torque",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
 
@@ -705,29 +606,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Sistema de Aquisição", detalhe: "Registro simultâneo de força e deformação" },
         ],
         normas: ["AWS D1.1/D1.1M", "ABNT NBR 6492", "ABNT NBR 8800"],
-        galeria: [
-          {
-            src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-03.png",
-            alt: "Macaco hidráulico com célula de carga acoplado a barra de ancoragem sob laje de concreto armado",
-            legenda: "Setup do ensaio — macaco hidráulico e célula de carga aplicando carga de tração na barra de ancoragem",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-01.png",
-            alt: "Engenheiro com capacete vermelho acompanhando leitura do sistema de aquisição em campo",
-            legenda: "Monitoramento em tempo real — operador acompanha as leituras de força e deformação durante o ensaio",
-          },
-          {
-            src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-02.png",
-            alt: "Sensor e cabos de instrumentação fixados na face inferior de viga metálica",
-            legenda: "Instrumentação na viga — sensor posicionado na face inferior para medição durante o carregamento",
-          },
-          {
-            src: "/images/Servicos/arrancamento-soldas/arrancamento-soldas-04.png",
-            alt: "Soldador realizando solda em viga metálica com faíscas visíveis",
-            legenda: "Execução da solda — registro do processo de soldagem antes da verificação experimental",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
 
@@ -771,24 +650,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Software de Análise", detalhe: "Mapeamento térmico e geração de relatórios" },
         ],
         normas: ["ABNT NBR 9441", "ABNT NBR 17240", "IT-14 CBPMESP"],
-        galeria: [
-          {
-            src: "/images/Servicos/monitoramento-termico/monitoramento-termico-04.png",
-            alt: "Plataforma elevatória posicionando sensores PT100 na estrutura metálica do teto",
-            legenda: "Instalação dos sensores PT100 na estrutura do teto — posicionamento estratégico por plataforma elevatória",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/monitoramento-termico/monitoramento-termico-02.png",
-            alt: "Incêndio controlado durante ensaio de fuga de fumaça no hangar",
-            legenda: "Fogo controlado durante o ensaio — simulação das condições reais de incêndio",
-          },
-          {
-            src: "/images/Servicos/monitoramento-termico/monitoramento-termico-03.png",
-            alt: "Sensor PT100 — termorresistor de alta precisão utilizado no monitoramento",
-            legenda: "Sensor PT100 — termorresistor com blindagem para medição de temperatura em campo",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
     ],
@@ -914,19 +776,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Software de Análise Modal", detalhe: "Identificação de frequências e modos" },
         ],
         normas: ["ISO 10816", "ISO 20816", "ABNT NBR 6118"],
-        galeria: [
-          {
-            src: "/images/Servicos/analise-de-vibracao/analise-vibracao-01.png",
-            alt: "Setup completo do ensaio com sistema de aquisição multicanal e laptop em campo",
-            legenda: "Setup em campo — sistema de aquisição multicanal com processamento espectral em tempo real",
-            destaque: true,
-          },
-          {
-            src: "/images/Servicos/analise-de-vibracao/analise-vibracao-02.png",
-            alt: "Acelerômetro instalado na base metálica do equipamento",
-            legenda: "Acelerômetro posicionado na base estrutural — separação das componentes de vibração",
-          },
-        ],
+        galeria: [],
         obras: [],
       },
     ],

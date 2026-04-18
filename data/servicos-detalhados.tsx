@@ -729,7 +729,39 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Software de Análise Modal", detalhe: "Identificação de frequências e amortecimentos" },
         ],
         normas: ["ABNT NBR 6118", "ABNT NBR 7188", "ISO 10137", "AISC Design Guide 11"],
-        galeria: [],
+        galeria: [
+          {
+            src: "/images/Obras/Ponte Rio–Niterói/destaque.jpg",
+            alt: "Vista aérea da Ponte Rio-Niterói durante ensaio de análise dinâmica",
+            legenda: "Ponte Rio–Niterói — maior ponte do Brasil, com 13,3 km de extensão sobre a Baía de Guanabara",
+            destaque: true,
+          },
+          {
+            src: "/images/Obras/Ponte Rio–Niterói/Capa.jpg",
+            alt: "Equipe OFM realizando instrumentação na Ponte Rio-Niterói",
+            legenda: "Instalação dos acelerômetros Dytran nos pontos de medição durante a aferição dos ADS",
+          },
+          {
+            src: "/images/Obras/Ponte Rio–Niterói/20231212_084526.jpg",
+            alt: "Sistema de aquisição Lynx ADS2002 instalado na ponte durante o ensaio",
+            legenda: "Sistema Lynx ADS2002 operando a 1024 Hz — aquisição multicanal em tempo real na ponte",
+          },
+          {
+            src: "/images/Obras/Ponte Rio–Niterói/20240306_120934.jpg",
+            alt: "Acelerômetro instalado na estrutura da Ponte Rio-Niterói",
+            legenda: "Acelerômetro posicionado na estrutura — medição das componentes de vibração sob tráfego",
+          },
+          {
+            src: "/images/Obras/Ponte Rio–Niterói/TimePhoto_20240729_102052.jpg",
+            alt: "Equipe de instrumentação trabalhando na Ponte Rio-Niterói",
+            legenda: "Equipe OFM em campo durante a aferição dos Atenuadores Dinâmicos Sincronizados (ADS)",
+          },
+          {
+            src: "/images/Obras/Ponte Rio–Niterói/TimePhoto_20240729_102058.jpg",
+            alt: "Detalhes da instrumentação e ensaio dinâmico na Ponte Rio-Niterói",
+            legenda: "Registro do ensaio — análise de frequências naturais e amortecimentos da estrutura",
+          },
+        ],
         obras: [
           { titulo: "Ponte Rio–Niterói", local: "Rio de Janeiro, RJ", tipo: "Análise Dinâmica", slug: "ponte-rio-niteroi" },
           { titulo: "The Town 2025", local: "São Paulo, SP", tipo: "Estrutura Temporária", slug: "the-town-2025" },

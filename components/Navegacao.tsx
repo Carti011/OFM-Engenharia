@@ -66,7 +66,7 @@ export default function Navbar() {
               <BotaoTema />
               <a
                 href="/#contato"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
               </a>
@@ -115,7 +115,7 @@ export default function Navbar() {
                   <a
                     href="/#contato"
                     onClick={() => setMenuAberto(false)}
-                    className="inline-flex items-center px-4 py-2 bg-(--destaque-laranja) text-white text-sm font-semibold rounded-xl cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-(--destaque-azul) text-white text-sm font-semibold rounded-xl cursor-pointer"
                   >
                     Solicitar Proposta
                   </a>

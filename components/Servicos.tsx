@@ -73,7 +73,7 @@ const servicos = [
   },
   {
     slug: "ensaios-industriais",
-    acento: "laranja" as const,
+    acento: "azul" as const,
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="5" y="9" width="3" height="11" rx="0" />
@@ -107,19 +107,30 @@ export default function Servicos() {
         {/* Header */}
         <div
           ref={header.ref}
-          className={`mb-16 ${header.montado ? "reveal-fade-up" : ""} ${header.visivel ? "is-visible" : ""}`}
+          className={`mb-16 flex flex-col sm:flex-row sm:items-end justify-between gap-6 ${header.montado ? "reveal-fade-up" : ""} ${header.visivel ? "is-visible" : ""}`}
         >
-          <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
-            O que fazemos
-          </p>
-          <h2
-            className="text-4xl md:text-5xl font-black text-(--texto-principal) leading-tight"
-            style={{ fontFamily: "var(--font-outfit)" }}
+          <div>
+            <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
+              O que fazemos
+            </p>
+            <h2
+              className="text-4xl md:text-5xl font-black text-(--texto-principal) leading-tight"
+              style={{ fontFamily: "var(--font-outfit)" }}
+            >
+              Serviços e
+              <br />
+              <span className="text-(--destaque-azul)">Especialidades</span>
+            </h2>
+          </div>
+          <Link
+            href="/servicos"
+            className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer"
           >
-            Serviços e
-            <br />
-            <span className="text-(--destaque-azul)">Especialidades</span>
-          </h2>
+            Ver todos os serviços
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </Link>
         </div>
 
         {/* Grid de serviços */}
@@ -129,15 +140,15 @@ export default function Servicos() {
             const corBorda =
               servico.acento === "azul"
                 ? "hover:border-(--destaque-azul)/40"
-                : "hover:border-(--destaque-laranja)/40";
+                : "hover:border-(--destaque-azul)/40";
             const corIcone =
               servico.acento === "azul"
                 ? "text-(--destaque-azul)"
-                : "text-(--destaque-laranja)";
+                : "text-(--destaque-azul)";
             const corVer =
               servico.acento === "azul"
                 ? "text-(--destaque-azul)"
-                : "text-(--destaque-laranja)";
+                : "text-(--destaque-azul)";
             return (
               <div
                 key={servico.slug}

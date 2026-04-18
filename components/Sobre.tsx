@@ -53,7 +53,7 @@ export default function About() {
           <div>
             <p
               ref={label.ref}
-              className={`text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4 ${label.montado ? "reveal-fade-right" : ""} ${label.visivel ? "is-visible" : ""}`}
+              className={`text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4 ${label.montado ? "reveal-fade-right" : ""} ${label.visivel ? "is-visible" : ""}`}
             >
               Nossa História
             </p>
@@ -105,7 +105,7 @@ export default function About() {
           {/* Direita: histórico */}
           <div className="relative">
             {/* Linha vertical */}
-            <div className="absolute left-6 top-3 bottom-3 w-px bg-linear-to-b from-(--destaque-azul) via-(--destaque-laranja) to-transparent" />
+            <div className="absolute left-6 top-3 bottom-3 w-px bg-linear-to-b from-(--destaque-azul) via-(--destaque-azul) to-transparent" />
 
             <div className="space-y-10">
               {historico.map((etapa, i) => {

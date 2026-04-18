@@ -67,7 +67,7 @@ export default function TechnicalScope() {
             ref={header.ref}
             className={`${header.montado ? "reveal-fade-up" : ""} ${header.visivel ? "is-visible" : ""}`}
           >
-            <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+            <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
               Capacidade Técnica
             </p>
             <h2
@@ -82,11 +82,11 @@ export default function TechnicalScope() {
 
           <div
             ref={destaque.ref}
-            className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 h-full bg-(--bg-cartao) border border-(--destaque-laranja)/30 rounded-sm ${destaque.montado ? "reveal-fade-up" : ""} ${destaque.visivel ? "is-visible" : ""}`}
+            className={`flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 h-full bg-(--bg-cartao) border border-(--destaque-azul)/30 rounded-sm ${destaque.montado ? "reveal-fade-up" : ""} ${destaque.visivel ? "is-visible" : ""}`}
             style={{ transitionDelay: "100ms" }}
           >
-            <div className="w-10 h-10 bg-(--destaque-laranja)/10 border border-(--destaque-laranja)/30 rounded-sm flex items-center justify-center shrink-0">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--destaque-laranja)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <div className="w-10 h-10 bg-(--destaque-azul)/10 border border-(--destaque-azul)/30 rounded-sm flex items-center justify-center shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--destaque-azul)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             </div>

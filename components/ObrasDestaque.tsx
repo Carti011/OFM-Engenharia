@@ -118,7 +118,7 @@ export default function Portfolio() {
             ref={tituloEsq.ref}
             className={`${tituloEsq.montado ? "reveal-fade-right" : ""} ${tituloEsq.visivel ? "is-visible" : ""}`}
           >
-            <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+            <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
               Portfólio
             </p>
             <h2
@@ -142,11 +142,11 @@ export default function Portfolio() {
             {/* Legenda */}
             <div className="flex items-center gap-4 text-[10px] tracking-widest uppercase">
               <span className="flex items-center gap-1.5 text-(--texto-fraco)">
-                <span className="w-2 h-2 rounded-none bg-(--destaque-laranja) inline-block" />
+                <span className="w-2 h-2 rounded-none bg-(--destaque-azul) inline-block" />
                 OFM Engenharia
               </span>
               <span className="flex items-center gap-1.5 text-(--texto-fraco)">
-                <span className="w-2 h-2 rounded-none bg-(--destaque-azul)/60 inline-block" />
+                <span className="w-2 h-2 rounded-none bg-(--destaque-cinza) inline-block" />
                 Acervo do Engenheiro
               </span>
             </div>
@@ -162,7 +162,7 @@ export default function Portfolio() {
               <article
                 key={i}
                 ref={ref}
-                className={`relative group bg-(--bg-cartao) border rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${obra.acervo ? "border-(--borda-principal) hover:border-(--destaque-azul)/20" : "border-(--borda-principal) hover:border-(--destaque-laranja)/30"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
+                className={`relative group bg-(--bg-cartao) border rounded-sm overflow-hidden transition-colors duration-200 ${obra.slug ? "cursor-pointer" : "cursor-default"} ${obra.acervo ? "border-(--borda-principal) hover:border-(--destaque-azul)/20" : "border-(--borda-principal) hover:border-(--destaque-azul)/30"} ${montado ? "reveal-scale" : ""} ${visivel ? "is-visible" : ""}`}
                 style={{ transitionDelay: `${delay}ms` }}
               >
                 <div className="card-linha-hover w-0 group-hover:w-full" />
@@ -241,7 +241,7 @@ export default function Portfolio() {
 
                   {/* Badge de tipo (sempre visível) */}
                   <span
-                    className={`absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-[10px] font-bold tracking-wide uppercase rounded-sm ${obra.acervo ? "text-(--destaque-azul)/70" : "text-(--destaque-laranja)"}`}
+                    className={`absolute top-3 right-3 px-2 py-1 bg-(--bg-principal)/80 text-[10px] font-bold tracking-wide uppercase rounded-sm ${obra.acervo ? "text-(--destaque-cinza)" : "text-(--destaque-azul)"}`}
                   >
                     {obra.tipo}
                   </span>
@@ -254,8 +254,8 @@ export default function Portfolio() {
                       {obra.local}
                     </p>
                     {obra.acervo && (
-                      <span className="flex items-center gap-1 text-[9px] tracking-widest uppercase text-(--destaque-azul)/60 font-medium">
-                        <span className="w-1.5 h-1.5 bg-(--destaque-azul)/60 inline-block" />
+                      <span className="flex items-center gap-1 text-[9px] tracking-widest uppercase text-(--destaque-cinza) font-medium">
+                        <span className="w-1.5 h-1.5 bg-(--destaque-cinza) inline-block" />
                         Acervo Técnico
                       </span>
                     )}

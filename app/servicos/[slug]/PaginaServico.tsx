@@ -53,7 +53,7 @@ function NavServico({ titulo }: { titulo: string }) {
               </Link>
               <Link
                 href="/#contato"
-                className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
+                className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
               </Link>
@@ -83,10 +83,10 @@ function SecaoBloco({
   const sNormas = useScrollReveal({ threshold: 0.08 });
   const sGaleria = useScrollReveal({ threshold: 0.05 });
 
-  const corAcento = ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-laranja)";
-  const bgAcento = ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-laranja)";
-  const bgAcentoSuave = ehAzul ? "bg-(--destaque-azul)/10" : "bg-(--destaque-laranja)/10";
-  const bordaAcento = ehAzul ? "border-(--destaque-azul)/30" : "border-(--destaque-laranja)/30";
+  const corAcento = ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-azul)";
+  const bgAcento = ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-azul)";
+  const bgAcentoSuave = ehAzul ? "bg-(--destaque-azul)/10" : "bg-(--destaque-azul)/10";
+  const bordaAcento = ehAzul ? "border-(--destaque-azul)/30" : "border-(--destaque-azul)/30";
   const ultimoBloco = indice === total - 1;
 
   return (
@@ -281,8 +281,8 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
   const sCta = useScrollReveal({ threshold: 0.1 });
   const sNav = useScrollReveal({ threshold: 0.1 });
 
-  const corAcento = ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-laranja)";
-  const bgAcento = ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-laranja)";
+  const corAcento = ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-azul)";
+  const bgAcento = ehAzul ? "bg-(--destaque-azul)" : "bg-(--destaque-azul)";
 
   // obras agregadas de todos os tipos (quando tiposDeServico presente)
   const obrasAgregadas = temTipos
@@ -330,7 +330,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 Voltar aos Serviços
               </Link>
               <div className="flex flex-wrap gap-2 mb-5">
-                <span className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${ehAzul ? "bg-(--destaque-azul)/20 border-(--destaque-azul)/40 text-white/80" : "bg-(--destaque-laranja)/20 border-(--destaque-laranja)/40 text-(--destaque-laranja)"}`}>
+                <span className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${ehAzul ? "bg-(--destaque-azul)/20 border-(--destaque-azul)/40 text-white/80" : "bg-(--destaque-azul)/20 border-(--destaque-azul)/40 text-(--destaque-azul)"}`}>
                   {servico.categoriaLabel}
                 </span>
                 <span className="px-3 py-1 bg-white/10 border border-white/20 text-white/70 text-[11px] tracking-[0.2em] uppercase rounded-sm">
@@ -377,7 +377,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 Voltar aos Serviços
               </Link>
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${ehAzul ? "bg-(--destaque-azul)/15 border-(--destaque-azul)/30 text-(--destaque-azul)" : "bg-(--destaque-laranja)/15 border-(--destaque-laranja)/30 text-(--destaque-laranja)"}`}>
+                <span className={`px-3 py-1 text-[11px] font-bold tracking-[0.2em] uppercase rounded-sm border ${ehAzul ? "bg-(--destaque-azul)/15 border-(--destaque-azul)/30 text-(--destaque-azul)" : "bg-(--destaque-azul)/15 border-(--destaque-azul)/30 text-(--destaque-azul)"}`}>
                   {servico.categoriaLabel}
                 </span>
                 <span className="px-3 py-1 bg-(--bg-elemento) border border-(--borda-principal) text-(--texto-suave) text-[11px] tracking-[0.2em] uppercase rounded-sm">
@@ -411,13 +411,13 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 >
                   <div className="flex items-baseline gap-1">
                     <span
-                      className={`text-3xl md:text-4xl font-black ${ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-laranja)"}`}
+                      className={`text-3xl md:text-4xl font-black ${ehAzul ? "text-(--destaque-azul)" : "text-(--destaque-azul)"}`}
                       style={{ fontFamily: "var(--font-outfit)" }}
                     >
                       {m.valor}
                     </span>
                     {m.unidade && (
-                      <span className={`text-sm font-semibold ${ehAzul ? "text-(--destaque-azul)/70" : "text-(--destaque-laranja)/70"}`}>
+                      <span className={`text-sm font-semibold ${ehAzul ? "text-(--destaque-azul)/70" : "text-(--destaque-azul)/70"}`}>
                         {m.unidade}
                       </span>
                     )}
@@ -438,7 +438,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
               ref={sSobre.ref}
               className={`max-w-3xl ${sSobre.montado ? "reveal-fade-right" : ""} ${sSobre.visivel ? "is-visible" : ""}`}
             >
-              <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+              <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
                 Sobre o Serviço
               </p>
               <h2
@@ -476,7 +476,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                     className={`shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-sm border transition-colors duration-200 cursor-pointer ${
                       ehAzul
                         ? "border-(--destaque-azul)/30 text-(--destaque-azul) hover:bg-(--destaque-azul)/10"
-                        : "border-(--destaque-laranja)/30 text-(--destaque-laranja) hover:bg-(--destaque-laranja)/10"
+                        : "border-(--destaque-azul)/30 text-(--destaque-azul) hover:bg-(--destaque-azul)/10"
                     }`}
                   >
                     <span className="opacity-50 mr-1.5">{String(i + 1).padStart(2, "0")}</span>
@@ -511,7 +511,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 ref={sAplicacoes.ref}
                 className={`${sAplicacoes.montado ? "reveal-fade-up" : ""} ${sAplicacoes.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
                   Onde Aplicamos
                 </p>
                 <h2
@@ -547,7 +547,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 ref={sEquipamentos.ref}
                 className={`${sEquipamentos.montado ? "reveal-fade-up" : ""} ${sEquipamentos.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
                   Instrumentação
                 </p>
                 <h2
@@ -602,7 +602,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 ref={sGaleria.ref}
                 className={`${sGaleria.montado ? "reveal-fade-up" : ""} ${sGaleria.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-3">
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-3">
                   Galeria
                 </p>
                 <div className="flex items-end justify-between gap-4 mb-10">
@@ -667,7 +667,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
                 ref={sObras.ref}
                 className={`${sObras.montado ? "reveal-fade-up" : ""} ${sObras.visivel ? "is-visible" : ""}`}
               >
-                <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+                <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
                   Portfólio
                 </p>
                 <h2
@@ -738,7 +738,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
               </svg>
             </div>
 
-            <p className="text-xs tracking-[0.35em] text-(--destaque-laranja) uppercase font-medium mb-4">
+            <p className="text-xs tracking-[0.35em] text-(--destaque-azul) uppercase font-medium mb-4">
               Precisa desse serviço?
             </p>
             <h2
@@ -753,7 +753,7 @@ export default function PaginaServico({ servico }: { servico: ServicoDetalhado }
             <div className="flex flex-wrap justify-center gap-3">
               <Link
                 href="/#contato"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-(--destaque-laranja) hover:bg-(--destaque-laranja-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-(--destaque-azul) hover:bg-(--destaque-azul-hover) text-white text-sm font-semibold rounded-sm transition-colors duration-200 cursor-pointer"
               >
                 Solicitar Proposta
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

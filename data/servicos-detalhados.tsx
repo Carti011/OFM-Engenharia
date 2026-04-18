@@ -192,12 +192,6 @@ export const servicosDetalhados: ServicoDetalhado[] = [
             tipo: "Ferroviário",
             slug: "metro-rj-cptm",
           },
-          {
-            titulo: "Ponte Rio–Niterói",
-            local: "Rio de Janeiro, RJ",
-            tipo: "Análise Dinâmica",
-            slug: "ponte-rio-niteroi",
-          },
         ],
       },
 
@@ -320,6 +314,7 @@ export const servicosDetalhados: ServicoDetalhado[] = [
     titulo: "Monitoramento e Validação Estrutural",
     categoriaLabel: "Estruturas Fixas",
     acento: "azul",
+    imagemHero: "/images/Obras/Museu do Amanhã/Vista panorâmica do Museu do Amanhã na praça Mauá.png",
     subtitulo:
       "Acompanhamento contínuo do comportamento estrutural em obras e operação, combinado com a calibração experimental de modelos de elementos finitos para validação técnica dos projetos.",
     sobre: [
@@ -431,7 +426,39 @@ export const servicosDetalhados: ServicoDetalhado[] = [
           { nome: "Sistema de Aquisição", detalhe: "Alta precisão metrológica" },
         ],
         normas: ["ASTM E1012", "ISO 6892-1"],
-        galeria: [],
+        galeria: [
+          {
+            src: "/images/Obras/Museu do Amanhã/001.jpg",
+            alt: "Instrumentação com strain gages na estrutura metálica do Museu do Amanhã",
+            legenda: "Strain gages instalados nos pontos críticos — 16 canais de extensometria durante o descimbramento",
+            destaque: true,
+          },
+          {
+            src: "/images/Obras/Museu do Amanhã/002.jpg",
+            alt: "Equipe OFM realizando instrumentação no canteiro de obras do Museu do Amanhã",
+            legenda: "Equipe em campo durante a fase de instrumentação da cobertura metálica",
+          },
+          {
+            src: "/images/Obras/Museu do Amanhã/003.jpg",
+            alt: "Detalhe de sensor e cabeamento instalados na estrutura do Museu do Amanhã",
+            legenda: "Cabeamento e condicionamento de sinal integrados ao sistema de aquisição multicanal",
+          },
+          {
+            src: "/images/Obras/Museu do Amanhã/004.jpg",
+            alt: "Sistema de aquisição de dados durante o descimbramento do Museu do Amanhã",
+            legenda: "Aquisição em tempo real — monitoramento das deformações ao longo de todas as etapas do descimbramento",
+          },
+          {
+            src: "/images/Obras/Museu do Amanhã/005.jpg",
+            alt: "Estrutura metálica do Museu do Amanhã durante a fase de descimbramento",
+            legenda: "Fase de descimbramento — dados experimentais correlacionados com o modelo FEM do projeto",
+          },
+          {
+            src: "/images/Obras/Museu do Amanhã/006.jpg",
+            alt: "Detalhes da instrumentação e validação estrutural no Museu do Amanhã",
+            legenda: "Resultados publicados em artigo técnico internacional — referência em validação experimental de FEM",
+          },
+        ],
         obras: [
           { titulo: "Museu do Amanhã", local: "Rio de Janeiro, RJ", tipo: "Descimbramento", slug: "museu-do-amanha" },
           { titulo: "Ponte Rio–Niterói", local: "Rio de Janeiro, RJ", tipo: "Análise Dinâmica", slug: "ponte-rio-niteroi" },
@@ -892,6 +919,18 @@ export const servicosDetalhados: ServicoDetalhado[] = [
             local: "São Paulo, SP",
             tipo: "Ensaio estático e dinâmico",
             slug: "the-town-2025",
+          },
+          {
+            titulo: "Ponte Estaiada Octávio Frias",
+            local: "São Paulo, SP",
+            tipo: "Análise Estrutural",
+            slug: "ponte-estaiada-octavio-frias",
+          },
+          {
+            titulo: "Ponte Newton Navarro",
+            local: "Natal, RN",
+            tipo: "Ensaio Estrutural",
+            slug: "ponte-newton-navarro",
           },
         ],
       },

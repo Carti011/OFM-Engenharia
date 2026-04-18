@@ -10,6 +10,42 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ---
 
+## [2026-04-17] — Refinamentos de serviços, cores e galerias
+
+### Adicionado
+
+- Seção "Como trabalhamos" na página `/servicos` — 4 etapas (Análise e Planejamento, Instrumentação, Ensaio e Aquisição, Análise e Relatório) com ícones SVG e grid de bordas internas; conteúdo aguarda validação do cliente
+- Botão "Ver todos os serviços" (azul, link `/servicos`) no header da seção `#servicos` da home — aparece ao lado do título em telas ≥ sm
+- Variável CSS `--destaque-cinza` (`#475569` no escuro, `#334155` no claro) e `--destaque-cinza-hover` — introduzida para diferenciar elementos secundários do accent primário azul
+- Ícones SVG nos cards da página `/servicos` (listagem) — mesmos ícones já usados na seção `#servicos` da home, reutilizados via `Record<string, React.ReactNode>`
+- ADR 010 — decisão de renomear variáveis CSS de destaque para nomes semanticamente corretos
+
+### Alterado
+
+- `--destaque-laranja` renomeado para `--destaque-azul` em todos os 17 arquivos que a referenciavam — o nome anterior era um artefato histórico (ADR 006) que não descrevia mais a cor real (#1a5cff); nome corrigido para eliminar confusão em manutenção futura
+- `--destaque-azul` (que na prática era cinza/slate #475569) renomeado para `--destaque-cinza` — referências atualizadas nos 3 arquivos que o usavam (`ObrasDestaque.tsx`, `globals.css`, e outros)
+- Seção `#servicos` da home: todos os 5 cards padronizados com `acento: "azul"` — removida distinção azul/laranja que gerava inconsistência visual; ícones e textos agora uniformes
+- Página `/servicos` reestruturada: removida separação em categorias (era 4+1, desequilibrada); grade única com os 5 serviços substituiu o layout anterior
+- `ObrasDestaque.tsx`: indicadores de "Acervo do Engenheiro" (badge, dot, legenda) migrados de `--destaque-azul/60` para `--destaque-cinza` — diferenciação visual clara entre OFM (azul) e Acervo (cinza)
+
+### Adicionado (galerias e obras)
+
+- Galeria `analise-de-vibracao/conforto-estrutural`: 6 fotos da Ponte Rio–Niterói (`001.jpg`–`006.jpg`)
+- Galeria `monitoramento-estrutural/validacao-numerica`: 6 fotos do Museu do Amanhã (`001.jpg`–`006.jpg`, destaque em `001.jpg`)
+- `imagemHero` de `monitoramento-estrutural`: panorâmica do Museu do Amanhã
+
+### Corrigido
+
+- Obras relacionadas `provas-de-carga/estatica-dinamica`: Ponte Rio–Niterói removida (era análise dinâmica, não prova de carga)
+- Obras relacionadas `estruturas-especiais/estruturas-fixas`: Ponte Estaiada Octávio Frias e Ponte Newton Navarro adicionadas
+- Todas as referências a `/images/Servicos/` removidas das galerias em `data/servicos-detalhados.tsx`
+
+### Removido
+
+- Pasta `/public/images/Servicos/` deletada — todas as imagens de serviços agora vêm de `/public/images/Obras/`
+
+---
+
 ## [2026-04-16] — Novas páginas de obras, conteúdo técnico e reorganização de imagens
 
 ### Adicionado

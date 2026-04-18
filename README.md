@@ -60,7 +60,6 @@ empresa especializada em instrumentação e análise experimental de estruturas 
 
 /public/images/
   /Obras/               — fotos organizadas por obra (subpasta por nome da obra)
-  /Servicos/            — fotos editoriais organizadas por slug de serviço
   /Logos/               — logos institucionais (OFM, USP, Falcão Bauer)
 
 /docs

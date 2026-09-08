@@ -8,6 +8,11 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ## [Não lançado]
 
+### Adicionado
+
+- Tag do Google (`AW-18425425968`) para a campanha do Google Ads — componente `components/TagGoogle.tsx` montado no layout raiz, cobrindo as 17 páginas geradas
+  - `gtag.js` é içado para o `<head>` e o snippet de configuração sai como script literal no HTML estático, sem depender da hidratação do React
+
 ---
 
 ## [2026-04-17] — Refinamentos de serviços, cores e galerias

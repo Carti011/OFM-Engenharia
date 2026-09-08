@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Work_Sans } from "next/font/google";
 import "./globals.css";
 import ProvedorTema from "@/components/ProvedorTema";
+import TagGoogle from "@/components/TagGoogle";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full antialiased">
+        <TagGoogle />
         <ProvedorTema>{children}</ProvedorTema>
       </body>
     </html>

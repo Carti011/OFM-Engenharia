@@ -1,9 +1,12 @@
 "use client";
 
+import { registrarCliqueWhatsApp } from "@/lib/conversao";
+
 export default function WhatsAppButton() {
   return (
     <a
       href="https://wa.me/5511964866459"
+      onClick={() => registrarCliqueWhatsApp("botao-flutuante")}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fale conosco pelo WhatsApp"

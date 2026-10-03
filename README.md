@@ -92,7 +92,18 @@ O deploy é feito automaticamente via Vercel a cada push na branch `main`.
 
 ## Variáveis de ambiente
 
-Este projeto não utiliza variáveis de ambiente. Não há backend, banco de dados ou serviços externos autenticados.
+O envio da solicitação de orçamento (`POST /api/orcamento`) usa SMTP do Google Workspace da OFM.
+
+| Variável | Obrigatória | Descrição |
+|---|---|---|
+| `SMTP_USUARIO` | sim | Conta do Google Workspace que autentica e assina o envio |
+| `SMTP_SENHA` | sim | **Senha de app** do Google, nunca a senha da conta |
+| `SMTP_HOST` | não | Padrão `smtp.gmail.com` |
+| `SMTP_PORTA` | não | Padrão `587` |
+| `EMAIL_DESTINO_ORCAMENTO` | não | Padrão `fernando.franco@ofmengenharia.com.br` |
+| `NEXT_PUBLIC_ROTULO_CONVERSAO_ORCAMENTO` | não | Rótulo da conversão no Google Ads. Sem ela o envio funciona, mas nada é medido |
+
+Localmente, copie `.env.example` para `.env.local` e preencha. Em produção, cadastre na Vercel em Settings → Environment Variables. Nenhuma dessas variáveis pode ser versionada.
 
 - Número de WhatsApp: hardcoded em `Contato.tsx`
 - E-mail de contato: hardcoded em `Contato.tsx`

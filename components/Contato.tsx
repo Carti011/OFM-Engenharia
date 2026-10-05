@@ -2,22 +2,10 @@
 
 import { useState } from "react";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import Link from "next/link";
+import { tiposEnsaio } from "@/data/tipos-ensaio";
+import { registrarCliqueWhatsApp } from "@/lib/conversao";
 
-const tiposEnsaio = [
-  "Prova de Carga Estática",
-  "Prova de Carga Dinâmica",
-  "Prova de Carga em Porta Palete",
-  "Análise de Vibração Residencial",
-  "Análise de Vibração Predial",
-  "Análise de Vibração em Vias Públicas",
-  "Ensaio de Trafegabilidade",
-  "Monitoramento Estrutural",
-  "Validação de Modelo Numérico",
-  "Fabricação de Célula de Carga",
-  "Ensaio Industrial Especial",
-  "Ensaio de Arrancamento / Solda",
-  "Outro",
-];
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -57,6 +45,7 @@ export default function Contact() {
         `*Tipo de Ensaio:* ${form.tipo || "Não especificado"}\n` +
         `*Descrição:* ${form.descricao || "Sem descrição adicional"}`
     );
+    registrarCliqueWhatsApp("formulario-home");
     window.open(`https://wa.me/5511964866459?text=${mensagem}`, "_blank");
   };
 
@@ -242,6 +231,21 @@ export default function Contact() {
                 <p className="text-xs text-(--texto-fraco) text-center mt-3">
                   Os dados do formulário serão enviados pelo canal escolhido.
                 </p>
+
+                <div className="mt-6 pt-6 border-t border-(--borda-principal) text-center">
+                  <p className="text-xs text-(--texto-suave) mb-3">
+                    Prefere enviar sem sair do site?
+                  </p>
+                  <Link
+                    href="/orcamento"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-(--bg-cartao) border border-(--destaque-azul) hover:bg-(--destaque-azul)/10 text-(--destaque-azul) font-bold text-sm rounded-sm transition-colors duration-200 cursor-pointer"
+                  >
+                    Solicitar orçamento pelo site
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </form>
           </div>
@@ -343,6 +347,7 @@ export default function Contact() {
             <a
               ref={whatsappDireto.ref}
               href="https://wa.me/5511964866459"
+              onClick={() => registrarCliqueWhatsApp("contato-lateral")}
               target="_blank"
               rel="noopener noreferrer"
               className={`flex items-center justify-center gap-3 p-5 bg-[#25d366]/10 border border-[#25d366]/20 hover:border-[#25d366]/50 hover:bg-[#25d366]/15 rounded-sm transition-all duration-200 cursor-pointer group ${whatsappDireto.montado ? "reveal-fade-left" : ""} ${whatsappDireto.visivel ? "is-visible" : ""}`}

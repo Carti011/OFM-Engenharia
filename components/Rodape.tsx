@@ -8,6 +8,7 @@ const itensNav = [
   { rotulo: "Obras", ancora: "/#obras" },
   { rotulo: "Acervo Técnico", ancora: "/#acervo" },
   { rotulo: "Contato", ancora: "/#contato" },
+  { rotulo: "Orçamento", ancora: "/orcamento" },
 ];
 
 export default function Footer() {

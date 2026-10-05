@@ -10,6 +10,28 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ### Adicionado
 
+- Rota `POST /api/orcamento` para envio da solicitação de orçamento por e-mail, sem depender do aplicativo do visitante (ADR 011)
+  - Validação server-side, campo isca contra robô de spam e limite de envios por IP
+  - Transporte SMTP do Google Workspace atrás de uma porta, trocável sem mexer no serviço
+- Vitest e 15 testes cobrindo validação, anti-spam, limite por IP, os status HTTP da rota e o transporte SMTP
+  - O transporte é exercitado contra um servidor SMTP real levantado no próprio teste (`smtp-server`), sem credencial de produção nem rede externa
+- `.env.example` documentando as variáveis de SMTP e o rótulo de conversão
+- Página `/orcamento` com formulário completo (nome, empresa, telefone, e-mail, cidade da obra, serviço e descrição), estados de envio e erro, campo isca e validação compartilhada com o servidor
+- Página `/obrigado`, exibida apenas após um envio bem-sucedido
+  - Recarregar ou abrir a página direto redireciona para `/orcamento` e não registra conversão, conforme pedido do cliente
+  - Marcada como `noindex` para não aparecer na busca e gerar conversão falsa
+- Conversão do Google Ads disparada no envio concluído; cliques de WhatsApp medidos como evento separado, com a origem do clique
+
+### Alterado
+
+- `next.config.ts`: removido `output: "export"` — as páginas seguem pré-renderizadas, mas a rota de API roda no servidor
+- Next atualizado de 16.2.1 para 16.3.6, que corrige uma falha crítica de negação de serviço em Server Components — relevante agora que o projeto passou a ter servidor
+- `@types/node` alinhado com o Node 24 usado no desenvolvimento
+- Lista de tipos de ensaio extraída para `data/tipos-ensaio.ts`, compartilhada entre o formulário da home e a página `/orcamento`
+- Seção de contato da home e rodapé ganharam caminho para `/orcamento`, sem remover os canais de WhatsApp e e-mail existentes
+
+### Adicionado
+
 - Tag do Google (`AW-18425425968`) para a campanha do Google Ads — componente `components/TagGoogle.tsx` montado no layout raiz, cobrindo as 17 páginas geradas
   - `gtag.js` é içado para o `<head>` e o snippet de configuração sai como script literal no HTML estático, sem depender da hidratação do React
 

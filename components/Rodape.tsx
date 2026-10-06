@@ -9,6 +9,7 @@ const itensNav = [
   { rotulo: "Acervo Técnico", ancora: "/#acervo" },
   { rotulo: "Contato", ancora: "/#contato" },
   { rotulo: "Orçamento", ancora: "/orcamento" },
+  { rotulo: "Privacidade", ancora: "/privacidade" },
 ];
 
 export default function Footer() {

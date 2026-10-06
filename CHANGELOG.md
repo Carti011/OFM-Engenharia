@@ -10,6 +10,10 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ### Adicionado
 
+- Tag do Google Analytics (`G-FRG6QKT410`) junto à tag do Google Ads já existente, no mesmo componente
+
+### Adicionado
+
 - Rota `POST /api/orcamento` para envio da solicitação de orçamento por e-mail, sem depender do aplicativo do visitante (ADR 011)
   - Validação server-side, campo isca contra robô de spam e limite de envios por IP
   - Transporte SMTP do Google Workspace atrás de uma porta, trocável sem mexer no serviço

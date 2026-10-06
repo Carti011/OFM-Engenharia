@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { tiposEnsaio } from "@/data/tipos-ensaio";
 import { validarSolicitacao } from "@/lib/orcamento/solicitacao";
@@ -265,7 +266,14 @@ export default function FormularioOrcamento() {
 
       <p className="text-xs text-(--texto-fraco)">
         Os campos com * são obrigatórios. Seus dados são usados apenas para responder esta
-        solicitação.
+        solicitação — veja a{" "}
+        <Link
+          href="/privacidade"
+          className="text-(--destaque-azul) hover:text-(--destaque-azul-hover) underline underline-offset-2 transition-colors duration-200"
+        >
+          política de privacidade
+        </Link>
+        .
       </p>
     </form>
   );

@@ -10,6 +10,10 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
 
 ### Adicionado
 
+- Tag do Google Analytics (`G-FRG6QKT410`) junto à tag do Google Ads já existente, no mesmo componente
+
+### Adicionado
+
 - Rota `POST /api/orcamento` para envio da solicitação de orçamento por e-mail, sem depender do aplicativo do visitante (ADR 011)
   - Validação server-side, campo isca contra robô de spam e limite de envios por IP
   - Transporte SMTP do Google Workspace atrás de uma porta, trocável sem mexer no serviço
@@ -21,6 +25,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/).
   - Recarregar ou abrir a página direto redireciona para `/orcamento` e não registra conversão, conforme pedido do cliente
   - Marcada como `noindex` para não aparecer na busca e gerar conversão falsa
 - Conversão do Google Ads disparada no envio concluído; cliques de WhatsApp medidos como evento separado, com a origem do clique
+- Página `/privacidade` com o aviso de tratamento de dados exigido pela LGPD e pelas políticas do Google Ads
+  - Descreve o que o site realmente coleta: os campos do formulário, o IP usado para conter envio automatizado e os cookies da tag do Google
+  - Link no rodapé de todas as páginas e ao lado do botão de envio do formulário, no ponto onde os dados são informados
 
 ### Alterado
 
